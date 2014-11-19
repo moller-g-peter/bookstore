@@ -1,6 +1,6 @@
 $(function(){
 
-	alert('Its working!');
+	alert('Its not working!');
 
 
-})
+});
