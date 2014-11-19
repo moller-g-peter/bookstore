@@ -4,7 +4,8 @@
 		<meta charset="utf-8">
 
 		<title>BookStore. Group fantastic 4.</title>
-  	<link rel="stylesheet" href="css/meyerreset.css">
+
+  		<link rel="stylesheet" href="css/meyerreset.css">
 		<link rel="stylesheet" href="css/style.css">
 
 		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
@@ -13,28 +14,36 @@
 	<body>
 		<header>
 			<h1>Bookstore</h1>
-		</header>		
-		<section>
+		</header>
+
+		<section class="searchFields">
 			<form>
-	  		<label > Search for a specific book:<br> <input type="text" name="ISBN" value=""  placeholder="Enter ISBN here.." required></label>
-	  		<br>
-	  		<label >Enter the f-price of one book:<br> <input title="The price of one book will automatically be multiplied with the quantity of books" type="number" name="price" valur="" placeholder="Enter price here.." required></label>
-	  		<br>
-	  		<label >Enter the quantity of the books:<br> <input title="The quantity of all the books will automatically be multiplied with the price of one book" type="number" name="quantity" placeholder="Enter quantity here.." required></label>
-	  		<br>
-	  		<label >When the books got to the store:<br> <input type="datetime" name="daytime" placeholder="yyyy-mm-dd" required></label>
-	  		<br>
-	  		<label > Enter which bookshelf it's placed:<br> <input type="text" name="bookshelf" value=""  placeholder="Enter a Bookshelf" required></label>
-	  	</form>
+		  		<label>Search for a specific book: <br> 
+		  		<input type="text" name="ISBN" value=""  placeholder="Enter ISBN here.." required></label><br>
+
+		  		<label>Enter the f-price of one book: <br> 
+		  		<input title="The price of one book will automatically be multiplied with the quantity of books" type="number" name="price" valur="" placeholder="Enter price here.." required></label>
+		  		<br>
+
+		  		<label>Enter the quantity of the books: <br> 
+		  		<input title="The quantity of all the books will automatically be multiplied with the price of one book" type="number" name="quantity" placeholder="Enter quantity here.." required></label>
+		  		<br>
+
+		  		<label>When the books got to the store: <br> 
+		  		<input type="datetime" name="daytime" placeholder="yyyy-mm-dd" required></label>
+		  		<br>
+
+		  		<label>Enter which bookshelf it's placed: <br> 
+		  		<input type="text" name="bookshelf" value=""  placeholder="Enter a Bookshelf" required></label>
+	  		</form>
 		</section>
+		<section class="resultWindow">
+			<article>
+				Results from search quieries will appear here.
+			</article>
+		</section>
+
+
+
 	</body>
 </html>
-
-
-
-
-
-
-
-
-
