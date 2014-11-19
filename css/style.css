@@ -1,0 +1,21 @@
+body {
+  line-height:140%;
+ 
+}
+
+header {
+  font-size:30px;
+  background-color:#876;
+  padding:50px 6%;
+  border-bottom: 3px solid #000;
+ 
+}
+
+section {
+  background-color:#456;
+  padding:20px;
+  margin:5% 70% 0 6%;
+  border:3px solid #000;
+  color:#fff;
+
+}
