@@ -20,6 +20,10 @@ $(function(){
 		$('.bookshelf').click(function(){
 			console.log('Add place in shelf.');
 		});
+
+		$('.manualPrice').click(function(){
+			console.log('Change the price manualy.');
+		});
 	}
 	
 	forStaff();
