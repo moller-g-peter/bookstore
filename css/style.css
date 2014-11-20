@@ -30,6 +30,9 @@ input {
 }
 
 .resultWindow {
+  background-color:#abc;
+  height: 200px;
+  width: 200px;
   margin-left: 550px;
   margin-top: 1px;
 }
