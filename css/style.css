@@ -1,6 +1,6 @@
 body {
   line-height:140%;
- 
+  position: relative;
 }
 
 header h1 {
@@ -13,10 +13,7 @@ header h1 {
 
 .searchFields {
   background-color:#456;
-  padding:20px;
-  margin:50px 1000px 0 60px;
-  margin-left: 10px;
-  margin-top: 10px;
+  padding: 20px;
   border:3px solid #000;
   color:#fff;
 
@@ -30,8 +27,8 @@ input {
 }
 
 .resultWindow {
-  margin-left: 450px;
-  margin-top: -385px;
+  margin-left: 550px;
+  margin-top: 1px;
 }
 
 .customerResult {
