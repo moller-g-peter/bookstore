@@ -1,23 +1,27 @@
 $(function(){
 
-	$('.ISBN').click(function(){
-		console.log('Search via ISBN.');
-	})
+	function forStaff(){
+		$('.ISBN').click(function(){
+			console.log('Search via ISBN.');
+		})
 
-	$('.price').click(function(){
-		console.log('Add Price.');
-	})
+		$('.price').click(function(){
+			console.log('Add Price.');
+		})
 
-	$('.quantity').click(function(){
-		console.log('Add Quantity.');
-	})
+		$('.quantity').click(function(){
+			console.log('Add Quantity.');
+		})
 
-	$('.daytime').click(function(){
-		console.log('Add date of arrival.');
-	})
+		$('.daytime').click(function(){
+			console.log('Add date of arrival.');
+		})
 
-	$('.bookshelf').click(function(){
-		console.log('Add place in shelf.');
-	})
+		$('.bookshelf').click(function(){
+			console.log('Add place in shelf.');
+		})
+	};
+
+	forStaff();
 
 });
