@@ -33,3 +33,7 @@ input {
   margin-left: 450px;
   margin-top: -385px;
 }
+
+.customerResult {
+  display: none;
+}
