@@ -30,7 +30,7 @@ input {
 }
 
 .resultWindow {
-  background-color:#abc;
+  background-color: #abc;
   height: 200px;
   width: 200px;
   margin-left: 550px;
@@ -39,4 +39,16 @@ input {
 
 .customerResult {
   display: none;
+}
+
+.manualBox {
+  display: block;
+  margin-top: 100px;
+  width: 250px;
+  background-color: #678;
+  text-align: center;
+}
+
+.manualBox input {
+  width: 170px;
 }
