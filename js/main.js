@@ -21,7 +21,7 @@ $(function(){
 			console.log('Add place in shelf.');
 		});
 	}
-
+	
 	forStaff();
 
 });
