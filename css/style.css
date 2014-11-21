@@ -52,3 +52,7 @@ input {
 .manualBox input {
   width: 170px;
 }
+
+.boom {
+  font-weight: bold;
+}
