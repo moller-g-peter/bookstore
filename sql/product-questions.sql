@@ -2,7 +2,7 @@
 # hostname: 127.0.0.1
 # username: root
 # password: mysql
-# database: webshop
+# database: bookstore
 
 # get categories
 SELECT * FROM pcategories;
