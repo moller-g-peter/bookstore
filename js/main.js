@@ -17,7 +17,7 @@ $(function(){
 
 
 			$.ajax({
-			url:"libs/sql-ajax-json.php",				
+			url:"libs/sql-ajax-json.php",			
 				dataType: "json",
 				data: {					
 					sql: "sql/product-questions.sql",				
