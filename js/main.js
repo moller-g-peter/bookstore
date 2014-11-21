@@ -10,16 +10,8 @@ $(function(){
 			console.log("bookInfo: ", bookInfo);
 
 			$.ajax({
-			// Use Nodebite's magic library
 			url:"libs/sql-ajax-json.php",
-				// Expect json in return
 				dataType: "json",
-				data: {
-					// Read SQL questions from this file
-					sql: "sql/product-questions.sql",
-					// Run the query named book input
-					run: "book input",
-					//data to send
 				data: {					
 					sql: "sql/product-questions.sql",				
 					run: "book input",					
@@ -37,7 +29,6 @@ $(function(){
 			});
 		return false;
 	});
-
 
 	function forStaff(){
 
