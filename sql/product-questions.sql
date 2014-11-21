@@ -25,4 +25,4 @@ INSERT INTO login (email, password) VALUES ({email}, {password});
 SELECT users.uid, users.fname, users.lname, users.email FROM users, login WHERE login.email={email} AND login.password={password} AND users.email=login.email;
 
 # book input
-INSERT INTO booklist (isbn) VALUES ({isbn});
+INSERT INTO booklist (isbn, fPrice, amount, shelf) VALUES ({isbn}, {fPrice}, {amount}, {shelf});
