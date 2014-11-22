@@ -13,11 +13,25 @@ header h1 {
 
 .searchFields {
   position: absolute;
-  top: 130px;
+  top: 190px;
   left: 40px;
   background-color:#456;
   padding: 20px;
   border:3px solid #000;
+  color:#fff;
+
+}
+
+.addbook  {
+  position: absolute;
+  top: 140px;
+  left: 40px;
+  width:30px;
+  height: 30px;
+  background-color:#456;
+  padding: 10px 30px;
+  border:3px solid #000;
+  border-bottom: 0px solid #456;
   color:#fff;
 
 }
@@ -31,8 +45,8 @@ input {
 
 .resultWindow {
   background-color: #abc;
-  height: 200px;
-  width: 200px;
+  height: 475px;
+  width: 500px;
   margin-left: 400px;
   margin-top: 1px;
 }
