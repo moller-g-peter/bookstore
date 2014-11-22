@@ -33,29 +33,4 @@ $(function(){
 			});
 		return false;
 	});
-
-	function forStaff(){
-
-		$('.price').click(function(){
-			console.log('Add Price.');
-		});
-
-		$('.quantity').click(function(){
-			console.log('Add Quantity.');
-		});
-
-		$('.daytime').click(function(){
-			console.log('Add date of arrival.');
-		});
-
-		$('.bookshelf').click(function(){
-			console.log('Add place in shelf.');
-		});
-
-		$('.manualPrice').click(function(){
-			console.log('Change the price manualy.');
-		});
-	}
-
-	forStaff();
 });
