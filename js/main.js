@@ -37,7 +37,7 @@ $(function(){
 				},
 				success: function(data) {
 					console.log("Add bookInfo success: ", data, bookInfo);
-					alert("You have succefully stored your data");
+					alert("You have succefully stored your data!");
 				},
 				error: function(data) {
 					console.log("error: ", data);
