@@ -83,7 +83,6 @@ ul div {
   position: absolute;
   top: 145px;
   left: 40px;
-  /*border: 2px solid red;*/
   list-style: none;
   z-index: 10;
 }
@@ -112,4 +111,8 @@ ul div {
 
 li.grey {
   border-bottom: 3px solid #456;
+}
+
+li.grey a:hover {
+  background-color: #456;
 }
