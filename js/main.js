@@ -24,7 +24,7 @@ $(function(){
 		$('.inputFields').hide();
 	});
 
-	$('.staffForm').submit(function() {
+	$('.inputFields').submit(function() {
 		var bookInfo = {};
 
 		$(this).find("input").not("input[type='submit']").each(function() {
