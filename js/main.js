@@ -1,15 +1,26 @@
 
 $(function(){
-
+	$('.grey').addClass("activate");
+	$('.lightGrey').addClass("notactivate");
 	$('.searchFields').hide();
 	$('.inputFields').show();
 
 	$('.grey').click(function(){
+		$('.lightGrey').removeClass("activate");
+		$('.grey').removeClass("notactivate");
+		$('.lightGrey').addClass("notactivate");
+		$('.grey').addClass("activate");
 		$('.inputFields').show();
 		$('.searchFields').hide();
+
 	});
+	//$( "p" ).removeClass( "myClass noClass" ).addClass( "yourClass" );
 
 	$('.lightGrey').click(function(){
+		$('.grey').removeClass("activate");
+		$('.lightGrey').removeClass("notactivate");
+		$('.grey').addClass("notactivate");
+		$('.lightGrey').addClass("activate");
 		$('.searchFields').show();
 		$('.inputFields').hide();
 	});

@@ -45,19 +45,6 @@ header h1 {
 }
 
 
-/*.addbook  {
-  position: absolute;
-  top: 140px;
-  left: 40px;
-  width:30px;
-  height: 30px;
-  background-color:#456;
-  padding: 10px 30px;
-  border:3px solid #000;
-  border-bottom: 0px solid #456;
-  color:#fff;
-}*/
-
 .inputFields input , .customerField{
   width: 250px;
   height: 25px;
@@ -77,18 +64,6 @@ header h1 {
   display: none;
 }
 
-.manualBox {
-  display: block;
-  margin-top: 100px;
-  width: 250px;
-  background-color: #678;
-  text-align: center;
-}
-
-.manualBox input {
-  width: 170px;
-}
-
 .exe {
   font-weight: bold;
 }
@@ -101,43 +76,32 @@ ul div {
   z-index: 10;
 }
 
-.topTabs li {
+.activate {
   display: inline-block;
   border: 3px solid #000;
-  /*border-bottom: 3px solid red;*/
+  border-bottom: 3px solid #456;
   background-color:#456;
-  /*z-index: 100;*/
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-}
-
-.topTabs li {
-  display: block;
   text-decoration: none;
   color: #fff;
   font-weight: bold;
   padding: 10px 20px;
 }
 
-.topTabs li:hover {
-  background-color: #abc;
-  text-shadow: 2px 2px 2px #000;
+
+.notactivate {
+  display: inline-block;
+  border: 3px solid #000;
+  background-color:#678;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  text-decoration: none;
   color: #fff;
+  font-weight: bold;
+  padding: 10px 20px;
 }
 
-.topTabs li:active {
-  background-color: yellow;
-  text-shadow: 2px 2px 2px #000;
-  color: #fff;
-}
-
-li.grey {
-  border-bottom: 4px solid #456;
-}
-
-li.grey:hover {
-  background-color: #456;
-}
 
 .grey {
   position: absolute;
@@ -149,5 +113,5 @@ li.grey:hover {
   position: absolute;
   top: 0;
   left: 83px;
-  background-color: #789;
 }
+
