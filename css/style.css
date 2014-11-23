@@ -8,10 +8,9 @@ header h1 {
   background-color:#876;
   padding:50px 60px;
   border-bottom: 3px solid #000;
- 
 }
 
-.searchFields {
+.inputFields {
   position: absolute;
   top: 190px;
   left: 40px;
@@ -21,7 +20,7 @@ header h1 {
   color:#fff;
 }
 
-.search {
+.searchFields {
   position: absolute;
   top: 190px;
   left: 40px;
@@ -97,7 +96,7 @@ ul div {
   border-top-right-radius: 5px;
 }
 
-.topTabs li a {
+.topTabs li {
   display: block;
   text-decoration: none;
   color: #fff;
@@ -105,8 +104,14 @@ ul div {
   padding: 10px 20px;
 }
 
-.topTabs li a:hover {
+.topTabs li:hover {
   background-color: #abc;
+  text-shadow: 2px 2px 2px #000;
+  color: #fff;
+}
+
+.topTabs li:active {
+  background-color: yellow;
   text-shadow: 2px 2px 2px #000;
   color: #fff;
 }
@@ -115,10 +120,19 @@ li.grey {
   border-bottom: 3px solid #456;
 }
 
-li.grey a:hover {
+li.grey:hover {
   background-color: #456;
 }
 
-.lightGrey a {
+.grey {
+  position: absolute;
+  top: 0;
+  left:0;
+}
+
+.lightGrey{
+  position: absolute;
+  top: 0;
+  left: 83px;
   background-color: #789;
 }

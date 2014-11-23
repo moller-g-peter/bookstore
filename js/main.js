@@ -1,16 +1,17 @@
 
 $(function(){
 
-	// $('.searchFields').hide();
-	// $('.search').hide();
+	$('.searchFields').hide();
+	$('.inputFields').show();
 
-	$('#inputTab').click(function(){
-		$('.searchFields').show();
-		$('.search').hide();
-	});
-	$('#searchTab').click(function(){
-		$('.search').show();
+	$('.grey').click(function(){
+		$('.inputFields').show();
 		$('.searchFields').hide();
+	});
+
+	$('.lightGrey').click(function(){
+		$('.searchFields').show();
+		$('.inputFields').hide();
 	});
 
 	$('.staffForm').submit(function() {
