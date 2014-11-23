@@ -92,7 +92,8 @@ ul div {
   border: 3px solid #000;
   /*border-bottom: 3px solid red;*/
   background-color:#456;
-  z-index: 100;
+  /*z-index: 100;*/
+  border-radius: 5px;
 }
 
 .topTabs li a {
@@ -115,4 +116,8 @@ li.grey {
 
 li.grey a:hover {
   background-color: #456;
+}
+
+.lightGrey a {
+  background-color: #789;
 }
