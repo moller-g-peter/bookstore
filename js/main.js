@@ -14,7 +14,6 @@ $(function(){
 		$('.searchFields').hide();
 
 	});
-	//$( "p" ).removeClass( "myClass noClass" ).addClass( "yourClass" );
 
 	$('.lightGrey').click(function(){
 		$('.grey').removeClass("activate");
@@ -24,19 +23,6 @@ $(function(){
 		$('.searchFields').show();
 		$('.inputFields').hide();
 	});
-
-	// $(this).hover(function(){
-	//   $(".grey").css("background-color","yellow");
-	// }); 
-
-
-
-
-
-
-
-
-
 
 	$('.staffForm').submit(function() {
 		var bookInfo = {};
