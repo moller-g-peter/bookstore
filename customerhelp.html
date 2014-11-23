@@ -17,20 +17,19 @@
 			<h1>Bookstore</h1>
 		</header>
 
-		<section class="searchFields">
-			<h2>Enter an ISBN-number OR title OR author to search:</h2>
+		<section class="customerSearch">
+			<h2>Choose the right type of data, enter the data in the textfield and press Search!</h2>
 			<form>
-		  		<label>Search for a specific book: <br> 
-		  		<input type="text" name="ISBN" placeholder="Enter ISBN here..." ></label><br>
+		  		<input type="radio" name="choice" id="c1">
+					<label for="c1">ISBN</label>
+				<input type="radio" name="choice" id="c2">
+					<label for="q1a2">Booktitle</label>
+				<input type="radio" name="choice" id="c3">
+					<label for="q1a3">Author</label><br>
 
-		  		<label>Search for a title:<br> 
-		  		<input type="text" name="title" placeholder="Enter title here..." ></label>
-		  		<br>
+		  		<input type="text" name="ISBN" placeholder="Write here..." class="customerField"></label><br>
+		  		<button class="exe" type="submit">Search!</button>
 
-		  		<label>Search for an author:<br> 
-		  		<input type="text" name="author" placeholder="Enter author here..." ></label>
-		  		<br>
-		  		<button>Search!</button>
 	  		</form>
 		</section>
 		
@@ -39,3 +38,6 @@
 
 	</body>
 </html>
+
+
+
