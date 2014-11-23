@@ -93,7 +93,8 @@ ul div {
   /*border-bottom: 3px solid red;*/
   background-color:#456;
   /*z-index: 100;*/
-  border-radius: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 
 .topTabs li a {
