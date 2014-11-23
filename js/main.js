@@ -1,6 +1,18 @@
 
 $(function(){
 
+	$('.searchFields').hide();
+	$('.search').hide();
+
+	$('#inputTab').click(function(){
+		$('.searchFields').show();
+		$('.search').hide();
+	});
+	$('#searchTab').click(function(){
+		$('.search').show();
+		$('.searchFields').hide();
+	});
+
 	$('.staffForm').submit(function() {
 		var bookInfo = {};
 
