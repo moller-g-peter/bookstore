@@ -1,8 +1,8 @@
 
 $(function(){
 
-	$('.searchFields').hide();
-	$('.search').hide();
+	// $('.searchFields').hide();
+	// $('.search').hide();
 
 	$('#inputTab').click(function(){
 		$('.searchFields').show();
