@@ -65,6 +65,7 @@ header h1 {
 }
 
 .exe {
+  cursor: pointer;
   font-weight: bold;
 }
 
@@ -77,6 +78,7 @@ ul div {
 }
 
 .activate {
+  cursor: pointer;
   display: inline-block;
   border: 3px solid #000;
   border-bottom: 3px solid #456;
@@ -89,10 +91,11 @@ ul div {
   padding: 10px 20px;
 }
 
-
 .notactivate {
+  cursor: pointer;
   display: inline-block;
-  border: 3px solid #000;
+  border: 3px solid #555;
+  border-bottom: 0 ;
   background-color:#678;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
@@ -102,6 +105,9 @@ ul div {
   padding: 10px 20px;
 }
 
+.notactivate:hover {
+   background-color:#567;
+}
 
 .grey {
   position: absolute;
@@ -111,7 +117,7 @@ ul div {
 
 .lightGrey{
   position: absolute;
-  top: 0;
-  left: 83px;
+  top: 1;
+  left: 85px;
 }
 
