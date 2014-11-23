@@ -31,7 +31,7 @@ header h1 {
   color:#fff;
 }
 
-.addbook  {
+/*.addbook  {
   position: absolute;
   top: 140px;
   left: 40px;
@@ -42,7 +42,7 @@ header h1 {
   border:3px solid #000;
   border-bottom: 0px solid #456;
   color:#fff;
-}
+}*/
 
 input {
   width: 250px;
@@ -104,15 +104,7 @@ ul div {
 }
 
 .topTabs li a:hover {
-  background-color: #abc;
+  background-color: yellow;
   text-shadow: 2px 2px 2px #000;
   color: #fff;
-}
-
-.topTabs li a:hover {
-  background-color: yellow;
-}
-
-li a#searchTab {
-  background-color: red;
 }
