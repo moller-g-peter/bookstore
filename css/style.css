@@ -109,13 +109,3 @@ ul div {
   text-shadow: 2px 2px 2px #000;
   color: #fff;
 }
-
-/*ul div .grey {
-  border-bottom: #abc;
-  z-index: 20;
-}*/
-
-li.grey {
-  border-bottom: red;
-  z-index: 60;
-}
