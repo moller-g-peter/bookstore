@@ -90,10 +90,10 @@ ul div {
 
 .topTabs li {
   display: inline-block;
-  border: 3px solid yellow;
-  /*border-bottom: yellow;*/
+  border: 3px solid #000;
+  /*border-bottom: 3px solid red;*/
   background-color:#456;
-  /*z-index: 100;*/
+  z-index: 100;
 }
 
 .topTabs li a {
@@ -108,4 +108,8 @@ ul div {
   background-color: #abc;
   text-shadow: 2px 2px 2px #000;
   color: #fff;
+}
+
+li.grey {
+  border-bottom: 3px solid #456;
 }
