@@ -52,8 +52,7 @@ display: none;
   padding: 5px;
 }
 
-
-.inputFields input , .searchFields input , .customerField{
+input[type="text"], input[type="number"] {
   width: 250px;
   height: 25px;
   margin-left: 0;
