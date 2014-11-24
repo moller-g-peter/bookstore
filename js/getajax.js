@@ -18,8 +18,8 @@ $(function(){
           console.log("Add bookInfo success bookInfo: ", bookInfo);
           console.log("Add bookInfo success data: ", data);
           // alert("You have succefully stored your data!");
-          $('.resultWindow').append('You searched for: ' + bookInfo.isbn);
-          $(':input', '.inputForm').val('');
+          $('.resultWindow').append('You searched for: ' + [data] + data.author);
+
         },
         error: function(data) {
           console.log("error: ", data);
