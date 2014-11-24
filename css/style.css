@@ -125,11 +125,10 @@ ul div {
   left: 87px;
 }
 
-<<<<<<< Updated upstream
 b {
   font-weight: bold;
 }
-=======
+
 .modPrice {
   position: absolute;
   top: 1;
@@ -145,4 +144,7 @@ b {
 .inputForm {
   margin: 35px;
 }
->>>>>>> Stashed changes
+
+.p1 {
+  font-size: 18px;
+}
