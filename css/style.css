@@ -113,6 +113,10 @@ ul div {
    background-color:#567;
 }
 
+b {
+  font-weight: bold;
+}
+
 .input {
   position: absolute;
   top: 0;
@@ -125,10 +129,13 @@ ul div {
   left: 87px;
 }
 
+<<<<<<< Updated upstream
 b {
   font-weight: bold;
 }
 
+=======
+>>>>>>> Stashed changes
 .modPrice {
   position: absolute;
   top: 1;
@@ -144,7 +151,10 @@ b {
 .inputForm {
   margin: 35px;
 }
+<<<<<<< Updated upstream
 
 .p1 {
   font-size: 18px;
 }
+=======
+>>>>>>> Stashed changes
