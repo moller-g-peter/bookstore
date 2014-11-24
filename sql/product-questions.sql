@@ -29,3 +29,6 @@ INSERT INTO booklist (isbn, title, author, fPrice, amount, shelf) VALUES ({isbn}
 
 # Update price
 UPDATE booklist SET fPrice = fPrice * 1.8;
+
+# get books by isbn
+SELECT * FROM booklist WHERE isbn={isbn}; 
