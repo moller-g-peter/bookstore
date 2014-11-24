@@ -50,6 +50,7 @@ $(function(){
 					console.log("Add bookInfo success: ", data, bookInfo);
 					// alert("You have succefully stored your data!");
 					$('.resultWindow').append('You added: ' + '<b>' + bookInfo.title + '</b>' + '. By author: ' + '<b>' + bookInfo.author + '</b>' + '. Amount added: ' + '<b>' + bookInfo.amount + '</b>' + '<br>');
+					$(':input', '.inputForm').val('');
 				},
 				error: function(data) {
 					console.log("error: ", data);
