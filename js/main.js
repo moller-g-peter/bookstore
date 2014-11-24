@@ -42,7 +42,7 @@ $(function(){
 					isbn: JSON.stringify(bookInfo["isbn"]),
 					title: JSON.stringify(bookInfo["title"]),
 					author: JSON.stringify(bookInfo["author"]),
-					fPrice: JSON.stringify(bookInfo["fPrice"]),
+					fPrice: JSON.stringify(bookInfo["fPrice"]*1.8),
 					amount: JSON.stringify(bookInfo["amount"]),
 					shelf: JSON.stringify(bookInfo["shelf"])
 				},

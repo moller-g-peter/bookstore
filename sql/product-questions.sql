@@ -27,3 +27,5 @@ SELECT users.uid, users.fname, users.lname, users.email FROM users, login WHERE 
 # book input
 INSERT INTO booklist (isbn, title, author, fPrice, amount, shelf) VALUES ({isbn}, {title}, {author}, {fPrice}, {amount}, {shelf});
 
+# Update price
+UPDATE booklist SET fPrice = fPrice * 1.8;
