@@ -1,28 +1,27 @@
 
 $(function(){
-	$('.grey').addClass("activate");
-	$('.lightGrey').addClass("notactivate");
+	$('.input').addClass("activated");
+	$('.sell, .modPrice, .report').addClass("notactivated");
 	$('.searchFields').hide();
 	$('.inputFields').show();
 
-	$('.grey').click(function(){
-		$('.lightGrey').removeClass("activate");
-		$('.grey').removeClass("notactivate");
-		$('.lightGrey').addClass("notactivate");
-		$('.grey').addClass("activate");
-		$('.inputFields').show();
-		$('.searchFields').hide();
-
+	$(".topTabs li").click(function(){
+		var myClass=$(this).attr("id");
+		$(".topTabs").siblings().hide();
+		$(".show"+myClass).show();
+		$(this).siblings().removeClass("activated");
+		$(this).siblings().addClass("notactivated");
+		$(this).removeClass("notactivated");
+		$(this).addClass("activated");
 	});
 
-	$('.lightGrey').click(function(){
-		$('.grey').removeClass("activate");
-		$('.lightGrey').removeClass("notactivate");
-		$('.grey').addClass("notactivate");
-		$('.lightGrey').addClass("activate");
+	/*$('.sell').click(function() {
 		$('.searchFields').show();
-		$('.inputFields').hide();
-	});
+
+	});*/
+		
+
+
 
 	$('.inputForm').submit(function() {
 		var bookInfo = {};
