@@ -76,6 +76,12 @@ display: none;
   cursor: pointer;
   font-weight: bold;
 }
+.sellbutton{
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: 150px;
+  margin-top:50px;
+}
 
 ul div {
   position: absolute;
