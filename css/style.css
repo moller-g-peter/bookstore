@@ -148,20 +148,18 @@ b {
   left: 161px;
 }
 
+
+
 .report {
   position: absolute;
   top: 1;
   left: 280px;
 }
 
-.inputForm {
-  margin: 35px;
+form {
+  padding: 35px;
 }
 
 .p1 {
   font-size: 18px;
-}
-
-.searchForm {
-  padding: 35px;
 }
