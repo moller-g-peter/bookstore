@@ -10,6 +10,10 @@ header h1 {
   border-bottom: 3px solid #000;
 }
 
+.resultWindow .p1:nth-child(even) {
+  background-color: lightblue;
+}
+
 .inputFields {
   position: absolute;
   top: 190px;
