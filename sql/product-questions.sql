@@ -31,4 +31,7 @@ INSERT INTO booklist (isbn, title, author, fPrice, amount, shelf) VALUES ({isbn}
 UPDATE booklist SET fPrice = fPrice * 1.8;
 
 # get books by isbn
-SELECT * FROM booklist WHERE isbn={isbn}; 
+SELECT * FROM booklist WHERE isbn={isbn};
+
+# update books
+INSERT INTO booklog (isbnLog, amountLog) VALUES ({isbnLog}, {amountLog});
