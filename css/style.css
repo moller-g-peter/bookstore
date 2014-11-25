@@ -148,8 +148,6 @@ b {
   left: 161px;
 }
 
-
-
 .report {
   position: absolute;
   top: 1;
@@ -163,3 +161,12 @@ form {
 .p1 {
   font-size: 18px;
 }
+
+.modFields button {
+  margin-top: 10px;
+}
+
+.modFields input {
+  display: block;
+}
+
