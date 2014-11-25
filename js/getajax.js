@@ -16,10 +16,16 @@ $(function(){
           isbn: JSON.stringify(bookInfo["isbn"])
         },
         success: function(data) {
-          console.log("Add bookInfo success bookInfo: ", bookInfo);
+          $('.resultWindow').html("");
+          var resultHtml = $('.resultWindow');
+          console.log("Add bookInfo success bookInfo: ", bookInfo.data);
           console.log("Add bookInfo success data: ", data);
           // alert("You have succefully stored your data!");
-          $('.resultWindow').append('You searched for: ' + [data] + data.author);
+          for (var i = 0; i < data.length; i++) {
+            var article = $('<article class="p1"/>');
+            article.append('<h2>' + data[i].title +  " " + data[i].author + '</h2>');
+            resultHtml.append(article);
+          }
         },
         error: function(data) {
           console.log("error: ", data);
@@ -29,3 +35,6 @@ $(function(){
     return false;
   });
 });
+
+
+
