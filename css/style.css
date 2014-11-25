@@ -62,7 +62,7 @@ input[type="text"], input[type="number"] {
 .resultWindow {
   background-color: #abc;
   height: 475px;
-  width: 700px;
+  width: 620px;
   margin-left: 500px;
   margin-top: 68px;
 }
@@ -172,8 +172,9 @@ form {
 }
 
 em {
-  font:20px helvetica, bold;
-  color:#112;
+  font-size:20px;
+  font-weight: bold;
+  color:#642;
 }
 
 .CheckISBNforReport button, .CheckISBNforReport input {

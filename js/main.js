@@ -50,7 +50,7 @@ $(function(){
 					// alert("You have succefully stored your data!");
 					$('.resultWindow').append('<p class="p1">' + 'You added: ' + '<b>' + bookInfo.title + '</b>' + '. By author: ' + '<b>' + bookInfo.author + '.</b>' + ' Amount added: ' + '<b>' + bookInfo.amount + '.</b>' + '<br>' + 
 												'Added to shelf: ' + '<b>' + bookInfo.shelf + '.</b>');
-					$(':input', '.inputForm').val('');
+					$('input', '.inputForm').val('');
 				},
 				error: function(data) {
 					console.log("error: ", data);

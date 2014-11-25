@@ -30,23 +30,23 @@ $(function(){
             resultHtml.append(article);
             $('.sellISBN').val(data[i].isbn);
           }
+          if (!data.length){
+                  $('.resultWindow').append("<p>The isbn number your looking for is not found</p>");
+                }
+                
         },
         error: function(data) {
-          console.log("error: ", data);
           alert("Fill in all input fields.");
         }
       });
     return false;
   });
 
-
   $('.makeSale').submit(function() {
     var sellBook = {};
-
     $(this).find("input").not("input[type='submit']").each(function() {
       sellBook[this.name] = $(this).val();
     });
-
     $.ajax({
       url:"libs/sql-ajax-json.php",
         dataType: "json",
@@ -59,7 +59,6 @@ $(function(){
         success: function(data) {
           $('.resultWindow').html("");
           var resultHtml = $('.resultWindow');
-          console.log("Add sellBook success: ", sellBook.data);
           console.log("Add sellBook success data: ", data);
           // alert("You have succefully stored your data!");
           for (var i = 0; i < data.length; i++) {
@@ -70,10 +69,12 @@ $(function(){
         },
         error: function(data) {
           console.log("error: ", data);
+          $('.resultWindow').append("<p>The isbn number your looking for is undefined</p>");
         }
-      });
+    });
     return false;
   });
+
 });
 
 
