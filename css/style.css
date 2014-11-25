@@ -177,11 +177,15 @@ em {
   color:#642;
 }
 
-.CheckISBNforReport button, .CheckISBNforReport input {
+.CheckISBNforReport button, .CheckISBNforReport input, . {
   display: block;
   margin: 5px;
 }
 
-.reportButton {
-  margin-bottom: 20px;
+.CheckISBNforReport {
+  margin-bottom: 15px;
+}
+
+.getReport * {
+  display: block;
 }
