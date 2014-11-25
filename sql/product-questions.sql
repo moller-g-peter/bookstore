@@ -35,4 +35,3 @@ SELECT * FROM booklist WHERE isbn={isbn};
 
 # update books
 INSERT INTO booklog (isbnLog, amountLog) VALUES ({isbnLog}, {amountLog});
-
