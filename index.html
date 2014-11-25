@@ -85,9 +85,15 @@
 				
 				<section class="reportFields showreport">
 					<form class="CheckISBNforReport">
+						<p>Enter the ISBN to check if it exists in the shop.</p>
 						<input type="text" placeholder="Enter ISBN" class="isbn" name="cat"required>
-						<button type="submit">Find ISBN!</button>
+						<button type="submit" class="reportButton">Find ISBN!</button>
 						<input type="text" class="ISBNfound" value="">
+						<select>
+							<option value="month">Month</option>
+							<option value="year">Year</option>
+						</select>
+						<button type="submit">Get report!</button>
 					</form>
 				</section>
 			</ul>

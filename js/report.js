@@ -28,6 +28,9 @@ $(function(){
             resultHtml.append(article);
             $('.ISBNfound').val(data[i].isbn);
           }
+          if (!data.length){
+              $('.resultWindow').append("<p class='error'>The isbn number your looking for is not found</p>");
+            }
         },
         error: function(data) {
           console.log("error: ", data);

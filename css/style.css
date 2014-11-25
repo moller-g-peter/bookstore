@@ -181,3 +181,7 @@ em {
   display: block;
   margin: 5px;
 }
+
+.reportButton {
+  margin-bottom: 20px;
+}

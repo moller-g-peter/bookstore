@@ -31,7 +31,7 @@ $(function(){
             $('.sellISBN').val(data[i].isbn);
           }
           if (!data.length){
-                  $('.resultWindow').append("<p>The isbn number your looking for is not found</p>");
+                  $('.resultWindow').append("<p class='error'>The isbn number your looking for is not found</p>");
                 }
                 
         },
