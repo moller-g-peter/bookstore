@@ -71,10 +71,11 @@ input[type="text"], input[type="number"] {
   display: none;
 }
 
-.exe {
+.exe, .updateButton {
   cursor: pointer;
   font-weight: bold;
 }
+
 .sellbutton{
   cursor: pointer;
   font-weight: bold;
