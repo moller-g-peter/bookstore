@@ -18,22 +18,20 @@ $(function(){
         success: function(data) {
           $('.resultWindow').html("");
           var resultHtml = $('.resultWindow');
-          console.log("Add bookInfo success bookInfo: ", bookInfo.data);
           console.log("Add bookInfo success data: ", data);
           // alert("You have succefully stored your data!");
           for (var i = 0; i < data.length; i++) {
             var article = $('<article class="p1"/>');
-            article.append('<h2>Title: ' + '<em>' + data[i].title + '</em>' + '</h2>');
-            article.append('<h2>Author: ' + '<em>' + data[i].author + '</em>' + '</h2>');
-            article.append('<h2>Price: ' + '<em>' + data[i].fprice + '</em>' + '</h2>');
-            article.append('<h2> Shelf: ' + '<em>' + data[i].shelf + '</em>' + '</h2>');
+            article.append('<h3>Title: ' + '<em>' + data[i].title + '</em>' + '</h3>');
+            article.append('<h3>Author: ' + '<em>' + data[i].author + '</em>' + '</h3>');
+            article.append('<h3>Price: ' + '<em>' + data[i].fprice + '</em>' + '</h3>');
+            article.append('<h3> Shelf: ' + '<em>' + data[i].shelf + '</em>' + '</h3>');
             resultHtml.append(article);
-            $('.sellISBN').val(data[i].isbn);
+            $('.sellISBN').addClass("transform").val(data[i].isbn);
           }
           if (!data.length){
-                  $('.resultWindow').append("<p class='error'>The isbn number your looking for is not found</p>");
-                }
-                
+            $('.resultWindow').append("<p class='error'>The isbn number your looking for is not found<br/><hr/></p>");
+          }
         },
         error: function(data) {
           alert("Fill in all input fields.");
@@ -69,13 +67,10 @@ $(function(){
         },
         error: function(data) {
           console.log("error: ", data);
-          $('.resultWindow').append("<p>The isbn number your looking for is undefined</p>");
+          $('.resultWindow').append("<p>The isbn number your looking for is undefined..<br/><hr/></p>");
         }
     });
     return false;
   });
 
 });
-
-
-

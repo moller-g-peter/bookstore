@@ -22,9 +22,9 @@ $(function(){
           
           for (var i = 0; i < data.length; i++) {
             var article = $('<article class="p1"/>');
-            article.append('<h2>Title: ' + '<em>' + data[i].title + '</em>' + '</h2>');
-            article.append('<h2>Author: ' + '<em>' + data[i].author + '</em>' + '</h2>');
-            article.append('<h2> ISBN: ' + '<em>' + data[i].isbn + '</em>' + '</h2>');
+            article.append('<h3>Title: ' + '<em>' + data[i].title + '</em>' + '</h3>');
+            article.append('<h3>Author: ' + '<em>' + data[i].author + '</em>' + '</h3>');
+            article.append('<h3> ISBN: ' + '<em>' + data[i].isbn + '</em>' + '</h3>');
             resultHtml.append(article);
             $('.ISBNfound').val(data[i].isbn);
           }
