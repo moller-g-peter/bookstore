@@ -78,8 +78,8 @@ input[type="text"], input[type="number"] {
 .sellbutton{
   cursor: pointer;
   font-weight: bold;
-  margin-left: 150px;
-  margin-top:50px;
+  margin-left: 0px;
+  margin-top:20px;
 }
 
 ul div {
