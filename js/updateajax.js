@@ -19,14 +19,12 @@ $(function(){
 				},
 				success: function(data) {
 					console.log("Add bookInfo success: ", data, bookInfo);
-					// alert("You have succefully stored your data!");
-					$('.resultWindow').append('<p class="p1">' + 'You added: ' + '<b>' + bookInfo.title + '</b>' + '. By author: ' + '<b>' + bookInfo.author + '.</b>' + ' Amount added: ' + '<b>' + bookInfo.amount + '.</b>' + '<br>' + 
-												'Added to shelf: ' + '<b>' + bookInfo.shelf + '.</b>');
+					$('.resultWindow').append('The price on ISBN: ' + '<b>' + bookinfo.isbn + '</b>' + ', Title: ' + '<b>' + bookInfo.title + '</b>' + ', has been updated!');
 					$(':input', '.inputForm').val('');
 				},
 				error: function(data) {
 					console.log("error: ", data);
-					alert("Fill in all input fields.");
+					alert("Cannot find specific ISBN number. Please try again.");
 					}
 			});
 		return false;
