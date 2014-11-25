@@ -23,7 +23,7 @@ $(function(){
           // alert("You have succefully stored your data!");
           for (var i = 0; i < data.length; i++) {
             var article = $('<article class="p1"/>');
-            article.append('<h2>' + data[i].title +  " " + data[i].author + '</h2>');
+            article.append('<h2>' + 'Title is: ' + data[i].title +  ". " + 'Author is: ' + data[i].author + '.</h2>');
             resultHtml.append(article);
           }
         },
