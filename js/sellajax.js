@@ -28,6 +28,7 @@ $(function(){
             article.append('<h2>Price: ' + '<em>' + data[i].fprice + '</em>' + '</h2>');
             article.append('<h2> Shelf: ' + '<em>' + data[i].shelf + '</em>' + '</h2>');
             resultHtml.append(article);
+            $('.sellISBN').val(data[i].isbn);
           }
         },
         error: function(data) {

@@ -167,8 +167,8 @@ form {
   margin-top: 10px;
 }
 
-.modFields input {
-  display: block;
+.modFields input, .reportFields button {
+  display: inline-block;
 }
 
 em {
@@ -176,3 +176,7 @@ em {
   color:#112;
 }
 
+.CheckISBNforReport button, .CheckISBNforReport input {
+  display: block;
+  margin: 5px;
+}
