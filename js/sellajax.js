@@ -23,10 +23,10 @@ $(function(){
           // alert("You have succefully stored your data!");
           for (var i = 0; i < data.length; i++) {
             var article = $('<article class="p1"/>');
-            article.append('<h2>' + data[i].title +  " " + data[i].author + '</h2>');
-            article.append('<h2>' + data[i].title +  " " + data[i].author + '</h2>');
-            article.append('<h2>' + data[i].title +  " " + data[i].author + '</h2>');
-            article.append('<h2>' + data[i].title +  " " + data[i].author + '</h2>');
+            article.append('<h2>Title: ' + '<em>' + data[i].title + '</em>' + '</h2>');
+            article.append('<h2>Author: ' + '<em>' + data[i].author + '</em>' + '</h2>');
+            article.append('<h2>Price: ' + '<em>' + data[i].fprice + '</em>' + '</h2>');
+            article.append('<h2> Shelf: ' + '<em>' + data[i].shelf + '</em>' + '</h2>');
             resultHtml.append(article);
           }
         },
@@ -37,6 +37,7 @@ $(function(){
       });
     return false;
   });
+
 
   $('.makeSale').submit(function() {
     var sellBook = {};
