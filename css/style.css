@@ -183,16 +183,11 @@ h3 {
   color:#000;
 }
 
-<<<<<<< Updated upstream
-.CheckISBNforReport button, .CheckISBNforReport input {
-=======
 .CheckISBNforReport *, .getReport * {
->>>>>>> Stashed changes
   display: block;
   margin: 5px;
 }
 
-<<<<<<< Updated upstream
 .reportButton {
   margin-bottom: 20px;
 }
@@ -207,8 +202,6 @@ h3 {
   to{-webkit-transform:translateY(0px)}
 }
 
-=======
 .CheckISBNforReport {
   margin-bottom: 15px;
 }
->>>>>>> Stashed changes
