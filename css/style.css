@@ -183,6 +183,7 @@ h3 {
   color:#000;
 }
 
+
 .CheckISBNforReport *, .getReport * {
   display: block;
   margin: 5px;
@@ -198,10 +199,12 @@ h3 {
 }
 
 @-webkit-keyframes inputText {
-  from{-webkit-transform:translateY(-170px);}
+  from{-webkit-transform:translateY(-160px);}
   to{-webkit-transform:translateY(0px)}
 }
+
 
 .CheckISBNforReport {
   margin-bottom: 15px;
 }
+
