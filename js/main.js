@@ -35,7 +35,8 @@ $(function(){
 					author: JSON.stringify(bookInfo["author"]),
 					fPrice: JSON.stringify(bookInfo["fPrice"]*1.8),
 					amount: JSON.stringify(bookInfo["amount"]),
-					shelf: JSON.stringify(bookInfo["shelf"])
+					shelf: JSON.stringify(bookInfo["shelf"]),
+					salesPrice: JSON.stringify(bookInfo["salesPrice"])
 				},
 				success: function(data) {
 					console.log("Add bookInfo success: ", data, bookInfo);

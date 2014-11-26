@@ -14,13 +14,18 @@ $(function(){
 				dataType: "json",
 				data: {
 					sql: "sql/product-questions.sql",
-					run: "book input",
-					fPrice: JSON.stringify(bookInfo["fPrice"])
-				},
+					run: "modify price",
+					isbn: JSON.stringify(bookInfo["isbn"])
+				},				
 				success: function(data) {
+					if (bookInfo["isbn"] != data[0]["isbn"]) {
+         			$(".userNotify .userError").show();
+
+          return;
+        }
 					console.log("Add bookInfo success: ", data, bookInfo);
-					$('.resultWindow').append('The price on ISBN: ' + '<b>' + bookinfo.isbn + '</b>' + ', Title: ' + '<b>' + bookInfo.title + '</b>' + ', has been updated!');
-					$(':input', '.inputForm').val('');
+					// $('.resultWindow').append('The price on ISBN: ' + '<b>' + bookinfo.isbn + '</b>' + ', Title: ' + '<b>' + bookInfo.title + '</b>' + ', has been updated!');
+					// $(':input', '.inputForm').val('');
 				},
 				error: function(data) {
 					console.log("error: ", data);
