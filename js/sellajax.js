@@ -25,8 +25,10 @@ $(function(){
             var article = $('<article class="p1"/>');
             article.append('<h3>Title: ' + '<em>' + data[i].title + '</em>' + '</h3>');
             article.append('<h3>Author: ' + '<em>' + data[i].author + '</em>' + '</h3>');
-            article.append('<h3>Price: ' + '<em>' + data[i].fprice + '</em>' + '</h3>');
+            article.append('<h3>Price: ' + '<em>' + data[i].fPrice + ':-</em>' + '</h3>');
+            article.append('<h3> Amount in store: ' + '<em>' + data[i].amount + ' </em>' + 'pcs</h3>');
             article.append('<h3> Shelf: ' + '<em>' + data[i].shelf + '</em>' + '</h3><hr/>');
+            
             resultHtml.append(article);
             //Moving the ISBN nomber down with animation by adding a class
               $(".sellISBN").addClass("transform").val(data[i].isbn).delay(2000).queue(function(next){
