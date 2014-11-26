@@ -14,7 +14,7 @@ $(function(){
         data: {
           sql: "sql/product-questions.sql",
           run: "get books by isbn",
-          isbn: JSON.stringify(ISBN["cat"])
+          isbn: JSON.stringify(ISBN["isbn"])
         },
         success: function(data) {
           $('.resultWindow').html("");

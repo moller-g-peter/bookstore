@@ -30,28 +30,28 @@
 
 				<section class="inputFields showinput">
 					<form class="inputForm">
-				  		<label>Enter ISBN number for book: <br> 
-				  		<input type="text" class="isbn" name="isbn" value=""  placeholder="Enter ISBN here.." required></label>
+				  		<label for="isbn">Enter ISBN number for book: </label><br> 
+				  		<input type="text" class="isbn" name="isbn" id="isbn" value=""  placeholder="Enter ISBN here.." required></label>
 				  		<br>
 
-				  		<label>Enter the title of the book: <br>
-				  		<input type="text" class="title" name="title" value="" placeholder="Enter book title.." required></label>
+				  		<label for="title">Enter the title of the book: </label><br>
+				  		<input type="text" class="title" name="title" id="title" value="" placeholder="Enter book title.." required></label>
 				  		<br>
 
-				  		<label>Enter the author of the book: <br>
-				  		<input type="text" class="author" name="author" value="" placeholder="Author of the book.." required></label>
+				  		<label for="author">Enter the author of the book: </label><br>
+				  		<input type="text" class="author" name="author" id="author" value="" placeholder="Author of the book.." required></label>
 				  		<br>
 
-				  		<label>Enter publisher price of one book: <br> 
-				  		<input title="The price of one book will automatically be multiplied with the quantity of books" type="number" class="price" name="fPrice" value="" placeholder="Enter price here.." required></label>
+				  		<label for="fPrice">Enter publisher price of one book: </label><br> 
+				  		<input title="The price of one book will automatically be multiplied with the quantity of books" type="number" class="price" name="fPrice" id="fPrice" value="" placeholder="Enter price here.." required></label>
 				  		<br>
 
-				  		<label>Enter the quantity of the books: <br> 
-				  		<input title="The quantity of all the books will automatically be multiplied with the price of one book" type="number" class="quantity" name="amount" placeholder="Enter quantity here.." required></label>
+				  		<label for="amount">Enter the quantity of the books: </label><br> 
+				  		<input title="The quantity of all the books will automatically be multiplied with the price of one book" type="number" class="quantity" name="amount" id="amount" placeholder="Enter quantity here.." required></label>
 				  		<br>
 
-				  		<label>Enter which bookshelf it's placed: <br> 
-				  		<input type="text" class="bookshelf" name="shelf" value=""  placeholder="Enter a Bookshelf" required></label>
+				  		<label for="shelf">Enter which bookshelf it's placed: </label><br> 
+				  		<input type="text" class="bookshelf" name="shelf" id="shelf" value="" placeholder="Enter a Bookshelf" required></label>
 				  		<br>
 				  		<button class="exe" type="submit">Submit</button> 
 			  		</form>
@@ -59,16 +59,16 @@
 
 				<section class="searchFields showsell">
 					<form class="searchForm">
-				  		<label>Search for ISBN: <br> 
-				  		<input type="text" class="isbn" name="isbn" value=""  placeholder="Enter ISBN here.." required></label>
+				  		<label for="isbn">Search for ISBN: <br> 
+				  		<input type="text" class="isbn" name="isbn" id="isbn" value=""  placeholder="Enter ISBN here.." required></label>
 				  		<br>
 				  		<button class="exe" type="submit">search</button>
 				  	</form>
 				  	<form class="makeSale">
-				  		<label>ISBN to sell: <br>
-				  		<input type="text" class="isbn, sellISBN" name="isbnLog" value="" placeholder="Enter ISBN wich will be sold.." required></label> <br>
-				  		<label>Quantity <br> 
-				  		<input type="number" class="isbn" name="amountLog" value=""  placeholder="Enter amount"></label>
+				  		<label for="isbn">ISBN to sell: <br>
+				  		<input type="text" class="isbn, sellISBN" name="isbnLog" id="isbnLog" value="" placeholder="Enter ISBN wich will be sold.." required></label> <br>
+				  		<label for="amountLog">Quantity <br> 
+				  		<input type="number" class="isbn" name="amountLog" id="amountLog" value=""  placeholder="Enter amount"></label>
 				  		<br>
 				  		<p><i>The date-information is logged automatically.</i></p>
 				  		<button class="sellbutton" type="sumbit">sell</button>
@@ -77,7 +77,8 @@
 				
 				<section class="modFields showmodPrice">
 					<form class="updateForm">
-						<input type="text" class="isbn" name="isbn"placeholder="Enter ISBN here.." required></label>
+						<label for="isbn">Enter ISBN</label>
+						<input type="text" class="isbn" name="isbn" id="isbn" placeholder="Enter ISBN here.." required>
 						<p>The 6%-tax is added automatically after <br> you press the button.</p>
 						<button class="updateButton">Change price</button>
 					</form>
@@ -86,11 +87,13 @@
 				<section class="reportFields showreport">
 					<form class="CheckISBNforReport">
 						<p>Enter the ISBN to check if it exists in the shop.</p>
-						<input type="text" placeholder="Enter ISBN" class="isbn" name="cat"required>
+						<label for="isbn"></label>
+						<input type="text" placeholder="Enter ISBN" class="isbn" name="isbn" id="isbn" required>
 						<button type="submit">Find ISBN!</button>
 					</form>
 					<form class="getReport">
-						<input type="text" class="ISBNfound" value="">
+						<label for="isbn"></label>
+						<input type="text" class="ISBNfound" name="isbn" id="isbn" value="">
 						<p>Select time period:</p>
 						<select>
 							<option value="month">Month</option>
@@ -100,7 +103,6 @@
 					</form>
 				</section>
 			</ul>
-
 
 		<section class="resultWindow">
 			<article>
