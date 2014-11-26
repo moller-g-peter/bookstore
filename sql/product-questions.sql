@@ -36,7 +36,7 @@ SELECT * FROM booklist WHERE isbn={isbn};
 
 # update books
 INSERT INTO booklog (isbnLog, amountLog) VALUES ({isbnLog}, {amountLog});
-UPDATE booklist SET amount = amount - {amountLog} WHERE isbn = '{isbnLog}';
 
 # modify price
 UPDATE booklist SET fPrice = fPrice, salesPrice = fPrice * 1.8;
+-- are we using this?? -> UPDATE booklist SET amount = amount - {amountLog} WHERE isbn = '{isbnLog}';

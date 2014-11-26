@@ -26,7 +26,7 @@ $(function(){
             article.append('<h3>Title: ' + '<em>' + data[i].title + '</em>' + '</h3>');
             article.append('<h3>Author: ' + '<em>' + data[i].author + '</em>' + '</h3>');
             article.append('<h3>Price: ' + '<em>' + data[i].fprice + '</em>' + '</h3>');
-            article.append('<h3> Shelf: ' + '<em>' + data[i].shelf + '</em>' + '</h3>');
+            article.append('<h3> Shelf: ' + '<em>' + data[i].shelf + '</em>' + '</h3><hr/>');
             resultHtml.append(article);
             //Moving the ISBN nomber down with animation by adding a class
               $(".sellISBN").addClass("transform").val(data[i].isbn).delay(2000).queue(function(next){
@@ -39,7 +39,7 @@ $(function(){
           }
         },
         error: function(data) {
-          alert("Fill in all input fields.");
+          alert("Error: Fill in all input fields.");
         }
       });
     return false;

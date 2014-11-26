@@ -5,10 +5,8 @@ $(function(){
 
     $(this).find("input").not("input[type='submit']").each(function() {
       ISBN[this.name] = $(this).val();
-      
     });
-
-     $.ajax({
+    $.ajax({
       url:"libs/sql-ajax-json.php",
         dataType: "json",
         data: {
@@ -26,7 +24,7 @@ $(function(){
             article.append('<h3>Author: ' + '<em>' + data[i].author + '</em>' + '</h3>');
             article.append('<h3> ISBN: ' + '<em>' + data[i].isbn + '</em>' + '</h3>');
             resultHtml.append(article);
-              $(".ISBNfound").addClass("transform").val(data[i].isbn).delay(2000).queue(function(next){
+              $(".ISBNfound").addClass("transform").val(data[i].isbn).delay(1000).queue(function(next){
                 $(this).removeClass("transform");
                   next();
               });
