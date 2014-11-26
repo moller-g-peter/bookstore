@@ -29,22 +29,15 @@ $(function(){
             article.append('<h3> Shelf: ' + '<em>' + data[i].shelf + '</em>' + '</h3>');
             resultHtml.append(article);
             //Moving the ISBN nomber down with animation by adding a class
-            $('.sellISBN').addClass("transform").val(data[i].isbn);
+              $('.sellISBN').addClass("transform").val(data[i].isbn);
+              $(".sellISBN").addClass("transform").val(data[i].isbn).delay(2000).queue(function(next){
+                $(this).removeClass("transform");
+                  next();
+              });
           }
           if (!data.length){
             $('.resultWindow').append("<p class='error'>The isbn number your looking for is not found<br/><hr/></p>");
           }
-          // if ($('.sellISBN').has('.transform')) {
-          //    $('.sellISBN').delay(3000).removeClass("transform").val(data[i].isbn);
-          // }
-
-          $(".sellISBN").addClass("transform").delay(2000).queue(function(next){
-              $(this).removeClass("transform");
-                next();
-            });
-
-
-
         },
         error: function(data) {
           alert("Fill in all input fields.");
