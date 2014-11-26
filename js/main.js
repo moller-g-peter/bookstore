@@ -33,7 +33,7 @@ $(function(){
 					isbn: JSON.stringify(bookInfo["isbn"]),
 					title: JSON.stringify(bookInfo["title"]),
 					author: JSON.stringify(bookInfo["author"]),
-					fPrice: JSON.stringify(bookInfo["fPrice"]*1.8),
+					fPrice: JSON.stringify(bookInfo["fPrice"]),
 					amount: JSON.stringify(bookInfo["amount"]),
 					shelf: JSON.stringify(bookInfo["shelf"]),
 					salesPrice: JSON.stringify(bookInfo["salesPrice"])

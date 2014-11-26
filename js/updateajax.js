@@ -1,37 +1,57 @@
 $(function(){
-	
-	$('.updateForm').submit(function() {
-		var bookInfo = {};
+  //a function to verify a user
 
-		$(this).find("input").not("input[type='submit']").each(function() {
-			bookInfo[this.name] = $(this).val();
-		});
+    $('.updateForm').submit(function() {
+    var bookInfo = {};
 
-			console.log("bookInfo: ", bookInfo);
+    $(this).find("input").not("input[type='submit']").each(function() {
+      bookInfo[this.name] = $(this).val();
+    });
 
-			$.ajax({
-			url:"libs/sql-ajax-json.php",
-				dataType: "json",
-				data: {
-					sql: "sql/product-questions.sql",
-					run: "modify price",
-					isbn: JSON.stringify(bookInfo["isbn"])
-				},				
-				success: function(data) {
-					if (bookInfo["isbn"] != data[0]["isbn"]) {
-         			$(".userNotify .userError").show();
+    $.ajax({
+      url:"libs/sql-ajax-json.php",
+      dataType: "json",
+      data: {
+        sql: "sql/product-questions.sql",
+        run: "get books by isbn",
+        isbn: JSON.stringify(bookInfo["isbn"])
+      },
+      success: function(data) {
+        console.log("if success: ", data);
 
-          return;
-        }
-					console.log("Add bookInfo success: ", data, bookInfo);
-					// $('.resultWindow').append('The price on ISBN: ' + '<b>' + bookinfo.isbn + '</b>' + ', Title: ' + '<b>' + bookInfo.title + '</b>' + ', has been updated!');
-					// $(':input', '.inputForm').val('');
-				},
-				error: function(data) {
-					console.log("error: ", data);
-					alert("Cannot find specific ISBN number. Please try again.");
-					}
-			});
-		return false;
-	});
+        //om ovan fungerar så körs nedan funktion....VIKTIG
+        modifyPrice(bookInfo);
+
+      },
+      error: function(data) {
+        console.log("error: ", data);
+      }
+    });
+       return false;
+  });
+
+  //function to register a new password in the database
+  function modifyPrice(bookInfo) {
+    $.ajax({
+      // Use Nodebite's magic library
+      url:"libs/sql-ajax-json.php",
+      // Expect json in return
+      dataType: "json",
+      data: {
+        // Read SQL questions from this file
+        sql: "sql/product-questions.sql",
+        // Run the query named all products
+        run: "modify price",
+        //data to send
+        fPrice: JSON.stringify(bookInfo["fPrice"])
+      },
+      // When we have got an response from the server
+      // run userLogin()
+      success: function(data) {
+        console.log("3. modifyPrice success: ", data);
+        console.log("now calling userLogin()...");
+        // userLogin(bookInfo);
+      }
+    });
+  }
 });

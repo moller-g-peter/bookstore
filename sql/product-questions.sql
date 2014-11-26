@@ -27,9 +27,8 @@ SELECT users.uid, users.fname, users.lname, users.email FROM users, login WHERE 
 # book input
 INSERT INTO booklist (isbn, title, author, fPrice, amount, shelf) VALUES ({isbn}, {title}, {author}, {fPrice}, {amount}, {shelf});
 
-# Update price
-UPDATE booklist SET fPrice = fPrice * 1.8;
-
+# modify price
+UPDATE booklist SET fPrice = {fPrice};
 
 # get books by isbn
 SELECT * FROM booklist WHERE isbn={isbn};
@@ -38,5 +37,8 @@ SELECT * FROM booklist WHERE isbn={isbn};
 INSERT INTO booklog (isbnLog, amountLog) VALUES ({isbnLog}, {amountLog});
 
 # modify price
-UPDATE booklist SET fPrice = fPrice, salesPrice = fPrice * 1.8;
+UPDATE booklist SET fPrice = fPrice, salesPrice = salesPrice;
 -- are we using this?? -> UPDATE booklist SET amount = amount - {amountLog} WHERE isbn = '{isbnLog}';
+
+UPDATE booklist SET amount = amount - {amountLog} WHERE isbn = '{isbnLog}';
+
