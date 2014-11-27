@@ -67,6 +67,7 @@ $(function(){
           //   article.append('<h2>' + 'You sold book with ISBN: ' + data[i].isbn +  ". " + 'This amount of copies: ' + data[i].amount + '.</h2>');
           //   resultHtml.append(article);
           // }
+          $('input').val('');
         },
         error: function(data) {
           console.log("modifyBook: ", modifyBook);
