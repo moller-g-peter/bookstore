@@ -21,15 +21,15 @@
 		<section class="customerSearch">
 			<h2>Choose the right type of data, enter the data in the textfield and press Search!</h2>
 			<form class="customerForm">
-		  		<label for="c1">ISBN</label>
+		  		<label for="radioISBN">ISBN</label>
 		  		<input type="radio" name="choice" id="radioISBN" value="isbn">
-				<label for="c2">Booktitle</label>
+				<label for="radioTitle">Booktitle</label>
 				<input type="radio" name="choice" id="radioTitle" value="title">
-				<label for="c3">Author</label>
+				<label for="radioAuthor">Author</label>
 				<input type="radio" name="choice" id="radioAuthor" value="author"><br>
 				
 				<label for="data"></label>
-		  		<input type="text" name="isbn" id="isbn" placeholder="Write here..." class="customerField"><br>
+		  		<input type="text" name="isbn" id="customerInput" placeholder="Write here..." class="customerField"><br>
 		  		<button class="exe" type="submit">Search!</button>
 
 	  		</form>
