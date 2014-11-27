@@ -33,6 +33,12 @@ INSERT INTO booklist (isbn, title, author, fPrice, amount, shelf) VALUES ({isbn}
 # get books by isbn
 SELECT * FROM booklist WHERE isbn={isbn};
 
+# get books by title
+SELECT * FROM booklist WHERE title={title};
+
+# get books by author
+SELECT * FROM booklist WHERE author={author};
+
 # update books
 INSERT INTO booklog (isbnLog, amountLog) VALUES ({isbnLog}, {amountLog});
 

@@ -61,7 +61,7 @@ input[type="text"], input[type="number"] {
 }
 
 .customerResult {
-  display: none;
+  margin-left: 620px;
 }
 
 .exe, .updateButton {

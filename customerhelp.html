@@ -10,6 +10,7 @@
 
 		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 		<script src="js/main.js"></script>
+		<script src="js/customer.js"></script>
 	</head>
 	<body>
 		
@@ -19,22 +20,22 @@
 
 		<section class="customerSearch">
 			<h2>Choose the right type of data, enter the data in the textfield and press Search!</h2>
-			<form>
+			<form class="customerForm">
 		  		<label for="c1">ISBN</label>
-		  		<input type="radio" name="choice" id="c1">
+		  		<input type="radio" name="choice" id="radioISBN" value="isbn">
 				<label for="c2">Booktitle</label>
-				<input type="radio" name="choice" id="c2">
+				<input type="radio" name="choice" id="radioTitle" value="title">
 				<label for="c3">Author</label>
-				<input type="radio" name="choice" id="c3"><br>
+				<input type="radio" name="choice" id="radioAuthor" value="author"><br>
 				
 				<label for="data"></label>
-		  		<input type="text" name="data" id="data" placeholder="Write here..." class="customerField"><br>
+		  		<input type="text" name="isbn" id="isbn" placeholder="Write here..." class="customerField"><br>
 		  		<button class="exe" type="submit">Search!</button>
 
 	  		</form>
 		</section>
 		
-		<section class="customerResult">
+		<section class="resultWindow customerResult">
 		</section>
 
 	</body>
