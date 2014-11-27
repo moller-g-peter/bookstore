@@ -1,10 +1,13 @@
 
 $(function(){
+	
+	//adding and removing classes with style properties to/from the tabs and hide/show the right elements
 	$('.input').addClass("activated");
 	$('.sell, .modPrice, .report').addClass("notactivated");
 	$('.searchFields').hide();
 	$('.inputFields').show();
 
+	//Clickfunction that fixes the right look + visibility of the tabs
 	$(".topTabs li").click(function(){
 		var myClass=$(this).attr("id");
 		$(".topTabs").siblings().hide();
