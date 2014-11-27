@@ -13,6 +13,7 @@
 		<script src="js/sellajax.js"></script>
 		<script src="js/report.js"></script>
 		<script src="js/updateajax.js"></script>
+		<script src="js/modifyajax.js"></script>
 	</head>
 	<body>
 	
@@ -87,6 +88,14 @@
 					<form class="updateForm">
 						<label for="isbn3">Enter ISBN</label>
 						<input type="text" class="isbn" name="isbn" id="isbn3" placeholder="Enter ISBN here.." required>
+						<button class="searchUpdate" type="submit">Search ISBN</button><br>
+					</form>
+					<form class="updateFormModify">
+						<label for="transportISBN">transportisbn
+				  		<input type="text" class="transportISBN" name="isbn" id="transportISBN" value=""  placeholder="Enter st"></label><br> 
+
+						<label for="isbn31">Enter new price</label>
+						<input type="text" class="isbn" name="fPrice" id="isbn31" placeholder="Enter new price here..">
 						<p>The 6%-tax is added automatically after <br> you press the button.</p>
 						<button class="updateButton" type="submit">Change price</button>
 					</form>
