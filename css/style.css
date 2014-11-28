@@ -215,3 +215,7 @@ h3 {
 .updateFormModify .transportISBN {
   display: none;
 }
+
+.updateFormModify {
+  padding-top: 0;
+}
