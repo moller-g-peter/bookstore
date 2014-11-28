@@ -41,6 +41,10 @@ $(function(){
       });
     return false;
   });
+  
+  $('.getReport').submit(function() {
+    return false;
+  });
+
 });
 
-/*$("input:text").val("Glenn Quagmire");*/
