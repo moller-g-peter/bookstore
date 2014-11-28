@@ -41,10 +41,11 @@ SELECT * FROM booklist WHERE author={author};
 
 # update books
 INSERT INTO booklog (isbnLog, amountLog) VALUES ({isbnLog}, {amountLog});
+UPDATE booklist SET amount = amount - {amountLog} WHERE isbn = '{isbnLog}';
 
 # modify price
 UPDATE booklist SET fPrice = {fPrice} WHERE isbn = {isbn};
 
 
--- are we using this?? -> UPDATE booklist SET amount = amount - {amountLog} WHERE isbn = '{isbnLog}';
+-- are we using this?? Yes we are, it will -"amount" from booklist and +"amount" to booklog  -> UPDATE booklist SET amount = amount - {amountLog} WHERE isbn = '{isbnLog}';
 
