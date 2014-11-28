@@ -11,7 +11,7 @@ header h1 {
 }
 
 .resultWindow .p1:nth-child(even) {
-  background-color: lightblue;
+  background-color: #789;
 }
 
 .inputFields, .searchFields, .showmodPrice, .reportFields {
@@ -51,17 +51,17 @@ input[type="text"], input[type="number"] {
 }
 
 .resultWindow {
-  background-color: #abc;
-  height: 475px;
-  width: 620px;
+  background-color: #89a;
+  min-height: 80px;
+  width: 640px;
   margin-left: 550px;
   margin-top: 68px;
-  box-shadow: 0 0 30px #000;
-  padding: 10px;
+  box-shadow: 0 0 30px  8px  #000;
+  padding: 60px 0 10px 0;
 }
 
 .customerResult {
-  margin-left: 620px;
+  display: none;
 }
 
 .exe, .updateButton {
@@ -154,6 +154,7 @@ form {
 
 .p1 {
   font-size: 18px;
+  padding: 5px 12px;
 }
 
 .modFields button {
@@ -207,15 +208,19 @@ h3 {
   to{-webkit-transform:translateY(0px)}
 }
 
-
 .CheckISBNforReport {
   margin-bottom: 15px;
 }
 
-.updateFormModify .transportISBN {
-  display: none;
+ .result-h2 {
+  position:absolute;
+  z-index: 2;
+  width: 620px;
+  margin-left: 550px;
+  margin-top: 68px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: #567;
+  padding: 10px 10px 0 10px;
 }
 
-.updateFormModify {
-  padding-top: 0;
-}
