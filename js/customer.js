@@ -15,7 +15,7 @@ $(function(){
 				data: {
 					sql: "sql/product-questions.sql",
 					run: "get books by isbn",
-					isbn: JSON.stringify(customerSearch["isbn"])
+					isbn: JSON.stringify(customerSearch["customerInput"])
 				},
 				success: function(data) {
 					$('.resultWindow').html("");
@@ -53,7 +53,7 @@ $(function(){
 				data: {
 					sql: "sql/product-questions.sql",
 					run: "get books by title",
-					title: JSON.stringify(customerSearch["isbn"])
+					title: JSON.stringify(customerSearch["customerInput"])
 				},
 				success: function(data) {
 					$('.resultWindow').html("");
@@ -91,7 +91,7 @@ $(function(){
 				data: {
 					sql: "sql/product-questions.sql",
 					run: "get books by author",
-					author: JSON.stringify(customerSearch["isbn"])
+					author: JSON.stringify(customerSearch["customerInput"])
 				},
 				success: function(data) {
 					$('.resultWindow').html("");
