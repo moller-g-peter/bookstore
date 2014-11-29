@@ -32,7 +32,7 @@ $(function(){
 				data: {
 					sql: "sql/product-questions.sql",
 					run: "book input",
-					isbn: parseInt(bookInfo["isbn"],13),
+					isbn: parseInt(bookInfo["isbn"]),
 					title: JSON.stringify(bookInfo["title"]),
 					author: JSON.stringify(bookInfo["author"]),
 					fPrice: JSON.stringify(bookInfo["fPrice"]),

@@ -43,7 +43,7 @@ SELECT * FROM booklist WHERE author={author};
 INSERT INTO booklog (isbnLog, amountLog) VALUES ({isbnLog}, {amountLog});
 
 # update booklist
-UPDATE booklist SET amount = amount - {amount} WHERE isbn = {isbn};
+UPDATE booklist SET amount = amount - {amountU} WHERE isbn = {isbnU};
 
 # modify price
 UPDATE booklist SET fPrice = {fPrice} WHERE isbn = {isbn};

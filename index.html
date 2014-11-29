@@ -7,18 +7,19 @@
 
   		<link rel="stylesheet" href="css/meyerreset.css">
 		<link rel="stylesheet" href="css/style.css">
+
 		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 		<script src="js/main.js"></script>
 		<script src="js/sellajax.js"></script>
 		<script src="js/report.js"></script>
-<!-- <script src="js/updateajax.js"></script> -->
+		<script src="js/updateajax.js"></script>
 		<script src="js/modifyajax.js"></script>
 	</head>
 	<body>
 	
 		<header>
 			<h1>Bookstore</h1>
-<!--<h1><img src="img/bookstorebanner.png"></h1>-->
+			<!--<h1><img src="img/bookstorebanner.png"></h1>-->
 		</header>
 
 			<ul class="tabWindows">
@@ -35,7 +36,7 @@
 				<section class="inputFields showinput">
 					<form class="inputForm">
 				  		<label for="isbn1">Enter ISBN number for book: </label><br> 
-				  		<input type="text" class="isbn" name="isbn" id="isbn1" value="" placeholder="Enter ISBN here.." required></label>
+				  		<input type="text" class="isbn" name="isbn" id="isbn1" value=""  placeholder="Enter ISBN here.." required></label>
 				  		<br>
 
 				  		<label for="title1">Enter the title of the book: </label><br>
@@ -61,7 +62,8 @@
 			  		</form>
 				</section>
 
-<!-- This is sell feelfs-->
+				<!-- This is sell feelfs-->
+
 				<section class="searchFields showsell">
 					<form class="searchForm">
 				  		<label for="isbn2">Search for ISBN: <br> 
@@ -78,9 +80,18 @@
 				  		<p><i>The date-information is logged automatically.</i></p>
 				  		<button class="sellbutton" type="submit">Sell</button>
 			  		</form>
+			  		<form class="minusBooklist">
+			  			<label for="isbnMinus">ISBN to be minused: <br>
+			  			<input type="text", class="isbnM" name="isbnU" id="isbnMinus" value="" placeholder="ISBN to be removes cus' tis' sold, B."></label>
+			  			<br>
+			  			<label for="amountMinus">Amount to be minused: <br>
+			  			<input type="number" class="isbnMq" name="amountU" id="amountMinus" value="" placeholder="Amount to removed from stash, pendejo!"></label> <br>
+			  			<button class="amountU" type="submit">Minus if from BooklistDB.</button>
+			  		</form>
 				</section>
 
-<!-- This is modifyprice feelfs-->				
+				<!-- This is modifyprice feelfs-->
+				
 				<section class="modFields showmodPrice">
 					<form class="updateForm">
 						<label for="isbn3">Enter ISBN</label>
@@ -97,7 +108,8 @@
 				</section>
 				
 
-<!-- This is report feelfs-->
+				<!-- This is report feelfs-->
+
 				<section class="reportFields showreport">
 					<form class="CheckISBNforReport">
 						<p>Enter the ISBN to check if it exists in the shop.</p>
@@ -109,14 +121,14 @@
 						<label for="isbn5">ISBN to get report for:</label>
 						<input type="text" class="ISBNfound" name="isbn" id="isbn5" value="">
 						<p>Select time period:</p>
-						<select id="year">
+						<select>
 							<option value="2013">2013</option>
 							<option value="2014">2014</option>
 							<option value="2015">2015</option>
 							<option value="2016">2016</option>
 							<option value="2017">2017</option>
 						</select>
-						<select id="month">
+						<select>
 							<option value="" selected>All</option>
 							<option value="01">January</option>
 							<option value="02">February</option>
@@ -136,12 +148,11 @@
 				</section>
 			</ul>
 
-<!-- This is result feelfs-->			
-		<div class="result-h2"><h2>Result:</h2><hr></div>
 		<section class="resultWindow">
 			<article>
 				
 			</article>
 		</section>
+
 	</body>
 </html>
