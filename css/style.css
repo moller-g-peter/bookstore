@@ -67,9 +67,6 @@ input[type="text"], input[type="number"] {
 .exe, .updateButton {
   cursor: pointer;
   font-weight: bold;
-  padding: 20px;
-  border-radius: 20px;
-  background-color:#c65;
 }
 
 .sellbutton{
@@ -173,6 +170,7 @@ em {
   font-size:20px;
   font-weight: bold;
   color:#642;
+
 }
 
 .error {
