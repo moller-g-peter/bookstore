@@ -25,7 +25,7 @@ $(function(){
 			bookInfo[this.name] = $(this).val();
 		});
 
-			console.log("bookInfo: ", bookInfo);
+			bookInfo.salesPrice = bookInfo.fPrice*1.8;
 
 			$.ajax({
 			url:"libs/sql-ajax-json.php",
@@ -43,10 +43,11 @@ $(function(){
 				},
 				success: function(data) {
 					console.log("Add bookInfo success: ", data, bookInfo);
-					// alert("You have succefully stored your data!");
 					$('.resultWindow').append('<p class="p1">' + 'You added: ' + '<b>' + bookInfo.title + '</b>' + '. By author: ' + '<b>' + bookInfo.author + '.</b>' + ' Amount added: ' + '<b>' + bookInfo.amount + '.</b>' + '<br>' + 
 							'Added to shelf: ' + '<b>' + bookInfo.shelf + '.</b>');
 					$('input', '.inputForm').val('');
+
+					autoPriceInsert(bookInfo, data);
 				},
 				error: function(data) {
 					console.log("error: ", data);
@@ -55,4 +56,28 @@ $(function(){
 			});
 		return false;
 	});
+
+		function autoPriceInsert(bookInfo, data){
+			console.log("bookInfo: ", bookInfo);
+			var insertAutoPrice = bookInfo;
+
+				$.ajax({
+					url:"libs/sql-ajax-json.php",
+						dataType: "json",
+						data: {
+							sql: "sql/product-questions.sql",
+							run: "price input",
+							isbn: JSON.stringify(insertAutoPrice["isbn"]),
+							salesPrice: JSON.stringify(insertAutoPrice["salesPrice"])
+						},
+						success: function(bookInfo, data) {
+							console.log("success data 2 :",data);
+							console.log("success bookInfo 2 :",bookInfo);
+						},
+						error: function(data) {
+							console.log("error: ", data);
+							alert("Fill in all input fields.");
+						}
+				});
+		}
 });
