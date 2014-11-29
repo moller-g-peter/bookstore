@@ -26,19 +26,22 @@ $(function(){
             article.append('<h3>Title: ' + '<em>' + data[i].title + '</em>' + '</h3>');
             article.append('<h3>Author: ' + '<em>' + data[i].author + '</em>' + '</h3>');
             article.append('<h3>Price: ' + '<em>' + data[i].fPrice + ':-</em>' + '</h3>');
-            article.append('<h3> Amount in store: ' + '<em>' + data[i].amount + ' </em>' + 'pcs</h3>');
+            article.append('<h3> Amount in store: ' + '<em>' + data[i].amount + '</em>' + ' pcs</h3>');
             article.append('<h3> Shelf: ' + '<em>' + data[i].shelf + '</em>' + '</h3><hr/>');
             
             resultHtml.append(article);
             //Moving the ISBN nomber down with animation by adding a class
-            $(".sellISBN").val(data[i].isbn);
-          }
-          $(".sellISBN").addClass("transform").val(data[i].isbn).delay(1000).queue(function(next){
+            $(".sellISBN").addClass("transform").val(data[i].isbn).delay(1000).queue(function(next){
             $(this).removeClass("transform");
             next();
           });
+          }
+          
           if (!data.length){
             $('.resultWindow').append("<p class='error'>The isbn number your looking for is not found<br/><hr/></p>");
+          }
+          else {
+
           }
         },
         error: function(data) {

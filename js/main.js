@@ -26,7 +26,6 @@ $(function(){
 		});
 
 			bookInfo.salesPrice = bookInfo.fPrice*1.8;
-
 			$.ajax({
 			url:"libs/sql-ajax-json.php",
 				dataType: "json",
