@@ -41,12 +41,10 @@ $(function(){
 					salesPrice: JSON.stringify(bookInfo["salesPrice"])
 				},
 				success: function(data) {
-					console.log("Add bookInfo success: ", data, bookInfo);
 					// alert("You have succefully stored your data!");
 					$('.resultWindow').append('<p class="p1">' + 'You added: ' + '<b>' + bookInfo.title + '.</b><br>' + 'By author: ' + '<b>' + bookInfo.author + '.</b><br>' + ' Amount added: ' + '<b>' + bookInfo.amount + '.</b>' + '<br>' + 
 							'Added to shelf: ' + '<b>' + bookInfo.shelf + '.</b>');
 					$('input', '.inputForm').val('');
-
 					autoPriceInsert(bookInfo, data);
 				},
 				error: function(data) {
@@ -57,6 +55,9 @@ $(function(){
 		return false;
 	});
 
+
+
+// This is Autu insert salesprice to PRICELIST TABLE
 		function autoPriceInsert(bookInfo, data){
 			console.log("bookInfo: ", bookInfo);
 			var insertAutoPrice = bookInfo;
