@@ -29,6 +29,7 @@ header h1 {
 display: none;
 }
 
+
 .customerSearch {
   position: absolute;
   top: 190px;
@@ -222,5 +223,9 @@ h3 {
   font-weight: bold;
   background-color: #567;
   padding: 10px 10px 0 10px;
+}
+
+#isbn31 {
+  display: none;
 }
 

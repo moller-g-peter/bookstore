@@ -19,11 +19,18 @@ $(function(){
 	});
 
 	$('.inputForm').submit(function() {
+		var isbn1 = find('#isbn1').val();
+
+			if (isbn1.length < 13){
+				console.log("isbn is less then 13");
+			}
 		var bookInfo = {};
 
 		$(this).find("input").not("input[type='submit']").each(function() {
 			bookInfo[this.name] = $(this).val();
 		});
+
+
 
 			bookInfo.salesPrice = bookInfo.fPrice*1.8;
 			$.ajax({
