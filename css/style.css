@@ -177,7 +177,7 @@ em {
 .error {
   margin-left:20px;
   padding-top:5px;
-  color:red;
+  color:#b33;
   font-size: 20px;
   font-weight: bold;
 }
@@ -229,3 +229,18 @@ h3 {
   display: none;
 }
 
+.redInput {
+  background-color:#b33;
+}
+
+.check {
+  display:block;
+  float:right;
+  color: #070;
+  font-size: 40px;
+  font-weight: bold;
+  text-shadow: 0 0 15px #0f0;  
+}
+.clearfix {
+  clear: both;
+}

@@ -19,11 +19,15 @@ $(function(){
 	});
 
 	$('.inputForm').submit(function() {
-		var isbn1 = find('#isbn1').val();
+		var isbnTrue = true;
+		var form = $('form');
+		var isbn1 = form.find('#isbn1').val();
+		var grabisbn = form.find('#isbn1');
+		isbnTrue = isbn1.length == 13;
 
-			if (isbn1.length < 13){
-				console.log("isbn is less then 13");
-			}
+			
+			if (isbnTrue){
+
 		var bookInfo = {};
 
 		$(this).find("input").not("input[type='submit']").each(function() {
@@ -47,18 +51,25 @@ $(function(){
 					shelf: JSON.stringify(bookInfo["shelf"]),
 					salesPrice: JSON.stringify(bookInfo["salesPrice"])
 				},
+
 				success: function(data) {
+					
+					grabisbn.removeClass("redInput");
 					// alert("You have succefully stored your data!");
 					$('.resultWindow').append('<p class="p1">' + 'You added: ' + '<b>' + bookInfo.title + '.</b><br>' + 'By author: ' + '<b>' + bookInfo.author + '.</b><br>' + ' Amount added: ' + '<b>' + bookInfo.amount + '.</b>' + '<br>' + 
-							'Added to shelf: ' + '<b>' + bookInfo.shelf + '.</b>');
+							'Added to shelf: ' + '<b>' + bookInfo.shelf + '.<span class="check"> √ </span><div class="clearfix"></div></b><hr>');
 					$('input', '.inputForm').val('');
 					autoPriceInsert(bookInfo, data);
 				},
 				error: function(data) {
-					console.log("error: ", data);
 					alert("Fill in all input fields.");
 					}
 			});
+		}
+		else {
+						$('.resultWindow').append('<p class="error">The isbn is to short<br/><hr/></p> </p>');
+						grabisbn.addClass("redInput");
+					}
 		return false;
 	});
 
@@ -66,7 +77,6 @@ $(function(){
 
 // This is Autu insert salesprice to PRICELIST TABLE
 		function autoPriceInsert(bookInfo, data){
-			console.log("bookInfo: ", bookInfo);
 			var insertAutoPrice = bookInfo;
 
 				$.ajax({
@@ -79,11 +89,8 @@ $(function(){
 							salesPrice: JSON.stringify(insertAutoPrice["salesPrice"])
 						},
 						success: function(bookInfo, data) {
-							console.log("success data 2 :",data);
-							console.log("success bookInfo 2 :",bookInfo);
 						},
 						error: function(data) {
-							console.log("error: ", data);
 							alert("Fill in all input fields.");
 						}
 				});

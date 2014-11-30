@@ -42,9 +42,6 @@ $(function(){
           if (!data.length){
             $('.resultWindow').append("<p class='error'>The isbn number your looking for is not found<br/><hr/></p>");
           }
-          else {
-
-          }
         },
         error: function(data) {
           alert("Error: Fill in all input fields.");
