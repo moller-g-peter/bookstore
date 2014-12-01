@@ -26,8 +26,9 @@ $(function(){
 
           for (var i = 0; i < data.length; i++) {
             var article = $('<article class="p1"/>');
+            article.append('<h3>ISBN: ' + '<em>' + data[i].isbn + '</em>' + '</h3>');
             article.append('<h3>Title: ' + '<em>' + data[i].title + '</em>' + '</h3>');
-            article.append('<h3>Price: ' + '<em>' + data[i].salesPrice + ':-</em>' + '</h3>');
+            article.append('<h3>Current price: ' + '<em>' + data[i].salesPrice + ':-</em>' + '</h3>');
             
             resultHtml.append(article);
             //Moving the ISBN nomber down with animation by adding a class
@@ -73,16 +74,14 @@ $(function(){
 
           $('.resultWindow').html("");
           var resultHtml = $('.resultWindow');
+          newPriceResult(modifyBook, data);
 
-
-          $('.resultWindow').append('<p class="p1">' + 'You added: ' + '<b>' + modifyBook.title + '.</b><br>');
-          // $('input', '.inputForm').val('');
-          // newPriceResult(modifyBook, data);
-          // for (var i = 0; i < data.length; i++) {
-          // var article = $('<article class="p1"/>');
-          //  article.append('<h2>' + 'You modified the price to: ' + data[i].salesPrice +  '</h2>');
-          //  resultHtml.append(article);
-          // }
+          $('.resultWindow').append('<p class="p1">' + 'Price has been successfully updated: ' + '<br>' +
+            'ISBN number: ' + '<b>' + modifyBook.isbn + '</b><br>' +
+            'Title: ' + '<b>' + modifyBook.title + '</b><br>' +
+            // 'Previous price: ' + '<b>' + modifyBook.title + '.</b><br>' +
+            'Current price: ' + '<b>' + modifyBook.salesPrice + '</b><br>'
+            );
           $('input').val('');
         },
         error: function(data) {
@@ -94,26 +93,24 @@ $(function(){
     return false;
   });
 
+        function newPriceResult(modifyBook, data){
+          // var newPriceResult = modifyBook;
 
-
-        // function newPriceResult(modifyBook, data){
-        //   // var newPriceResult = modifyBook;
-
-        //     $.ajax({
-        //       url:"libs/sql-ajax-json.php",
-        //         dataType: "json",
-        //         data: {
-        //           sql: "sql/product-questions.sql",
-        //           run: "price input",
-        //           isbn: JSON.stringify(insertAutoPrice["isbn"]),
-        //           salesPrice: JSON.stringify(insertAutoPrice["salesPrice"])
-        //         },
-        //         success: function(bookInfo, data) {
-        //         },
-        //         error: function(data) {
-        //           alert("Fill in all input fields.");
-        //         }
-        //     });
-        // }
+            $.ajax({
+              url:"libs/sql-ajax-json.php",
+                dataType: "json",
+                data: {
+                  sql: "sql/product-questions.sql",
+                  run: "price input",
+                  isbn: JSON.stringify(insertAutoPrice["isbn"]),
+                  salesPrice: JSON.stringify(insertAutoPrice["salesPrice"])
+                },
+                success: function(bookInfo, data) {
+                },
+                error: function(data) {
+                  alert("Fill in all input fields.");
+                }
+            });
+        }
 
 });

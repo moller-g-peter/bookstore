@@ -48,12 +48,14 @@ UPDATE booklist SET amount = amount - {amountLog} WHERE isbn = {isbnLog};
 # modify price
 UPDATE pricelist SET salesPrice = {salesPrice} WHERE isbn={isbn};
 
+# modify result
+
+
 # price input
 INSERT INTO pricelist (isbn, salesPrice) VALUES ({isbn}, {salesPrice});
 
 # get books by isbn II
 SELECT * FROM books_with_price WHERE isbn={isbn};
-
 
 
 -- are we using this?? Yes we are, it will -"amount" from booklist and +"amount" to booklog  -> UPDATE booklist SET amount = amount - {amountLog} WHERE isbn = '{isbnLog}';
