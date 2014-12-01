@@ -73,7 +73,11 @@ $(function(){
 
           $('.resultWindow').html("");
           var resultHtml = $('.resultWindow');
-          newPriceResult(modifyBook, data);
+
+
+          $('.resultWindow').append('<p class="p1">' + 'You added: ' + '<b>' + modifyBook.title + '.</b><br>');
+          // $('input', '.inputForm').val('');
+          // newPriceResult(modifyBook, data);
           // for (var i = 0; i < data.length; i++) {
           // var article = $('<article class="p1"/>');
           //  article.append('<h2>' + 'You modified the price to: ' + data[i].salesPrice +  '</h2>');
@@ -92,24 +96,24 @@ $(function(){
 
 
 
-        function newPriceResult(modifyBook, data){
-          // var newPriceResult = modifyBook;
+        // function newPriceResult(modifyBook, data){
+        //   // var newPriceResult = modifyBook;
 
-            $.ajax({
-              url:"libs/sql-ajax-json.php",
-                dataType: "json",
-                data: {
-                  sql: "sql/product-questions.sql",
-                  run: "price input",
-                  isbn: JSON.stringify(insertAutoPrice["isbn"]),
-                  salesPrice: JSON.stringify(insertAutoPrice["salesPrice"])
-                },
-                success: function(bookInfo, data) {
-                },
-                error: function(data) {
-                  alert("Fill in all input fields.");
-                }
-            });
-        }
+        //     $.ajax({
+        //       url:"libs/sql-ajax-json.php",
+        //         dataType: "json",
+        //         data: {
+        //           sql: "sql/product-questions.sql",
+        //           run: "price input",
+        //           isbn: JSON.stringify(insertAutoPrice["isbn"]),
+        //           salesPrice: JSON.stringify(insertAutoPrice["salesPrice"])
+        //         },
+        //         success: function(bookInfo, data) {
+        //         },
+        //         error: function(data) {
+        //           alert("Fill in all input fields.");
+        //         }
+        //     });
+        // }
 
 });
