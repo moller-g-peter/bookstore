@@ -58,7 +58,7 @@ $(function(){
     return false;
   });
 
-  $('.makeSale').delay(8000).submit(function() {
+  $('.makeSale').submit(function() {
     var sellBook = {};
     $(this).find("input").not("input[type='submit']").each(function() {
       sellBook[this.name] = $(this).val();
@@ -91,23 +91,35 @@ $(function(){
     return false;
   })
 
-    $('.minusBooklist').submit(function() {
-    var updateBooklist = sellBook;
-    $.ajax({
-      url:"libs/sql-ajax-json.php",
-        dataType: "json",
-        data: {
-          sql: "sql/product-questions.sql",
-          run: "update booklist",
-          isbnU: JSON.stringify(updateBooklist["isbnU"]),
-          amountU: JSON.stringify(updateBooklist["amountU"])
+$('.minusBooklist').submit(function() {
+
+    var updateBooklist = {};
+
+      $(this).find("input").not("input[type='submit']").each(function() {
+        updateBooklist[this.name] = $(this).val();
+      });
+
+      $.ajax({
+        url:"libs/sql-ajax-json.php",
+          dataType: "json",
+          data: {
+            sql: "sql/product-questions.sql",
+            run: "update booklist",
+            isbnU: JSON.stringify(updateBooklist["isbnU"]),
+            amountU: JSON.stringify(updateBooklist["amountU"])
           },
-          success: function(sellBook, data) {
+          success: function(data) {
+            console.log('Success: ', data, updateBooklist);
+            var resultHtml = $('.resultWindow');
+            var article = $('<article class="p1"/>');
+            article.append('<h2>' + 'Book with ISBN: ' + updateBooklist.isbnU +  ". " + 'Amount of copies: ' + updateBooklist.amountU + '. Was removoed from booklistDB' + '.</h2>');
+            resultHtml.append(article);
           },
           error: function(data) {
-            console.log('Data, sellBook: ', data, sellBook);
+            console.log('Error: ', data);
           }
+      });
+      return false;
     });
-  }
 
 });
