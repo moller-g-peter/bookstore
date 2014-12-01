@@ -71,11 +71,9 @@ $(function(){
         success: function(data) {
           $('.resultWindow').html("");
           var resultHtml = $('.resultWindow');
-          console.log(data.salesPrice); 
           for (var i = 0; i < data.length; i++) {
           var article = $('<article class="p1"/>');
-          console.log(data[i]);
-           article.append('<h2>' + 'You modified the price to: ' + data[i].salesPrice +  '.</h2>');
+           article.append('<h2>' + 'You modified the price to: ' + data[i].salesPrice +  '</h2>');
            resultHtml.append(article);
           }
           $('input').val('');
