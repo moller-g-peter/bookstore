@@ -82,7 +82,7 @@ $(function(){
           $('.isbnMq').val(sellBook.amountLog);
           // alert("You have succefully stored your data!");
           var article = $('<article class="p1"/>');
-          article.append('<h2>' + 'You sold book with ISBN: ' + sellBook.isbnLog +  ". " + 'This amount of copies: ' + sellBook.amountLog + '.</h2>');
+          article.append('<h2>' + 'You sold book with ISBN: ' + sellBook.isbnLog +  ". " + 'Amount of copies sold: ' + sellBook.amountLog + '.</h2>');
           resultHtml.append(article);
         },
         error: function(data) {
@@ -114,7 +114,7 @@ $(function(){
             console.log('Success: ', data, updateBooklist);
             var resultHtml = $('.resultWindow');
             var article = $('<article class="p1"/>');
-            article.append('<h2>' + 'Book with ISBN: ' + updateBooklist.isbnLog +  ". " + 'Amount of copies: ' + updateBooklist.amountLog + '. Was removoed from booklistDB' + '.</h2>');
+            article.append('<h2>' + 'Book with ISBN: ' + updateBooklist.isbnLog +  ". " + 'Amount of copies with this ISBN removed from booklistDB: ' + updateBooklist.amountLog + '.' + '</h2>');
             resultHtml.append(article);
           },
           error: function(data) {
