@@ -75,14 +75,6 @@ $(function(){
           $('.resultWindow').html("");
           var resultHtml = $('.resultWindow');
           newPriceResult(modifyBook, data);
-
-          $('.resultWindow').append('<p class="p1">' + 'Price has been successfully updated: ' + '<br>' +
-                    'ISBN number: ' + '<b>' + modifyBook.isbn + '</b><br>' +
-                    'Title: ' + '<b>' + modifyBook.title + '</b><br>' +
-                    // 'Previous price: ' + '<b>' + modifyBook.title + '.</b><br>' +
-                    'Current price: ' + '<b>' + modifyBook.salesPrice + '</b><br>'
-            );
-          
           $('input').val('');
         },
         error: function(data) {
@@ -95,7 +87,15 @@ $(function(){
   });
 
         function newPriceResult(modifyBook, data){
-          // var newPriceResult = modifyBook;
+          var resultNewPrice = modifyBook;
+
+          // console.log({
+          //         sql: "sql/product-questions.sql",
+          //         run: "modified price result",
+          //         isbn: resultNewPrice["isbn"],
+          //         title: resultNewPrice["title"],
+          //         salesPrice: resultNewPrice["salesPrice"]
+          //       });
 
             $.ajax({
               url:"libs/sql-ajax-json.php",
@@ -103,12 +103,18 @@ $(function(){
                 data: {
                   sql: "sql/product-questions.sql",
                   run: "modified price result",
-                  isbn: newPriceResult["isbn"]
-                  // title: JSON.stringify(newPriceResult["title"]),
-                  // salesPrice: JSON.stringify(newPriceResult["salesPrice"])
+                  isbn: resultNewPrice["isbn"],
+                  title: resultNewPrice["title"],
+                  salesPrice: resultNewPrice["salesPrice"]
                 },
-                success: function(modifyBook, data) {
-
+                success: function(modifyBook) {
+                  console.log("modifyBook: ", modifyBook);
+                  $('.resultWindow').append('<p class="p1">' + 'Price has been successfully updated: ' + '<br>' +
+                    'ISBN number: ' + '<b>' + modifyBook.isbn + '</b><br>' +
+                    'Title: ' + '<b>' + modifyBook.title + '</b><br>' +
+                    // 'Previous price: ' + '<b>' + modifyBook.title + '.</b><br>' +
+                    'Current price: ' + '<b>' + modifyBook.salesPrice + '</b><br>'
+                   );
                   
                 },
                 error: function(data) {
