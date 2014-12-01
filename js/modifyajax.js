@@ -13,7 +13,7 @@ $(function(){
         dataType: "json",
         data: {
           sql: "sql/product-questions.sql",
-          run: "get books by isbn",
+          run: "get books by isbn II",
           isbn: JSON.stringify(bookInfo["isbn"])
         },
         success: function(data) {
@@ -24,7 +24,7 @@ $(function(){
           for (var i = 0; i < data.length; i++) {
             var article = $('<article class="p1"/>');
             article.append('<h3>Title: ' + '<em>' + data[i].title + '</em>' + '</h3>');
-            article.append('<h3>Price: ' + '<em>' + data[i].fPrice + ':-</em>' + '</h3>');
+            article.append('<h3>Price: ' + '<em>' + data[i].salesPrice + ':-</em>' + '</h3>');
             
             resultHtml.append(article);
             //Moving the ISBN nomber down with animation by adding a class
@@ -52,7 +52,7 @@ $(function(){
         data: {
           sql: "sql/product-questions.sql",
           run: "modify price",
-          fPrice: JSON.stringify(modifyBook["fPrice"]),
+          salesPrice: JSON.stringify(modifyBook["salesPrice"]),
           isbn: JSON.stringify(modifyBook["isbn"])
           
         },
