@@ -1,4 +1,7 @@
 $(function(){
+
+  $('.isbnM').hide();
+  $('.isbnMq').hide();
    
   //Denna funktion söker via ajax i databasen på ett isbn nummer och skickar tillbaka valda värden tex price och title..
   $('.searchForm').submit(function() {
@@ -58,11 +61,14 @@ $(function(){
     return false;
   });
 
-  $('.makeSale').delay(8000).submit(function() {
+  $('.makeSale').submit(function() {
+
     var sellBook = {};
+
     $(this).find("input").not("input[type='submit']").each(function() {
       sellBook[this.name] = $(this).val();
     });
+
     $.ajax({
       url:"libs/sql-ajax-json.php",
         dataType: "json",
@@ -81,7 +87,6 @@ $(function(){
           var article = $('<article class="p1"/>');
           article.append('<h2>' + 'You sold book with ISBN: ' + sellBook.isbnLog +  ". " + 'This amount of copies: ' + sellBook.amountLog + '.</h2>');
           resultHtml.append(article);
-          removeFromBooklist(sellBook, data);
         },
         error: function(data) {
           console.log("error: ", data);
@@ -91,26 +96,9 @@ $(function(){
     return false;
   });
 
-  function removeFromBooklist(sellBook, data) {
-    var updateBooklist = sellBook;
-    $.ajax({
-      url:"libs/sql-ajax-json.php",
-        dataType: "json",
-        data: {
-          sql: "sql/product-questions.sql",
-          run: "update booklist",
-          isbnU: JSON.stringify(updateBooklist["isbnU"]),
-          amountU: JSON.stringify(updateBooklist["amountU"])
-          },
-          success: function(sellBook, data) {
-          },
-          error: function(data) {
-            console.log('Data, sellBook: ', data, sellBook);
-          }
-    });
-  }
+    function removeFromBooklist() {
+    $('.minusBooklist').submit(function() {
 
-    /*$('.minusBooklist').submit(function() {
     var updateBooklist = {};
 
       $(this).find("input").not("input[type='submit']").each(function() {
@@ -138,6 +126,7 @@ $(function(){
           }
       });
       return false;
-    });*/
+    });
+    }
 
 });
