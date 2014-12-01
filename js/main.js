@@ -34,8 +34,6 @@ $(function(){
 			bookInfo[this.name] = $(this).val();
 		});
 
-
-
 			bookInfo.salesPrice = bookInfo.fPrice*1.8;
 			$.ajax({
 			url:"libs/sql-ajax-json.php",

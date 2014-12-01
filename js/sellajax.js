@@ -31,13 +31,14 @@ $(function(){
             
             resultHtml.append(article);
             //Moving the ISBN nomber down with animation by adding a class
-            $(".sellISBN").addClass("transform").val(data[i].isbn).delay(1000).queue(function(next){
-            $(this).removeClass("transform");
-            next();
-          });
+          
             // add data[i].isbn to the hidden form
             $('.isbnM').val(data[i].isbn);
           }
+          $(".sellISBN").addClass("transform").val(bookInfo.isbn).delay(1000).queue(function(next){
+            $(this).removeClass("transform");
+            next();
+          });
           
           if (!data.length){
             $('.resultWindow').append("<p class='error'>The isbn number your looking for is not found<br/><hr/></p>");
