@@ -261,3 +261,11 @@ h3 {
   cursor: pointer;
   font-size: 30px;
 }
+
+.minusBooklist {
+  margin-top: -60px;
+}
+
+.amountU {
+  cursor: pointer;
+}
