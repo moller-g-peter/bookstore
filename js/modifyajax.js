@@ -55,7 +55,6 @@ $(function(){
   });
 
   $('.updateFormModify').submit(function() {
-    console.log("click!!!!!");
     var modifyBook = {};
     $(this).find("input").not("input[type='submit']").each(function() {
       modifyBook[this.name] = $(this).val();
@@ -72,14 +71,13 @@ $(function(){
         success: function(data) {
           $('.resultWindow').html("");
           var resultHtml = $('.resultWindow');
-          console.log("Add modifyBook success data: ", data);
-          console.log("modifyBook: ", modifyBook);
-          // alert("You have successfully stored your data!");
-          // for (var i = 0; i < data.length; i++) {
-          //   var article = $('<article class="p1"/>');
-          //   article.append('<h2>' + 'You sold book with ISBN: ' + data[i].isbn +  ". " + 'This amount of copies: ' + data[i].amount + '.</h2>');
-          //   resultHtml.append(article);
-          // }
+          console.log(data.salesPrice); 
+          for (var i = 0; i < data.length; i++) {
+          var article = $('<article class="p1"/>');
+          console.log(data[i]);
+           article.append('<h2>' + 'You modified the price to: ' + data[i].salesPrice +  '.</h2>');
+           resultHtml.append(article);
+          }
           $('input').val('');
         },
         error: function(data) {
