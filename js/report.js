@@ -1,6 +1,8 @@
 $(function(){
 
   $('.CheckISBNforReport').submit(function() {
+    var form = $('form');
+    var grabisbn = form.find('#isbn4');
     var ISBN = {};
 
     $(this).find("input").not("input[type='submit']").each(function() {
@@ -15,6 +17,7 @@ $(function(){
           isbn: JSON.stringify(ISBN["isbn"])
         },
         success: function(data) {
+          grabisbn.removeClass("redInput");
           $('.resultWindow').html("");
           var resultHtml = $('.resultWindow');
           
@@ -25,11 +28,18 @@ $(function(){
             article.append('<h3> ISBN: ' + '<em>' + data[i].isbn + '</em>' + '</h3>');
             resultHtml.append(article);
           }
-          
-          if (!data.length){
-              $('input', '.ISBNfound').val('');
-              $('.resultWindow').append("<p class='error'>The isbn number your looking for is not found</p>");
+
+           if (ISBN.isbn.length == 13){
+            $(".ISBNfound").addClass("transform").val(ISBN.isbn).delay(1000).queue(function(next){
+            $(this).removeClass("transform");
+              next();
+            });
           }
+          if (!data.length || ISBN.isbn.length < 13){
+            grabisbn.addClass("redInput");
+            $('.resultWindow').append("<p class='error'>The isbn number your looking for is not found or to short<br/><hr/></p>");
+          }
+
         },
         error: function(data) {
           console.log("error: ", data);

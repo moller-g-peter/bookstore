@@ -20,8 +20,8 @@ $(function(){
 
 	$('.inputForm').submit(function() {
 		var isbnTrue = true;
-		var form = $('form');
 		var isbn1 = form.find('#isbn1').val();
+		var form = $('form');
 		var grabisbn = form.find('#isbn1');
 		isbnTrue = isbn1.length == 13;
 

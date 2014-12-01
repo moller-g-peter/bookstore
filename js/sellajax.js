@@ -40,17 +40,15 @@ $(function(){
             $('.isbnM').val(data[i].isbn);
           }
           
-            if (bookInfo.isbn.length == 13){
-              $(".sellISBN").addClass("transform").val(bookInfo.isbn).delay(1000).queue(function(next){
-              $(this).removeClass("transform");
-                next();
-              });
-            }
-          
-          
-          if (data.length < 13){
+          if (bookInfo.isbn.length == 13){
+            $(".sellISBN").addClass("transform").val(bookInfo.isbn).delay(1000).queue(function(next){
+            $(this).removeClass("transform");
+              next();
+            });
+          }
+          if (!data.length || bookInfo.isbn.length < 13){
             grabisbn.addClass("redInput");
-            $('.resultWindow').append("<p class='error'>The isbn number your looking for is not found<br/><hr/></p>");
+            $('.resultWindow').append("<p class='error'>The isbn number your looking for is not found or to short<br/><hr/></p>");
           }
         },
         error: function(data) {
