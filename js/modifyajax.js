@@ -23,9 +23,10 @@ $(function(){
           var resultHtml = $('.resultWindow');
           console.log("Add bookInfo success data: ", data);
           // alert("You have succefully stored your data!");
+
           for (var i = 0; i < data.length; i++) {
             var article = $('<article class="p1"/>');
-            // article.append('<h3>Title: ' + '<em>' + data[i].title + '</em>' + '</h3>');
+            article.append('<h3>Title: ' + '<em>' + data[i].title + '</em>' + '</h3>');
             article.append('<h3>Price: ' + '<em>' + data[i].salesPrice + ':-</em>' + '</h3>');
             
             resultHtml.append(article);
@@ -38,7 +39,7 @@ $(function(){
           }
           if (bookInfo.isbn.length == 13 && data.length){
             
-            //peter what is hapening?
+            // 
 
             // $(".sellISBN").addClass("transform").val(bookInfo.isbn).delay(1000).queue(function(next){
             // $(this).removeClass("transform");
