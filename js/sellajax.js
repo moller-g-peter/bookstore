@@ -94,7 +94,7 @@ $(function(){
         }
     });
     return false;
-  });
+  })
 
     $('.minusBooklist').submit(function() {
 
