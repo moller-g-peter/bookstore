@@ -40,8 +40,10 @@ $(function(){
   });
   
   $('.getReport').submit(function() {
+      var year = $('#year').val();
+      var month = $("#month").val();
+      console.log(year, month);
     return false;
   });
 
 });
-
