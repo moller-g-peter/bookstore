@@ -70,11 +70,14 @@ $(function(){
           console.log("Add sellBook success data: ", data, sellBook);
           $('.isbnMq').val(sellBook.amountLog);
           // alert("You have succefully stored your data!");
-          for (var i = 0; i < data.length; i++) {
+          var article = $('<article class="p1"/>');
+          article.append('<h2>' + 'You sold book with ISBN: ' + sellBook.isbnLog +  ". " + 'This amount of copies: ' + sellBook.amountLog + '.</h2>');
+          resultHtml.append(article);
+          /*for (var i = 0; i < data.length; i++) {
             var article = $('<article class="p1"/>');
             article.append('<h2>' + 'You sold book with ISBN: ' + data.isbn +  ". " + 'This amount of copies: ' + data.amount + '.</h2>');
             resultHtml.append(article);
-          }
+          }*/
         },
         error: function(data) {
           console.log("error: ", data);
@@ -102,6 +105,10 @@ $(function(){
         },
         success: function(data) {
           console.log('Success: ', data, updateBooklist);
+          var resultHtml = $('.resultWindow');
+          var article = $('<article class="p1"/>');
+          article.append('<h2>' + 'Book with ISBN: ' + updateBooklist.isbnU +  ". " + 'Amount of copies: ' + updateBooklist.amountU + '. Was removoed from booklistDB' + '.</h2>');
+          resultHtml.append(article);
           /*for(var i = 0; i < data.length; i++){
             console.log('Success: ', data, updateBooklist);
           }*/
