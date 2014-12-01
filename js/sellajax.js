@@ -91,9 +91,9 @@ $(function(){
         }
     });
     return false;
-  })
+  });
 
-  $('.minusBooklist').submit(function() {
+  $('.makeSale').submit(function() {
 
     var updateBooklist = {};
 
@@ -107,14 +107,14 @@ $(function(){
           data: {
             sql: "sql/product-questions.sql",
             run: "update booklist",
-            isbnU: JSON.stringify(updateBooklist["isbnU"]),
-            amountU: JSON.stringify(updateBooklist["amountU"])
+            isbnLog: JSON.stringify(updateBooklist["isbnLog"]),
+            amountLog: JSON.stringify(updateBooklist["amountLog"])
           },
           success: function(data) {
             console.log('Success: ', data, updateBooklist);
             var resultHtml = $('.resultWindow');
             var article = $('<article class="p1"/>');
-            article.append('<h2>' + 'Book with ISBN: ' + updateBooklist.isbnU +  ". " + 'Amount of copies: ' + updateBooklist.amountU + '. Was removoed from booklistDB' + '.</h2>');
+            article.append('<h2>' + 'Book with ISBN: ' + updateBooklist.isbnLog +  ". " + 'Amount of copies: ' + updateBooklist.amountLog + '. Was removoed from booklistDB' + '.</h2>');
             resultHtml.append(article);
           },
           error: function(data) {
@@ -123,5 +123,6 @@ $(function(){
       });
       return false;
     });
+
 
 });
