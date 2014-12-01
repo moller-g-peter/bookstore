@@ -48,8 +48,8 @@ UPDATE booklist SET amount = amount - {amountLog} WHERE isbn = {isbnLog};
 # modify price
 UPDATE pricelist SET salesPrice = {salesPrice} WHERE isbn={isbn};
 
-# modify result
-
+# modified price result
+SELECT * FROM books_with_price WHERE (isbn, title, salesPrice) = ({isbn}, {title}, {salesPrice});
 
 # price input
 INSERT INTO pricelist (isbn, salesPrice) VALUES ({isbn}, {salesPrice});

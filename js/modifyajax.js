@@ -76,12 +76,7 @@ $(function(){
           var resultHtml = $('.resultWindow');
           newPriceResult(modifyBook, data);
 
-          $('.resultWindow').append('<p class="p1">' + 'Price has been successfully updated: ' + '<br>' +
-            'ISBN number: ' + '<b>' + modifyBook.isbn + '</b><br>' +
-            'Title: ' + '<b>' + modifyBook.title + '</b><br>' +
-            // 'Previous price: ' + '<b>' + modifyBook.title + '.</b><br>' +
-            'Current price: ' + '<b>' + modifyBook.salesPrice + '</b><br>'
-            );
+          
           $('input').val('');
         },
         error: function(data) {
@@ -101,11 +96,19 @@ $(function(){
                 dataType: "json",
                 data: {
                   sql: "sql/product-questions.sql",
-                  run: "price input",
-                  isbn: JSON.stringify(insertAutoPrice["isbn"]),
-                  salesPrice: JSON.stringify(insertAutoPrice["salesPrice"])
+                  run: "modified price result",
+                  isbn: newPriceResult["isbn"]
+                  // title: JSON.stringify(newPriceResult["title"]),
+                  // salesPrice: JSON.stringify(newPriceResult["salesPrice"])
                 },
-                success: function(bookInfo, data) {
+                success: function(modifyBook, data) {
+
+                  $('.resultWindow').append('<p class="p1">' + 'Price has been successfully updated: ' + '<br>' +
+                    'ISBN number: ' + '<b>' + modifyBook.isbn + '</b><br>' +
+                    'Title: ' + '<b>' + modifyBook.title + '</b><br>' +
+                    // 'Previous price: ' + '<b>' + modifyBook.title + '.</b><br>' +
+                    'Current price: ' + '<b>' + modifyBook.salesPrice + '</b><br>'
+            );
                 },
                 error: function(data) {
                   alert("Fill in all input fields.");
