@@ -84,7 +84,6 @@ $(function(){
           var article = $('<article class="p1"/>');
           article.append('<h2>' + 'You sold book with ISBN: ' + sellBook.isbnLog +  ". " + 'This amount of copies: ' + sellBook.amountLog + '.</h2>');
           resultHtml.append(article);
-          removeFromBooklist(sellBook, data);
         },
         error: function(data) {
           console.log("error: ", data);
