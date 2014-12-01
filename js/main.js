@@ -26,7 +26,7 @@ $(function(){
 		isbnTrue = isbn1.length == 13;
 
 			
-			if (isbnTrue){
+		if (isbnTrue){
 
 		var bookInfo = {};
 

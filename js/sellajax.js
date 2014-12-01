@@ -1,7 +1,4 @@
 $(function(){
-
-  $('.isbnM').hide();
-  $('.isbnMq').hide();
    
   //Denna funktion söker via ajax i databasen på ett isbn nummer och skickar tillbaka valda värden tex price och title..
   $('.searchForm').submit(function() {
@@ -61,14 +58,11 @@ $(function(){
     return false;
   });
 
-  $('.makeSale').submit(function() {
-
+  $('.makeSale').delay(8000).submit(function() {
     var sellBook = {};
-
     $(this).find("input").not("input[type='submit']").each(function() {
       sellBook[this.name] = $(this).val();
     });
-
     $.ajax({
       url:"libs/sql-ajax-json.php",
         dataType: "json",
@@ -87,6 +81,7 @@ $(function(){
           var article = $('<article class="p1"/>');
           article.append('<h2>' + 'You sold book with ISBN: ' + sellBook.isbnLog +  ". " + 'This amount of copies: ' + sellBook.amountLog + '.</h2>');
           resultHtml.append(article);
+          removeFromBooklist(sellBook, data);
         },
         error: function(data) {
           console.log("error: ", data);
@@ -97,34 +92,22 @@ $(function(){
   })
 
     $('.minusBooklist').submit(function() {
-
-    var updateBooklist = {};
-
-      $(this).find("input").not("input[type='submit']").each(function() {
-        updateBooklist[this.name] = $(this).val();
-      });
-
-      $.ajax({
-        url:"libs/sql-ajax-json.php",
-          dataType: "json",
-          data: {
-            sql: "sql/product-questions.sql",
-            run: "update booklist",
-            isbnU: JSON.stringify(updateBooklist["isbnU"]),
-            amountU: JSON.stringify(updateBooklist["amountU"])
+    var updateBooklist = sellBook;
+    $.ajax({
+      url:"libs/sql-ajax-json.php",
+        dataType: "json",
+        data: {
+          sql: "sql/product-questions.sql",
+          run: "update booklist",
+          isbnU: JSON.stringify(updateBooklist["isbnU"]),
+          amountU: JSON.stringify(updateBooklist["amountU"])
           },
-          success: function(data) {
-            console.log('Success: ', data, updateBooklist);
-            var resultHtml = $('.resultWindow');
-            var article = $('<article class="p1"/>');
-            article.append('<h2>' + 'Book with ISBN: ' + updateBooklist.isbnU +  ". " + 'Amount of copies: ' + updateBooklist.amountU + '. Was removoed from booklistDB' + '.</h2>');
-            resultHtml.append(article);
+          success: function(sellBook, data) {
           },
           error: function(data) {
-            console.log('Error: ', data);
+            console.log('Data, sellBook: ', data, sellBook);
           }
-      });
-      return false;
     });
+  }
 
 });
