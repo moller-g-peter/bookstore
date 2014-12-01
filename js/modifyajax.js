@@ -16,7 +16,7 @@ $(function(){
         data: {
           sql: "sql/product-questions.sql",
           run: "get books by isbn II",
-          isbn: JSON.stringify(bookInfo["isbn"])
+          isbn: bookInfo["isbn"]
         },
         success: function(data) {
           $('.resultWindow').html("");
@@ -76,6 +76,12 @@ $(function(){
           var resultHtml = $('.resultWindow');
           newPriceResult(modifyBook, data);
 
+          $('.resultWindow').append('<p class="p1">' + 'Price has been successfully updated: ' + '<br>' +
+                    'ISBN number: ' + '<b>' + modifyBook.isbn + '</b><br>' +
+                    'Title: ' + '<b>' + modifyBook.title + '</b><br>' +
+                    // 'Previous price: ' + '<b>' + modifyBook.title + '.</b><br>' +
+                    'Current price: ' + '<b>' + modifyBook.salesPrice + '</b><br>'
+            );
           
           $('input').val('');
         },
@@ -103,12 +109,7 @@ $(function(){
                 },
                 success: function(modifyBook, data) {
 
-                  $('.resultWindow').append('<p class="p1">' + 'Price has been successfully updated: ' + '<br>' +
-                    'ISBN number: ' + '<b>' + modifyBook.isbn + '</b><br>' +
-                    'Title: ' + '<b>' + modifyBook.title + '</b><br>' +
-                    // 'Previous price: ' + '<b>' + modifyBook.title + '.</b><br>' +
-                    'Current price: ' + '<b>' + modifyBook.salesPrice + '</b><br>'
-            );
+                  
                 },
                 error: function(data) {
                   alert("Fill in all input fields.");
