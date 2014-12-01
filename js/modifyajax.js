@@ -65,10 +65,12 @@ $(function(){
         data: {
           sql: "sql/product-questions.sql",
           run: "modify price",
+          title: modifyBook["title"],
           salesPrice: modifyBook["salesPrice"],
           isbn: modifyBook["isbn"]
         },
         success: function(data) {
+
           $('.resultWindow').html("");
           var resultHtml = $('.resultWindow');
           for (var i = 0; i < data.length; i++) {
