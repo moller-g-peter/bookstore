@@ -29,7 +29,7 @@ $(function(){
             resultHtml.append(article);
           }
 
-           if (ISBN.isbn.length == 13){
+           if (ISBN.isbn.length == 13 && data.length){
             $(".ISBNfound").addClass("transform").val(ISBN.isbn).delay(1000).queue(function(next){
             $(this).removeClass("transform");
               next();

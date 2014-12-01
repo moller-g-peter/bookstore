@@ -40,7 +40,7 @@ $(function(){
             $('.isbnM').val(data[i].isbn);
           }
           
-          if (bookInfo.isbn.length == 13){
+          if (bookInfo.isbn.length == 13 && data.length){
             $(".sellISBN").addClass("transform").val(bookInfo.isbn).delay(1000).queue(function(next){
             $(this).removeClass("transform");
               next();
