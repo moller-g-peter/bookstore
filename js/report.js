@@ -53,7 +53,13 @@ $(function(){
       var year = $('#year').val();
       var month = $("#month").val();
       console.log(year, month);
-    return false;
+      $('.reportDiv').show();
+      return false;
+  });
+
+  //When you click the 'X' - the div hides.
+  $('.closeReport').click(function() {
+    $('.reportDiv').hide();
   });
 
 });
