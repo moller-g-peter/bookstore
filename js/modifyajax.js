@@ -23,7 +23,7 @@ $(function(){
           // alert("You have succefully stored your data!");
           for (var i = 0; i < data.length; i++) {
             var article = $('<article class="p1"/>');
-            article.append('<h3>Title: ' + '<em>' + data[i].title + '</em>' + '</h3>');
+            // article.append('<h3>Title: ' + '<em>' + data[i].title + '</em>' + '</h3>');
             article.append('<h3>Price: ' + '<em>' + data[i].salesPrice + ':-</em>' + '</h3>');
             
             resultHtml.append(article);
@@ -42,6 +42,7 @@ $(function(){
   });
 
   $('.updateFormModify').submit(function() {
+    console.log("click!!!!!");
     var modifyBook = {};
     $(this).find("input").not("input[type='submit']").each(function() {
       modifyBook[this.name] = $(this).val();

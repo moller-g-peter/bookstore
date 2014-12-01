@@ -55,5 +55,6 @@ INSERT INTO pricelist (isbn, salesPrice) VALUES ({isbn}, {salesPrice});
 SELECT * FROM pricelist WHERE isbn={isbn};
 
 
+
 -- are we using this?? Yes we are, it will -"amount" from booklist and +"amount" to booklog  -> UPDATE booklist SET amount = amount - {amountLog} WHERE isbn = '{isbnLog}';
 
