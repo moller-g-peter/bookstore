@@ -42,6 +42,7 @@ $(function(){
   });
 
   $('.updateFormModify').submit(function() {
+    console.log("click!!!!!");
     var modifyBook = {};
     $(this).find("input").not("input[type='submit']").each(function() {
       modifyBook[this.name] = $(this).val();
@@ -52,8 +53,8 @@ $(function(){
         data: {
           sql: "sql/product-questions.sql",
           run: "modify price",
-          salesPrice: JSON.stringify(modifyBook["salesPrice"])
-                 
+          salesPrice: modifyBook["salesPrice"],
+          isbn: modifyBook["isbn"]
         },
         success: function(data) {
           $('.resultWindow').html("");

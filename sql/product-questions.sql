@@ -46,7 +46,7 @@ INSERT INTO booklog (isbnLog, amountLog) VALUES ({isbnLog}, {amountLog});
 UPDATE booklist SET amount = amount - {amountU} WHERE isbn = {isbnU};
 
 # modify price
-UPDATE pricelist SET salesPrice = {salesPrice} WHERE isbn = {isbn};
+UPDATE pricelist SET salesPrice = {salesPrice} WHERE isbn={isbn};
 
 # price input
 INSERT INTO pricelist (isbn, salesPrice) VALUES ({isbn}, {salesPrice});
