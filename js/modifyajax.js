@@ -2,6 +2,8 @@ $(function(){
    
   //Denna funktion söker via ajax i databasen på ett isbn nummer och skickar tillbaka valda värden tex price och title..
   $('.updateForm').submit(function() {
+    var form = $('form');
+    var grabisbn = form.find('#isbn3');
     var bookInfo = {};
 
     $(this).find("input").not("input[type='submit']").each(function() {
@@ -30,8 +32,18 @@ $(function(){
             //Moving the ISBN nomber down with animation by adding a class
               $(".transportISBN").val(data[i].isbn);
           }
-          if (!data.length){
-            $('.resultWindow').append("<p class='error'>The isbn number your looking for is not found<br/><hr/></p>");
+          if (!data.length || bookInfo.isbn.length < 13){
+            grabisbn.addClass("redInput");
+            $('.resultWindow').append("<p class='error'>The isbn number your looking for is not found or to short<br/><hr/></p>");
+          }
+          if (bookInfo.isbn.length == 13 && data.length){
+            
+            //peter what is hapening?
+
+            // $(".sellISBN").addClass("transform").val(bookInfo.isbn).delay(1000).queue(function(next){
+            // $(this).removeClass("transform");
+            //   next();
+            // });
           }
         },
         error: function(data) {
