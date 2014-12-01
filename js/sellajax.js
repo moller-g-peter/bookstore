@@ -96,7 +96,6 @@ $(function(){
     return false;
   });
 
-    function removeFromBooklist() {
     $('.minusBooklist').submit(function() {
 
     var updateBooklist = {};
@@ -127,6 +126,5 @@ $(function(){
       });
       return false;
     });
-    }
 
 });
