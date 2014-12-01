@@ -74,11 +74,6 @@ $(function(){
           var article = $('<article class="p1"/>');
           article.append('<h2>' + 'You sold book with ISBN: ' + sellBook.isbnLog +  ". " + 'This amount of copies: ' + sellBook.amountLog + '.</h2>');
           resultHtml.append(article);
-          /*for (var i = 0; i < data.length; i++) {
-            var article = $('<article class="p1"/>');
-            article.append('<h2>' + 'You sold book with ISBN: ' + data.isbn +  ". " + 'This amount of copies: ' + data.amount + '.</h2>');
-            resultHtml.append(article);
-          }*/
         },
         error: function(data) {
           console.log("error: ", data);
@@ -88,37 +83,34 @@ $(function(){
     return false;
   });
 
-  $('.minusBooklist').submit(function() {
+    $('.minusBooklist').submit(function() {
     var updateBooklist = {};
 
-    $(this).find("input").not("input[type='submit']").each(function() {
-      updateBooklist[this.name] = $(this).val();
-    });
+      $(this).find("input").not("input[type='submit']").each(function() {
+        updateBooklist[this.name] = $(this).val();
+      });
 
-    $.ajax({
-      url:"libs/sql-ajax-json.php",
-        dataType: "json",
-        data: {
-          sql: "sql/product-questions.sql",
-          run: "update booklist",
-          isbnU: JSON.stringify(updateBooklist["isbnU"]),
-          amountU: JSON.stringify(updateBooklist["amountU"])
-        },
-        success: function(data) {
-          console.log('Success: ', data, updateBooklist);
-          var resultHtml = $('.resultWindow');
-          var article = $('<article class="p1"/>');
-          article.append('<h2>' + 'Book with ISBN: ' + updateBooklist.isbnU +  ". " + 'Amount of copies: ' + updateBooklist.amountU + '. Was removoed from booklistDB' + '.</h2>');
-          resultHtml.append(article);
-          /*for(var i = 0; i < data.length; i++){
+      $.ajax({
+        url:"libs/sql-ajax-json.php",
+          dataType: "json",
+          data: {
+            sql: "sql/product-questions.sql",
+            run: "update booklist",
+            isbnU: JSON.stringify(updateBooklist["isbnU"]),
+            amountU: JSON.stringify(updateBooklist["amountU"])
+          },
+          success: function(data) {
             console.log('Success: ', data, updateBooklist);
-          }*/
-        },
-        error: function(data) {
-          console.log('Error: ', data);
-        }
+            var resultHtml = $('.resultWindow');
+            var article = $('<article class="p1"/>');
+            article.append('<h2>' + 'Book with ISBN: ' + updateBooklist.isbnU +  ". " + 'Amount of copies: ' + updateBooklist.amountU + '. Was removoed from booklistDB' + '.</h2>');
+            resultHtml.append(article);
+          },
+          error: function(data) {
+            console.log('Error: ', data);
+          }
+      });
+      return false;
     });
-    return false;
-  });
 
 });
