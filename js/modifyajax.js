@@ -42,7 +42,6 @@ $(function(){
   });
 
   $('.updateFormModify').submit(function() {
-    console.log("click!!!!!");
     var modifyBook = {};
     $(this).find("input").not("input[type='submit']").each(function() {
       modifyBook[this.name] = $(this).val();
@@ -53,16 +52,15 @@ $(function(){
         data: {
           sql: "sql/product-questions.sql",
           run: "modify price",
-          salesPrice: JSON.stringify(modifyBook["salesPrice"]),
-          isbn: JSON.stringify(modifyBook["isbn"])
-          
+          salesPrice: JSON.stringify(modifyBook["salesPrice"])
+                 
         },
         success: function(data) {
           $('.resultWindow').html("");
           var resultHtml = $('.resultWindow');
           console.log("Add modifyBook success data: ", data);
           console.log("modifyBook: ", modifyBook);
-          // alert("You have succefully stored your data!");
+          // alert("You have successfully stored your data!");
           // for (var i = 0; i < data.length; i++) {
           //   var article = $('<article class="p1"/>');
           //   article.append('<h2>' + 'You sold book with ISBN: ' + data[i].isbn +  ". " + 'This amount of copies: ' + data[i].amount + '.</h2>');
