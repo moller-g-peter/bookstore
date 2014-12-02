@@ -17,7 +17,7 @@ body {
 .booksInRow {
   position: absolute;
   display: inline-block;
-  width: 367px;
+  width: 356px;
   right: 0;
   padding: 0 3px;
 }
