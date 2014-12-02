@@ -13,6 +13,7 @@
 		<script src="js/report.js"></script>
 		<script src="js/modifyajax.js"></script>
 	</head>
+	<!-- ------------------------------------------------------ -->
 	<body>
 		<header class="topNavBar">
 			<h1></h1>
@@ -20,7 +21,7 @@
 			<a href="customerhelp.html"><img class="booksInRow" src="img/bookrow.jpg" /></a>
 		</header>
 
-	<a href="customerhelp.html"><div class="customlink"><h3>Go to Customer Search</div></h3></a>
+	<a href="customerhelp.html"><div class="glass"><div class="customlink"><h3>Go to Customer Search</div></h3></div></a>
 		<div class="menu">
 				<div class="reportDiv">
 						<p class="closeReport">X</p>
@@ -42,7 +43,10 @@
 
 							
 					  		<label for="isbn1">Enter ISBN number for book: </label><br> 
-					  		<input type="text" class="isbn" name="isbn" id="isbn1" maxlength="13" value="" placeholder="Enter ISBN here.." required></label>
+					  		<input type="text" class="isbn" name="isbn" id="isbn1" maxlength="13" value="" autocomplete="off" placeholder="Enter ISBN here.." required>
+
+					  	</label>
+					  	<div class="option"></div>
 					  		<br>
 
 					  		<label for="title1">Enter the title of the book: </label><br>
@@ -169,12 +173,12 @@
 			<div class="result-h2"><h2>Result:</h2><hr></div>
 			<section class="resultWindow">
 				<article>
-					<h3><a href="customerhelp.html"></a></h3>
+					
 				</article>
 			</section>
 		</div>
 
-					<h3><a href="customerhelp.html"></a></h3>
+			
 	
 	</body>
 </html>

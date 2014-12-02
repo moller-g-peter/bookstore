@@ -61,7 +61,7 @@ SELECT * FROM booklog WHERE dateLog LIKE "%{dateLog}%" && isbnLog = {isbnLog};
 # earnings
 
 # match isbn
-SELECT * FROM booklist WHERE isbn LIKE "{isbn}%";
+SELECT * FROM booklist WHERE isbn LIKE "{isbn}%" LIMIT 10;
 
 
 -- are we using this?? Yes we are, it will -"amount" from booklist and +"amount" to booklog  -> UPDATE booklist SET amount = amount - {amountLog} WHERE isbn = '{isbnLog}';

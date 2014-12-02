@@ -54,7 +54,6 @@ $(function(){
 					// alert("You have succefully stored your data!");
 					$('.resultWindow').append('<p class="p1">' + 'You added: ' + '<b>' + bookInfo.title + '.</b><br>' + 'By author: ' + '<b>' + bookInfo.author + '.</b><br>' + ' Amount added: ' + '<b>' + bookInfo.amount + '.</b>' + '<br>' + 
 							'Added to shelf: ' + '<b>' + bookInfo.shelf + '.<span class="check"> √ </span><div class="clearfix"></div></b><hr>');
-					
 					$('input', '.inputForm').val('');
 					autoPriceInsert(bookInfo, data);
 				},
@@ -74,43 +73,32 @@ $(function(){
 
 
 // This is Autu insert salesprice to PRICELIST TABLE
-		function autoPriceInsert(bookInfo, data){
-			var insertAutoPrice = bookInfo;
+	function autoPriceInsert(bookInfo, data){
+		var insertAutoPrice = bookInfo;
 
-				$.ajax({
-					url:"libs/sql-ajax-json.php",
-						dataType: "json",
-						data: {
-							sql: "sql/product-questions.sql",
-							run: "price input",
-							isbn: JSON.stringify(insertAutoPrice["isbn"]),
-							salesPrice: JSON.stringify(insertAutoPrice["salesPrice"])
-						},
-						success: function(bookInfo, data) {
-						},
-						error: function(data) {
-							alert("Fill in all input fields.");
-						}
-				});
-		}
+			$.ajax({
+				url:"libs/sql-ajax-json.php",
+					dataType: "json",
+					data: {
+						sql: "sql/product-questions.sql",
+						run: "price input",
+						isbn: JSON.stringify(insertAutoPrice["isbn"]),
+						salesPrice: JSON.stringify(insertAutoPrice["salesPrice"])
+					},
+					success: function(bookInfo, data) {
+					},
+					error: function(data) {
+						alert("Fill in all input fields.");
+					}
+			});
+	}
 
 
 
 	$('#isbn1').keyup(function(){
-		
-		
-		
+		$('.option').show();
 			var scan = $('#isbn1').val();
-
-		// 	$(this).find("input").not("input[type='submit']").each(function() {
-		// 	scan[this.name] = $(this).val();
-		// });
-
-			console.log('scan: ', scan);
-			
-
 			if (scan) {
-				console.log("i if-satsen scan!");
 				$.ajax({
 				url:"libs/sql-ajax-json.php",
 					dataType: "json",
@@ -120,16 +108,56 @@ $(function(){
 						isbn: parseInt(scan)
 					},
 					success: function(data) {
+
 						
-						console.log("sucsess!!!!!--> data: ",data);
-						console.log("sucsess scan: ",scan);
+
+						$('.option').html("");
+						for (var i = 0; i < data.length; i++) {
+						$('.option').append('<input class"underme" title="Title: '+ data[i].title + ' &#13 Author: ' + data[i].author + '" id="'+ data[i].isbn + '" type="text" value="'+ data[i].isbn + '" >');
+						var holder = data[i].isbn;
+						var isbnlength = $('#isbn1').val();
+
+						$('#title1').val(data[i].title);
+						$('#author1').val(data[i].author);
+						$('#shelf1').val(data[i].shelf);
+
+						}
+
+						$(".option input[type='text']").click(function() {
+
+							var tree = $(this).val();
+							$('#isbn1').val(tree);
+							$('.option').hide();
+
+							$('#title1').val(data[0].title);
+							$('#author1').val(data[0].author);
+							$('#shelf1').val(data[0].shelf);
+
+						});
+
+						if (data.length === 0) {
+							$('#title1').val('');
+							$('#author1').val('');
+							$('#shelf1').val('');
+						}
+
 					},
 					error: function(data) {
 						console.log("error data :", data, scan);
 					}
+
 				});
 				return false;
 			}
 	
 	});
+
+
+
+
+
+
+
+
+
 });
