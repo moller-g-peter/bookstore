@@ -16,142 +16,146 @@
 	</head>
 	<body>
 	
-		<header>
-			<h1>Bookstore</h1>
-<!--<h1><img src="img/bookstorebanner.png"></h1>-->
-		</header>
+		<div class="topNavBar">
+			<h1></h1>
+			<a href="index.html"><img class="bookStoreLogo" src="img/Bookstorelogo.jpg" /></a>
+		</div>
 
-			<div class="reportDiv">
-					<p class="closeReport">X</p>
-			</div>
-
-			<ul class="tabWindows">
-				<div class="topTabs">
-					<li class="input" id="input">Input</li>
-					<li class="sell" id="sell">Sell</li>
-					<li class="modPrice" id="modPrice">ModPrice</li>
-					<li class="report" id="report">Report</li>
+		<div class="menuI">
+				<div class="reportDiv">
+						<p class="closeReport">X</p>
 				</div>
 
-<!-- This is input feelfs-->
-				<section class="inputFields showinput">
-					<form class="inputForm">
-				  		<label for="isbn1">Enter ISBN number for book: </label><br> 
-				  		<input type="text" class="isbn" name="isbn" id="isbn1" maxlength="13" value="" placeholder="Enter ISBN here.." required></label>
-				  		<br>
+				<ul class="tabWindows">
+					<div class="topTabs">
+						<li class="input" id="input">Input</li>
+						<li class="sell" id="sell">Sell</li>
+						<li class="modPrice" id="modPrice">ModPrice</li>
+						<li class="report" id="report">Report</li>
+					</div>
 
-				  		<label for="title1">Enter the title of the book: </label><br>
-				  		<input type="text" class="title" name="title" id="title1" value="" placeholder="Enter book title.." required></label>
-				  		<br>
+	<!-- This is input feelfs-->
+					<section class="inputFields showinput">
+						<form class="inputForm">
+					  		<label for="isbn1">Enter ISBN number for book: </label><br> 
+					  		<input type="text" class="isbn" name="isbn" id="isbn1" maxlength="13" value="" placeholder="Enter ISBN here.." required></label>
+					  		<br>
 
-				  		<label for="author1">Enter the author of the book: </label><br>
-				  		<input type="text" class="author" name="author" id="author1" value="" placeholder="Author of the book.." required></label>
-				  		<br>
+					  		<label for="title1">Enter the title of the book: </label><br>
+					  		<input type="text" class="title" name="title" id="title1" value="" placeholder="Enter book title.." required></label>
+					  		<br>
 
-				  		<label for="fPrice1">Enter publisher price of one book: </label><br> 
-				  		<input title="The price of one book will automatically be multiplied with the quantity of books" type="number" class="price" name="fPrice" id="fPrice1" value="" placeholder="Enter price here.." required></label>
-				  		<br>
+					  		<label for="author1">Enter the author of the book: </label><br>
+					  		<input type="text" class="author" name="author" id="author1" value="" placeholder="Author of the book.." required></label>
+					  		<br>
 
-				  		<label for="amount1">Enter the quantity of the books: </label><br> 
-				  		<input title="The quantity of all the books will automatically be multiplied with the price of one book" type="number" class="quantity" name="amount" id="amount1" placeholder="Enter quantity here.." required></label>
-				  		<br>
+					  		<label for="fPrice1">Enter publisher price of one book: </label><br> 
+					  		<input title="The price of one book will automatically be multiplied with the quantity of books" type="number" class="price" name="fPrice" id="fPrice1" value="" placeholder="Enter price here.." required></label>
+					  		<br>
 
-				  		<label for="shelf1">Enter which bookshelf it's placed: </label><br> 
-				  		<input type="text" class="bookshelf" name="shelf" id="shelf1" value="" placeholder="Enter a Bookshelf" required></label>
-				  		<br>
-				  		<button class="exe" type="submit">Submit</button> 
-			  		</form>
-				</section>
+					  		<label for="amount1">Enter the quantity of the books: </label><br> 
+					  		<input title="The quantity of all the books will automatically be multiplied with the price of one book" type="number" class="quantity" name="amount" id="amount1" placeholder="Enter quantity here.." required></label>
+					  		<br>
 
-<!-- This is sell feelfs-->
-				<section class="searchFields showsell">
-					<form class="searchForm">
-				  		<label for="isbn2">Search for ISBN: <br> 
-				  		<input type="text" class="isbn" name="isbn" maxlength="13" id="isbn2" value=""  placeholder="Enter ISBN here.." required></label>
-				  		<br>
-				  		<button class="exe" type="submit">search</button>
-				  	</form>
-				  	<form class="makeSale">
-				  		<label for="isbn2">ISBN to sell: <br>
-				  		<input type="number" class="isbn, sellISBN" name="isbnLog" id="isbnLog2" value="" placeholder="Enter ISBN wich will be sold.." required></label> <br>
-				  		<label for="amountLog1">Quantity <br> 
-				  		<input type="number" class="isbn" name="amountLog" id="amountLog1" value=""  placeholder="Enter amount"></label>
-				  		<br>
-				  		<p><i>The date-information is logged automatically.</i></p>
-				  		<button class="sellbutton" type="submit">Sell</button>
-			  		</form>
-			  		<!-- <form class="minusBooklist">
-			  			<label for="isbnMinus"><ISBN to be minused: <br>
-			  			<input type="text", class="isbnM" name="isbnU" id="isbnMinus" value="" placeholder="ISBN to be removes cus' tis' sold, B."></label>
-			  			<br>
-			  			<label for="amountMinus"><Amount to be minused: <br>
-			  			<input type="number" class="isbnMq" name="amountU" id="amountMinus" value="" placeholder="Amount to removed from stash, pendejo!"></label> <br>
-			  			<button class="amountU" type="submit">Update Stock</button>
-			  		</form> -->
-				</section>
+					  		<label for="shelf1">Enter which bookshelf it's placed: </label><br> 
+					  		<input type="text" class="bookshelf" name="shelf" id="shelf1" value="" placeholder="Enter a Bookshelf" required></label>
+					  		<br>
+					  		<button class="exe" type="submit">Submit</button> 
+				  		</form>
+					</section>
 
-<!-- This is modifyprice feelfs-->				
-				<section class="modFields showmodPrice">
-					<form class="updateForm">
-						<label for="isbn3">Enter ISBN</label>
-						<input type="text" class="isbn" name="isbn" id="isbn3" maxlength="13" placeholder="Enter ISBN here.." required>
-						<button class="searchUpdate" type="submit">Search ISBN</button><br>
-					</form>
-					<form class="updateFormModify">
-				  		<input type="text" class="transportISBN" name="isbn" id="transportISBN" value=""  placeholder="Enter st"></label><br> 
+	<!-- This is sell feelfs-->
+					<section class="searchFields showsell">
+						<form class="searchForm">
+					  		<label for="isbn2">Search for ISBN: <br> 
+					  		<input type="text" class="isbn" name="isbn" maxlength="13" id="isbn2" value=""  placeholder="Enter ISBN here.." required></label>
+					  		<br>
+					  		<button class="exe" type="submit">search</button>
+					  	</form>
+					  	<form class="makeSale">
+					  		<label for="isbn2">ISBN to sell: <br>
+					  		<input type="number" class="isbn, sellISBN" name="isbnLog" id="isbnLog2" value="" placeholder="Enter ISBN wich will be sold.." required></label> <br>
+					  		<label for="amountLog1">Quantity <br> 
+					  		<input type="number" class="isbn" name="amountLog" id="amountLog1" value=""  placeholder="Enter amount"></label>
+					  		<br>
+					  		<p><i>The date-information is logged automatically.</i></p>
+					  		<button class="sellbutton" type="submit">Sell</button>
+				  		</form>
+				  		<!-- <form class="minusBooklist">
+				  			<label for="isbnMinus"><ISBN to be minused: <br>
+				  			<input type="text", class="isbnM" name="isbnU" id="isbnMinus" value="" placeholder="ISBN to be removes cus' tis' sold, B."></label>
+				  			<br>
+				  			<label for="amountMinus"><Amount to be minused: <br>
+				  			<input type="number" class="isbnMq" name="amountU" id="amountMinus" value="" placeholder="Amount to removed from stash, pendejo!"></label> <br>
+				  			<button class="amountU" type="submit">Update Stock</button>
+				  		</form> -->
+					</section>
 
-						<label for="isbn31">Enter new price</label>
-						<input type="text" class="isbn" name="salesPrice" id="isbn31" placeholder="Enter new price here..">
-						<button class="updateButton" type="submit">Change price</button>
-					</form>
-				</section>
-				
+	<!-- This is modifyprice feelfs-->				
+					<section class="modFields showmodPrice">
+						<form class="updateForm">
+							<label for="isbn3">Enter ISBN</label>
+							<input type="text" class="isbn" name="isbn" id="isbn3" maxlength="13" placeholder="Enter ISBN here.." required>
+							<button class="searchUpdate" type="submit">Search ISBN</button><br>
+						</form>
+						<form class="updateFormModify">
+					  		<input type="text" class="transportISBN" name="isbn" id="transportISBN" value=""  placeholder="Enter st"></label><br> 
 
-<!-- This is report feelfs-->
-				<section class="reportFields showreport">
-					<form class="CheckISBNforReport">
-						<p>Enter the ISBN to check if it exists in the shop.</p>
-						<label for="isbn4"></label>
-						<input type="text" placeholder="Enter ISBN" class="isbn22" name="isbn" maxlength="13" id="isbn4" required>
-						<button type="submit">Find ISBN!</button>
-					</form>
-					<form class="getReport">
-						<label for="isbn5">ISBN to get report for:</label>
-						<input type="text" class="ISBNfound" name="isbn" id="isbn5" value="">
-						<p>Select time period:</p>
-						<select id="year">
-							<option value="2013">2013</option>
-							<option value="2014">2014</option>
-							<option value="2015">2015</option>
-							<option value="2016">2016</option>
-							<option value="2017">2017</option>
-						</select>
-						<select id="month">
-							<option value="" selected>All</option>
-							<option value="01">January</option>
-							<option value="02">February</option>
-							<option value="03">March</option>
-							<option value="04">April</option>
-							<option value="05">May</option>
-							<option value="06">June</option>
-							<option value="07">July</option>
-							<option value="08">August</option>
-							<option value="09">September</option>
-							<option value="10">October</option>
-							<option value="11">November</option>
-							<option value="12">December</option>
-						</select>
-						<button type="submit">Get report!</button>
-					</form>
-				</section>
-			</ul>
+							<label for="isbn31">Enter new price</label>
+							<input type="text" class="isbn" name="salesPrice" id="isbn31" placeholder="Enter new price here..">
+							<button class="updateButton" type="submit">Change price</button>
+						</form>
+					</section>
+					
 
-<!-- This is result feelfs-->			
-		<div class="result-h2"><h2>Result:</h2><hr></div>
-		<section class="resultWindow">
-			<article>
-				
-			</article>
-		</section>
+	<!-- This is report feelfs-->
+					<section class="reportFields showreport">
+						<form class="CheckISBNforReport">
+							<p>Enter the ISBN to check if it exists in the shop.</p>
+							<label for="isbn4"></label>
+							<input type="text" placeholder="Enter ISBN" class="isbn22" name="isbn" maxlength="13" id="isbn4" required>
+							<button type="submit">Find ISBN!</button>
+						</form>
+						<form class="getReport">
+							<label for="isbn5">ISBN to get report for:</label>
+							<input type="text" class="ISBNfound" name="isbn" id="isbn5" value="">
+							<p>Select time period:</p>
+							<select id="year">
+								<option value="2013">2013</option>
+								<option value="2014">2014</option>
+								<option value="2015">2015</option>
+								<option value="2016">2016</option>
+								<option value="2017">2017</option>
+							</select>
+							<select id="month">
+								<option value="" selected>All</option>
+								<option value="01">January</option>
+								<option value="02">February</option>
+								<option value="03">March</option>
+								<option value="04">April</option>
+								<option value="05">May</option>
+								<option value="06">June</option>
+								<option value="07">July</option>
+								<option value="08">August</option>
+								<option value="09">September</option>
+								<option value="10">October</option>
+								<option value="11">November</option>
+								<option value="12">December</option>
+							</select>
+							<button type="submit">Get report!</button>
+						</form>
+					</section>
+				</ul>
+		</div>
+
+		<div class="menuII">
+	<!-- This is result feelfs-->			
+			<div class="result-h2"><h2>Result:</h2><hr></div>
+			<section class="resultWindow">
+				<article>
+					
+				</article>
+			</section>
+		</div>
 	</body>
 </html>
