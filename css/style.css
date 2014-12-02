@@ -59,7 +59,7 @@ body {
 
 .customlink h3:hover {
   color:#fff;
-  text-shadow: -1px 0 #456, 0 1px #456, 1px 0 #456, 0 -1px #456;
+  text-shadow: -1px 0 #aaa, 0 1px #aaa, 1px 0 #aaa, 0 -1px #aaa;
 }
 
 .customerSearch h2, .customerSearch form {
