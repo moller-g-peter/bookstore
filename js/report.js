@@ -50,11 +50,17 @@ $(function(){
   });
   
   $('.getReport').submit(function() {
+      
       var year = $('#year').val();
       var month = $("#month").val();
       var dateLog = year + "-" + month;
-      console.log(year, month, dateLog);
+      console.log("year:", year, "month:", month, "date:", dateLog);
       $('.reportDiv').show();
+
+      var reportInput = {};
+      $(this).find("input").not("input[type='submit']").each(function() {
+        reportInput[this.name] = $(this).val();
+      });
 
       $.ajax({
         url:"libs/sql-ajax-json.php",
@@ -62,14 +68,24 @@ $(function(){
         data: {
           sql: "sql/product-questions.sql",
           run: "data for report",
+          isbnLog: JSON.stringify(reportInput["isbnLog"]),
+          dateLog: JSON.stringify(["dateLog"])
+
         },
-        success: console.log("Success for raport-ajax!"),
+        success: function(data) {
+          console.log("Success for raport-ajax!", data);
+          for (var i = 0; i < data.length; i++) {
+            var article = $('<article class="p1"/>');
+            article.append('<h3>Title: ' + '<em>' + data[i].isbnLog + '</em>' + '</h3>');
+            article.append('<h3>Author: ' + '<em>' + data[i].dateLog + '</em>' + '</h3>');
+            $(".reportDiv").append(article);
+          }
+        },
         error: function(data) {
           console.log("Error with the report");
         }
       });
       
-
       return false;
   });
 
