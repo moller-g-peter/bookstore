@@ -74,6 +74,8 @@ $(function(){
 
           $('.resultWindow').html("");
           var resultHtml = $('.resultWindow');
+          console.log(modifyBook);
+
           newPriceResult(modifyBook);
           $('input').val('');
         },
