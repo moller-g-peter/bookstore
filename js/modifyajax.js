@@ -66,9 +66,9 @@ $(function(){
         data: {
           sql: "sql/product-questions.sql",
           run: "modify price",
-          title: JSON.stringify(modifyBook["title"]),
-          salesPrice: JSON.stringify(modifyBook["salesPrice"]),
-          isbn: JSON.stringify(modifyBook["isbn"])
+          title: modifyBook["title"],
+          salesPrice: modifyBook["salesPrice"],
+          isbn: modifyBook["isbn"]
         },
         success: function(data) {
 
@@ -90,7 +90,7 @@ $(function(){
 
         function newPriceResult(modifyBook){
           var resultNewPrice = modifyBook;
-
+          console.log(resultNewPrice);
           // console.log({
           //         sql: "sql/product-questions.sql",
           //         run: "modified price result",
@@ -105,23 +105,21 @@ $(function(){
                 data: {
                   sql: "sql/product-questions.sql",
                   run: "modified price result",
-                  isbn: resultNewPrice["isbn"],
-                  title: resultNewPrice["title"],
-                  salesPrice: resultNewPrice["salesPrice"]
+                  isbn: resultNewPrice["isbn"]
                 },
-                success: function(modifyBook, data) {
+                success: function(modifyBook) {
                   console.log("modifyBook: ", modifyBook);
                   $('.resultWindow').append('<p class="p1">' + 'Price has been successfully updated: ' + '<br>' +
-                    'ISBN number: ' + '<b>' + modifyBook.isbn + '</b><br>' +
-                    'Title: ' + '<b>' + modifyBook.title + '</b><br>' +
+                    'ISBN number: ' + '<b>' + modifyBook[0].isbn + '</b><br>' +
+                    'Title: ' + '<b>' + modifyBook[0].title + '</b><br>' +
                     // 'Previous price: ' + '<b>' + modifyBook.title + '.</b><br>' +
-                    'Current price: ' + '<b>' + modifyBook.salesPrice + '</b><br>'
+                    'Current price: ' + '<b>' + modifyBook[0].salesPrice + '</b><br>'
                    );
                   
                 },
                 error: function(data) {
-                  alert("Fill in all input fields.");
-                  console.log('Data: ', data);
+                  console.log("newPriceResult error: ", data.responseText);
+                  /*alert("Fill in all input fields.");*/
                 }
             });
         }
