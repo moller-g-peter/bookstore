@@ -27,9 +27,6 @@ SELECT users.uid, users.fname, users.lname, users.email FROM users, login WHERE 
 # book input
 INSERT INTO booklist (isbn, title, author, fPrice, amount, shelf) VALUES ({isbn}, {title}, {author}, {fPrice}, {amount}, {shelf});
 
--- # Update price
--- UPDATE booklist SET fPrice = fPrice * 1.8;
-
 # get books by isbn
 SELECT * FROM booklist WHERE isbn={isbn};
 
@@ -57,11 +54,14 @@ INSERT INTO pricelist (isbn, salesPrice) VALUES ({isbn}, {salesPrice});
 # get books by isbn II
 SELECT * FROM books_with_price WHERE isbn={isbn};
 
+
 # data for report
 SELECT * FROM booklog WHERE dateLog LIKE "%{dateLog}%" && isbnLog = {isbnLog};
 
 # earnings
 
+# match isbn
+SELECT * FROM booklist WHERE isbn LIKE "{isbn}%";
 
 
 -- are we using this?? Yes we are, it will -"amount" from booklist and +"amount" to booklog  -> UPDATE booklist SET amount = amount - {amountLog} WHERE isbn = '{isbnLog}';

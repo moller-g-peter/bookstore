@@ -165,7 +165,7 @@ b {
 .report {
   position: absolute;
   top: 1;
-  left: 280px;
+  left: 278px;
 }
 
 form {
@@ -296,6 +296,17 @@ h3 {
   margin-top: -70px;
 }
 
+.customlink h3 {
+  float:right;
+  margin: 10px 20px 0 0;
+  color:#fff;
+  text-shadow: 2px 2px 2px #000;
+  font-family: ABeeZee ;
+  line-height: 1em;
+  color: #ffffff;
+
+
+}
 /*.menuII {
   display: block;
   position: absolute;

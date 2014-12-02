@@ -24,7 +24,6 @@ $(function(){
 		var isbn1 = form.find('#isbn1').val();
 		var grabisbn = form.find('#isbn1');
 		isbnTrue = isbn1.length == 13;
-
 			
 		if (isbnTrue){
 
@@ -51,14 +50,15 @@ $(function(){
 				},
 
 				success: function(data) {
-					
 					grabisbn.removeClass("redInput");
 					// alert("You have succefully stored your data!");
 					$('.resultWindow').append('<p class="p1">' + 'You added: ' + '<b>' + bookInfo.title + '.</b><br>' + 'By author: ' + '<b>' + bookInfo.author + '.</b><br>' + ' Amount added: ' + '<b>' + bookInfo.amount + '.</b>' + '<br>' + 
 							'Added to shelf: ' + '<b>' + bookInfo.shelf + '.<span class="check"> √ </span><div class="clearfix"></div></b><hr>');
+					
 					$('input', '.inputForm').val('');
 					autoPriceInsert(bookInfo, data);
 				},
+				
 				error: function(data) {
 					alert("Fill in all input fields.");
 					}
@@ -93,4 +93,43 @@ $(function(){
 						}
 				});
 		}
+
+
+
+	$('#isbn1').keyup(function(){
+		
+		
+		
+			var scan = $('#isbn1').val();
+
+		// 	$(this).find("input").not("input[type='submit']").each(function() {
+		// 	scan[this.name] = $(this).val();
+		// });
+
+			console.log('scan: ', scan);
+			
+
+			if (scan) {
+				console.log("i if-satsen scan!");
+				$.ajax({
+				url:"libs/sql-ajax-json.php",
+					dataType: "json",
+					data: {
+						sql: "sql/product-questions.sql",
+						run: "match isbn",
+						isbn: parseInt(scan)
+					},
+					success: function(data) {
+						
+						console.log("sucsess!!!!!--> data: ",data);
+						console.log("sucsess scan: ",scan);
+					},
+					error: function(data) {
+						console.log("error data :", data, scan);
+					}
+				});
+				return false;
+			}
+	
+	});
 });

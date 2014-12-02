@@ -15,13 +15,13 @@
 		<script src="js/modifyajax.js"></script>
 	</head>
 	<body>
-	
-		<div class="topNavBar">
+		<header class="topNavBar">
 			<h1></h1>
 			<a href="index.html"><img class="bookStoreLogoII" src="img/Bookstorelogo.jpg" /></a>
 			<a href="index.html"><img class="booksInRow" src="img/bookrow.jpg" /></a>
-		</div>
+		</header>
 
+	<a href="customerhelp.html"><div class="customlink"><h3>Go to Customer Search</div></h3></a>
 		<div class="menu">
 				<div class="reportDiv">
 						<p class="closeReport">X</p>
@@ -35,9 +35,13 @@
 						<li class="report" id="report">Report</li>
 					</div>
 
+
+
 	<!-- This is input feelfs-->
 					<section class="inputFields showinput">
 						<form class="inputForm">
+
+							
 					  		<label for="isbn1">Enter ISBN number for book: </label><br> 
 					  		<input type="text" class="isbn" name="isbn" id="isbn1" maxlength="13" value="" placeholder="Enter ISBN here.." required></label>
 					  		<br>
@@ -82,15 +86,27 @@
 					  		<p><i>The date-information is logged automatically.</i></p>
 					  		<button class="sellbutton" type="submit">Sell</button>
 				  		</form>
-				  		<!-- <form class="minusBooklist">
-				  			<label for="isbnMinus"><ISBN to be minused: <br>
-				  			<input type="text", class="isbnM" name="isbnU" id="isbnMinus" value="" placeholder="ISBN to be removes cus' tis' sold, B."></label>
-				  			<br>
-				  			<label for="amountMinus"><Amount to be minused: <br>
-				  			<input type="number" class="isbnMq" name="amountU" id="amountMinus" value="" placeholder="Amount to removed from stash, pendejo!"></label> <br>
-				  			<button class="amountU" type="submit">Update Stock</button>
-				  		</form> -->
 					</section>
+
+<!-- This is sell feelfs-->
+				<section class="searchFields showsell">
+					<form class="searchForm">
+				  		<label for="isbn2">Search for ISBN: <br> 
+				  		<input type="text" class="isbn" name="isbn" maxlength="13" id="isbn2" value=""  placeholder="Enter ISBN here.." required></label>
+				  		<br>
+				  		<button class="exe" type="submit">search</button>
+				  	</form>
+				  	<form class="makeSale">
+				  		<label for="isbn2">ISBN to sell: <br>
+				  		<input type="number" class="isbn, sellISBN" name="isbnLog" id="isbnLog2" value="" placeholder="Enter ISBN wich will be sold.." required></label> <br>
+				  		<label for="amountLog1">Quantity <br> 
+				  		<input type="number" class="isbn" name="amountLog" id="amountLog1" value=""  placeholder="Enter amount"></label>
+				  		<br>
+				  		<p><i>The date-information is logged automatically.</i></p>
+				  		<button class="sellbutton" type="submit">Sell</button>
+			  		</form>
+				</section>
+
 
 	<!-- This is modifyprice feelfs-->				
 					<section class="modFields showmodPrice">
@@ -154,9 +170,12 @@
 			<div class="result-h2"><h2>Result:</h2><hr></div>
 			<section class="resultWindow">
 				<article>
-					
+					<h3><a href="customerhelp.html"></a></h3>
 				</article>
 			</section>
 		</div>
+
+					<h3><a href="customerhelp.html"></a></h3>
+	
 	</body>
 </html>
