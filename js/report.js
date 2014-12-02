@@ -69,7 +69,7 @@ $(function(){
           sql: "sql/product-questions.sql",
           run: "data for report",
           isbnLog: JSON.stringify(reportInput["isbnLog"]),
-          dateLog: JSON.stringify(["dateLog"])
+          dateLog: JSON.stringify(reportInput["dateLog"])
 
         },
         success: function(data) {
@@ -82,7 +82,7 @@ $(function(){
           }
         },
         error: function(data) {
-          console.log("Error with the report");
+          console.log("Error with the report:", data);
         }
       });
       
