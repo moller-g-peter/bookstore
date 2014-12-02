@@ -47,7 +47,6 @@ body {
   display: none;
 }
 
-
 .customerSearch {
   position: absolute;
   top: 256px;
@@ -59,8 +58,8 @@ body {
 }
 
 .customlink h3:hover {
-  color:#ffff99;
-  text-shadow: 2px 2px #ff0000;
+  color:#fff;
+  text-shadow: -1px 0 #456, 0 1px #456, 1px 0 #456, 0 -1px #456;
 }
 
 .customerSearch h2, .customerSearch form {
