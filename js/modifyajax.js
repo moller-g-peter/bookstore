@@ -66,9 +66,9 @@ $(function(){
         data: {
           sql: "sql/product-questions.sql",
           run: "modify price",
-          title: modifyBook["title"],
-          salesPrice: modifyBook["salesPrice"],
-          isbn: modifyBook["isbn"]
+          title: JSON.stringify(modifyBook["title"]),
+          salesPrice: JSON.stringify(modifyBook["salesPrice"]),
+          isbn: JSON.stringify(modifyBook["isbn"])
         },
         success: function(data) {
 
@@ -86,7 +86,7 @@ $(function(){
     return false;
   });
 
-        function newPriceResult(modifyBook, data){
+        function newPriceResult(modifyBook){
           var resultNewPrice = modifyBook;
 
           // console.log({
@@ -107,7 +107,7 @@ $(function(){
                   title: resultNewPrice["title"],
                   salesPrice: resultNewPrice["salesPrice"]
                 },
-                success: function(modifyBook) {
+                success: function(modifyBook, data) {
                   console.log("modifyBook: ", modifyBook);
                   $('.resultWindow').append('<p class="p1">' + 'Price has been successfully updated: ' + '<br>' +
                     'ISBN number: ' + '<b>' + modifyBook.isbn + '</b><br>' +
@@ -119,6 +119,7 @@ $(function(){
                 },
                 error: function(data) {
                   alert("Fill in all input fields.");
+                  console.log('Data: ', data);
                 }
             });
         }
