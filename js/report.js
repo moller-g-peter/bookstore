@@ -58,10 +58,14 @@ $(function(){
       $('.reportDiv').show();
 
       var reportInput = {};
-      $(this).find("input").not("input[type='submit']").each(function() {
-        reportInput[this.name] = $(this).val();
-      });
+      reportInput["isbnLog"] = $(".ISBNfound").val();
+      reportInput["dateLog"] = dateLog;
 
+      /*$(this).find("input").not("input[type='submit']").each(function() {
+        reportInput[this.name] = $(this).val();
+      });*/
+
+      console.log("reportInput:", reportInput);
       $.ajax({
         url:"libs/sql-ajax-json.php",
         dataType: "json",
@@ -69,20 +73,20 @@ $(function(){
           sql: "sql/product-questions.sql",
           run: "data for report",
           isbnLog: JSON.stringify(reportInput["isbnLog"]),
-          dateLog: JSON.stringify(reportInput["dateLog"])
+          dateLog: reportInput["dateLog"]
 
         },
         success: function(data) {
           console.log("Success for raport-ajax!", data);
           for (var i = 0; i < data.length; i++) {
             var article = $('<article class="p1"/>');
-            article.append('<h3>Title: ' + '<em>' + data[i].isbnLog + '</em>' + '</h3>');
-            article.append('<h3>Author: ' + '<em>' + data[i].dateLog + '</em>' + '</h3>');
+            article.append('<h3>Isbn: ' + '<em>' + data[i].isbnLog + '</em>' + '</h3>');
+            article.append('<h3>Date: ' + '<em>' + data[i].dateLog + '</em>' + '</h3>');
             $(".reportDiv").append(article);
           }
         },
         error: function(data) {
-          console.log("Error with the report:", data);
+          console.log("Error with the report", data);
         }
       });
       
