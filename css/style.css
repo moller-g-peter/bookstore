@@ -44,7 +44,7 @@ body {
 }
 
 .tabWindows section:not(.inputFields) {
-display: none;
+  display: none;
 }
 
 
@@ -56,6 +56,11 @@ display: none;
   padding: 20px;
   border:3px solid #000;
   color:#fff;
+}
+
+.customlink h3:hover {
+  color:#ffff99;
+  text-shadow: 2px 2px #ff0000;
 }
 
 .customerSearch h2, .customerSearch form {
@@ -303,11 +308,5 @@ h3 {
   text-shadow: 2px 2px 2px #000;
   font-family: ABeeZee ;
   line-height: 1em;
-  color: #ffffff;
-
-
 }
-/*.menuII {
-  display: block;
-  position: absolute;
-}*/
+
