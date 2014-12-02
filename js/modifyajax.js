@@ -74,7 +74,7 @@ $(function(){
 
           $('.resultWindow').html("");
           var resultHtml = $('.resultWindow');
-          newPriceResult(modifyBook, data);
+          newPriceResult(modifyBook);
           $('input').val('');
         },
         error: function(data) {
