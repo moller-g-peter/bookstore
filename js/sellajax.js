@@ -127,6 +127,7 @@ $(function(){
     $('#isbn2').keyup(function(){
     $('.option').show();
       var scan = $('#isbn2').val();
+      console.log("keyup scan", scan);
       if (scan) {
         $.ajax({
         url:"libs/sql-ajax-json.php",
