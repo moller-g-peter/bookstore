@@ -1,7 +1,7 @@
 body {
   line-height:140%;
   position: relative;
-  background: url('../img/woodBooks.jpg') no-repeat center center fixed;
+  background: url('../img/woodBooks.jpg') no-repeat  bottom right fixed;
   /*-moz-background-size: cover;*/
   /*-webkit-background-size: cover;*/
   /*-o-background-size: cover;*/
@@ -209,7 +209,7 @@ h3 {
 
 .CheckISBNforReport *, .getReport * {
   display: block;
-  margin: 5px;
+
 }
 
 .reportButton {
