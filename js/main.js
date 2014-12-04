@@ -60,59 +60,58 @@ $(function(){
 				
 				error: function(data) {
 					alert("Fill in all input fields.");
-					}
+				}
 			});
 		}
 		else {
-						$('.resultWindow').append('<p class="error">The isbn is to short<br/><hr/></p> </p>');
-						grabisbn.addClass("redInput");
-					}
+			$('.resultWindow').append('<p class="error">The isbn is to short<br/><hr/></p> </p>');
+			grabisbn.addClass("redInput");
+		}
 		return false;
 	});
-
 
 
 // This is Autu insert salesprice to PRICELIST TABLE
 	function autoPriceInsert(bookInfo, data){
 		var insertAutoPrice = bookInfo;
 
-			$.ajax({
-				url:"libs/sql-ajax-json.php",
-					dataType: "json",
-					data: {
-						sql: "sql/product-questions.sql",
-						run: "price input",
-						isbn: JSON.stringify(insertAutoPrice["isbn"]),
-						salesPrice: JSON.stringify(insertAutoPrice["salesPrice"])
-					},
-					success: function(bookInfo, data) {
-					},
-					error: function(data) {
-						alert("Fill in all input fields.");
-					}
-			});
+		$.ajax({
+			url:"libs/sql-ajax-json.php",
+			dataType: "json",
+			data: {
+				sql: "sql/product-questions.sql",
+				run: "price input",
+				isbn: JSON.stringify(insertAutoPrice["isbn"]),
+				salesPrice: JSON.stringify(insertAutoPrice["salesPrice"])
+			},
+			success: function(bookInfo, data) {
+			},
+			error: function(data) {
+				alert("Fill in all input fields.");
+			}
+		});
 	}
 
 
 
 	$('#isbn1').keyup(function(){
 		$('.option').show();
-			var scan = $('#isbn1').val();
-			if (scan) {
-				$.ajax({
+		var scan = $('#isbn1').val();
+
+		if (scan) {
+			$.ajax({
 				url:"libs/sql-ajax-json.php",
-					dataType: "json",
-					data: {
-						sql: "sql/product-questions.sql",
-						run: "match isbn",
-						isbn: parseInt(scan)
-					},
-					success: function(data) {
+				dataType: "json",
+				data: {
+					sql: "sql/product-questions.sql",
+					run: "match isbn",
+					isbn: parseInt(scan)
+				},
+				success: function(data) {
 
-						
+					$('.option').html("");
+					for (var i = 0; i < data.length; i++) {
 
-						$('.option').html("");
-						for (var i = 0; i < data.length; i++) {
 						$('.option').append('<input class"underme" title="Title: '+ data[i].title + ' &#13 Author: ' + data[i].author + '" id="'+ data[i].isbn + '" type="text" value="'+ data[i].isbn + '" >');
 						var holder = data[i].isbn;
 						var isbnlength = $('#isbn1').val();
@@ -121,43 +120,35 @@ $(function(){
 						$('#author1').val(data[i].author);
 						$('#shelf1').val(data[i].shelf);
 
-						}
-
-						$(".option input[type='text']").click(function() {
-
-							var tree = $(this).val();
-							$('#isbn1').val(tree);
-							$('.option').hide();
-
-							$('#title1').val(data[0].title);
-							$('#author1').val(data[0].author);
-							$('#shelf1').val(data[0].shelf);
-
-						});
-
-						if (data.length === 0) {
-							$('#title1').val('');
-							$('#author1').val('');
-							$('#shelf1').val('');
-						}
-
-					},
-					error: function(data) {
-						console.log("error data :", data, scan);
 					}
 
-				});
-				return false;
-			}
+					$(".option input[type='text']").click(function() {
+
+						var tree = $(this).val();
+						$('#isbn1').val(tree);
+						$('.option').hide();
+
+						$('#title1').val(data[0].title);
+						$('#author1').val(data[0].author);
+						$('#shelf1').val(data[0].shelf);
+
+					});
+
+					if (data.length === 0) {
+						$('#title1').val('');
+						$('#author1').val('');
+						$('#shelf1').val('');
+					}
+
+				},
+				error: function(data) {
+					console.log("error data :", data, scan);
+				}
+
+			});
+			return false;
+		}
 	
 	});
-
-
-
-
-
-
-
-
 
 });
