@@ -116,8 +116,6 @@ $(function(){
 							var inputField = $('<input class"underme" title="Title: '+ data[i].title + ' &#13 Author: ' + data[i].author + '" type="text" value="'+ data[i].isbn + '" >');
 							inputField.data("book", data[i]);
 							$('.option').append(inputField);
-							var holder = data[i].isbn;
-
 
 							$('#title1').val(data[i].title);
 							$('#author1').val(data[i].author);

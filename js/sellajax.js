@@ -123,6 +123,47 @@ $(function(){
       });
       return false;
     });
+  
+    $('#isbn2').keyup(function(){
+    $('.option').show();
+      var scan = $('#isbn2').val();
+      if (scan) {
+        $.ajax({
+        url:"libs/sql-ajax-json.php",
+          dataType: "json",
+          data: {
+            sql: "sql/product-questions.sql",
+            run: "match isbn",
+            isbn: parseInt(scan)
+          },
+          success: function(data) {
+            console.log("success");
+
+            $('.option').html("");
+            for (var i = 0; i < data.length; i++) {
+              var inputField = $('<input class"underme" title="Title: '+ data[i].title + ' &#13 Author: ' + data[i].author + '" type="text" value="'+ data[i].isbn + '" >');
+              inputField.data("book", data[i]);
+              $('.option').append(inputField);
+
+            }
+
+            $(".option input[type='text']").click(function() {
+              var thisBookData = $(this).data("book");
+              // var isbn = $(this).val();
+              $('#isbn2').val(thisBookData.isbn);
+              $('.option').hide();
+            });
+
+          },
+          error: function(data) {
+            console.log("error data :", data, scan);
+          }
+
+        });
+        return false;
+      }
+  
+  });
 
 
 });
