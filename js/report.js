@@ -85,13 +85,13 @@ $(function(){
             article.append('<h3>Date: ' + '<em>' + data[i].dateLog + '</em>' + '</h3>');
             article.append('<h3>Amount: ' + '<em>' + data[i].amountLog + '</em>' + '</h3>');
             article.append('<h3>Earnings/book: ' + '<em>' + data[i].earnings + '</em>' + '</h3>');
-            article.append('<h3>Total Earnings: ' + '<em>' + data[i].totalAmount + '</em>' + '</h3>');
+            article.append('<h3>Earnings in this buy: ' + '<em>' + data[i].totalAmount + '</em>' + '</h3>');
             total += data[i].totalAmount;
             $(".reportDiv").append(article);
             
           }
          
-          $(".reportDiv").append('<h3>Total earnings: ' + total + '</h3');
+          $(".reportDiv").append('<h3 id="totalTotal">Total earnings for this isbn in the time period: ' + total + '</h3');
         },
         error: function(data) {
           console.log("Error with the report", data);
@@ -105,5 +105,50 @@ $(function(){
   $('.closeReport').click(function() {
     $('.reportDiv').hide();
   });
+
+
+  $('#isbn4').keyup(function(){
+    $('.option').show();
+      var scan = $('#isbn4').val();
+      if (scan) {
+        $.ajax({
+        url:"libs/sql-ajax-json.php",
+          dataType: "json",
+          data: {
+            sql: "sql/product-questions.sql",
+            run: "match isbn",
+            isbn: parseInt(scan)
+          },
+          success: function(data) {
+
+            console.log(data);
+            $('.option').html("");
+            for (var i = 0; i < data.length; i++) {
+              var inputField = $('<input class"underme" title="Title: '+ data[i].title + ' &#13 Author: ' + data[i].author + '" type="text" value="'+ data[i].isbn + '" >');
+              inputField.data("book", data[i]);
+              $('.option').append(inputField);
+            }
+
+            $(".option input[type='text']").click(function() {
+              var thisBookData = $(this).data("book");
+              $('#isbn4').val(thisBookData.isbn);
+              $('.option').hide();
+
+            });
+
+          },
+          error: function(data) {
+            console.log("error data :", data, scan);
+          }
+
+        });
+        return false;
+      }
+  
+  });
+
+
+
+
 
 });

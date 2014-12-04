@@ -318,14 +318,12 @@ h3 {
   background-color: #afa;
 }
 
-
 .glass {
   float:right;
   min-height: 65px;
   min-width: 20px;
   margin: 20px 10px ;
   box-shadow: 0 0 30px  8px  #000;
-
 }
 
 #reportResult {
@@ -335,4 +333,8 @@ h3 {
 #reportResult h3 {
   display: inline;
   padding: 5px;
+}
+
+#totalTotal {
+  margin-left: 600px;
 }
