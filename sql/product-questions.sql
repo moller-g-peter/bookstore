@@ -65,7 +65,7 @@ SELECT * FROM books_with_price WHERE isbn={isbn};
 
 
 # data for report
-SELECT * FROM report_data WHERE dateLog LIKE "%{dateLog}%" && isbnLog = {isbnLog};
+SELECT * FROM report_data WHERE dateLog LIKE "{dateLog}%" && isbnLog = {isbnLog};
 
 # match isbn
 SELECT * FROM booklist WHERE isbn LIKE "{isbn}%" LIMIT 10;

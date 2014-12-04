@@ -327,3 +327,12 @@ h3 {
   box-shadow: 0 0 30px  8px  #000;
 
 }
+
+#reportResult {
+  padding-top: 20px;
+}
+
+#reportResult h3 {
+  display: inline;
+  padding: 5px;
+}

@@ -78,12 +78,20 @@ $(function(){
         },
         success: function(data) {
           console.log("Success for raport-ajax!", data);
+          var total = 0;
           for (var i = 0; i < data.length; i++) {
-            var article = $('<article class="p1"/>');
+            var article = $('<article class="p1" id=reportResult/>');
             article.append('<h3>Isbn: ' + '<em>' + data[i].isbnLog + '</em>' + '</h3>');
             article.append('<h3>Date: ' + '<em>' + data[i].dateLog + '</em>' + '</h3>');
+            article.append('<h3>Amount: ' + '<em>' + data[i].amountLog + '</em>' + '</h3>');
+            article.append('<h3>Earnings/book: ' + '<em>' + data[i].earnings + '</em>' + '</h3>');
+            article.append('<h3>Total Earnings: ' + '<em>' + data[i].totalAmount + '</em>' + '</h3>');
+            total += data[i].totalAmount;
             $(".reportDiv").append(article);
+            
           }
+         
+          $(".reportDiv").append('<h3>Total earnings: ' + total + '</h3');
         },
         error: function(data) {
           console.log("Error with the report", data);
