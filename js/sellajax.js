@@ -124,10 +124,9 @@ $(function(){
       return false;
     });
   
-    $('#isbn2').keyup(function(){
+     $('#isbn2').keyup(function(){
     $('.option').show();
       var scan = $('#isbn2').val();
-      console.log("keyup scan", scan);
       if (scan) {
         $.ajax({
         url:"libs/sql-ajax-json.php",
@@ -138,21 +137,20 @@ $(function(){
             isbn: parseInt(scan)
           },
           success: function(data) {
-            console.log("success");
 
+            console.log(data);
             $('.option').html("");
             for (var i = 0; i < data.length; i++) {
               var inputField = $('<input class"underme" title="Title: '+ data[i].title + ' &#13 Author: ' + data[i].author + '" type="text" value="'+ data[i].isbn + '" >');
               inputField.data("book", data[i]);
               $('.option').append(inputField);
-
             }
 
             $(".option input[type='text']").click(function() {
               var thisBookData = $(this).data("book");
-              // var isbn = $(this).val();
               $('#isbn2').val(thisBookData.isbn);
               $('.option').hide();
+
             });
 
           },
