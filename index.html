@@ -76,34 +76,15 @@
 					</section>
 
 <!-- This is sell feelfs-->
-					<section class="searchFields showsell">
-						<form class="searchForm">
-					  		<label for="isbn2">Search for ISBN: <br> 
-					  		<input type="text" class="isbn" name="isbn" maxlength="13" id="isbn2" value=""  placeholder="Enter ISBN here.." required></label>
-					  		<br>
-					  		<button class="exe" type="submit">search</button>
-					  	</form>
-					  	<form class="makeSale">
-					  		<label for="isbnLog2">ISBN to sell: <br>
-					  		<input type="number" class="isbn, sellISBN" name="isbnLog" id="isbnLog2" value="" placeholder="Enter ISBN wich will be sold.." required></label> <br>
-					  		<label for="amountLog1">Quantity <br> 
-					  		<input type="number" class="isbn" name="amountLog" id="amountLog1" value=""  placeholder="Enter amount"></label>
-					  		<br>
-					  		<p><i>The date-information is logged automatically.</i></p>
-					  		<button class="sellbutton" type="submit">Sell</button>
-				  		</form>
-					</section>
-
-<!-- This is sell feelfs-->
 				<section class="searchFields showsell">
 					<form class="searchForm">
 				  		<label for="isbn2">Search for ISBN: <br> 
-				  		<input type="text" class="isbn" name="isbn" maxlength="13" id="isbn2" value=""  placeholder="Enter ISBN here.." required></label>
+				  		<input type="text" class="isbn" name="isbn" maxlength="13" id="isbn2" value="" autocomplete="off" placeholder="Enter ISBN here.." required></label>
 				  		<br>
 				  		<button class="exe" type="submit">search</button>
 				  	</form>
 				  	<form class="makeSale">
-				  		<label for="isbn2">ISBN to sell: <br>
+				  		<label for="isbnLog2">ISBN to sell: <br>
 				  		<input type="number" class="isbn, sellISBN" name="isbnLog" id="isbnLog2" value="" placeholder="Enter ISBN wich will be sold.." required></label> <br>
 				  		<label for="amountLog1">Quantity <br> 
 				  		<input type="number" class="isbn" name="amountLog" id="amountLog1" value=""  placeholder="Enter amount"></label>
@@ -113,12 +94,11 @@
 			  		</form>
 				</section>
 
-
 	<!-- This is modifyprice feelfs-->				
 					<section class="modFields showmodPrice">
 						<form class="updateForm">
 							<label for="isbn3">Enter ISBN</label>
-							<input type="text" class="isbn" name="isbn" id="isbn3" maxlength="13" placeholder="Enter ISBN here.." required>
+							<input type="text" class="isbn" name="isbn" id="isbn3" autocomplete="off" maxlength="13" placeholder="Enter ISBN here.." required>
 							<button class="searchUpdate" type="submit">Search ISBN</button><br>
 						</form>
 						<form class="updateFormModify">
@@ -136,7 +116,7 @@
 						<form class="CheckISBNforReport">
 							<p>Enter the ISBN to check if it exists in the shop.</p>
 							<label for="isbn4"></label>
-							<input type="text" placeholder="Enter ISBN" class="isbn22" name="isbn" maxlength="13" id="isbn4" required>
+							<input type="text" placeholder="Enter ISBN" autocomplete="off" class="isbn22" name="isbn" maxlength="13" id="isbn4" required>
 							<button type="submit">Find ISBN!</button>
 						</form>
 						<form class="getReport">
