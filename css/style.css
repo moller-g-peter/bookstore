@@ -8,12 +8,7 @@ body {
   /*background-size: cover;*/
 }
 
-.bookStoreLogoII {
-  display: inline-block;
-  width: 350px;
-  z-index: 10;
-}
-
+/*Right img in header*/
 .booksInRow {
   position: absolute;
   display: inline-block;
@@ -22,16 +17,26 @@ body {
   padding: 0 3px;
 }
 
+/*Left img in header*/
+.bookStoreLogoII {
+  display: inline-block;
+  width: 350px;
+  z-index: 10;
+}
+
+/*Header*/
 .topNavBar {
   background-color:#876;
   padding:10px 0 0 10px;
   border-bottom: 2px solid #000;
 }
 
+/*Every other child in resultbox has a different color*/
 .resultWindow .p1:nth-child(even) {
   background-color: #789;
 }
 
+/*Positions of the tab content boxes*/
 .inputFields, .searchFields, .showmodPrice, .reportFields {
   position: absolute;
   top: 190px;
@@ -43,29 +48,18 @@ body {
   color:#fff;
 }
 
+/*To start with, .inputfields is the only one of the content boxes that displays*/
 .tabWindows section:not(.inputFields) {
   display: none;
 }
 
-.customerSearch {
-  position: absolute;
-  top: 253px;
-  left: 40px;
-  background-color:#456;
-  padding: 20px;
-  border:3px solid #000;
-  color:#fff;
-}
-
+/*Link to the other page in the project*/
 .customlink h3:hover {
   color:#fff;
   text-shadow: -1px 0 #aaa, 0 1px #aaa, 1px 0 #aaa, 0 -1px #aaa;
 }
 
-.customerSearch h2, .customerSearch form {
-  padding: 5px;
-}
-
+/*All inputs of type: text+number*/
 input[type="text"], input[type="number"] {
   width: 250px;
   height: 25px;
@@ -73,6 +67,7 @@ input[type="text"], input[type="number"] {
   margin-bottom: 15px;
 }
 
+/*Div that prints result/answer to an interaction*/
 .resultWindow {
   background-color: #89a;
   min-height: 80px;
@@ -83,15 +78,13 @@ input[type="text"], input[type="number"] {
   padding: 55px 0 10px 0;
 }
 
-.customerResult {
-  margin-left: 620px;
-}
-
+/*Styling for different buttons*/
 .exe, .updateButton {
   cursor: pointer;
   font-weight: bold;
 }
 
+/*Styling for the sell-tab-button*/
 .sellbutton{
   cursor: pointer;
   font-weight: bold;
@@ -99,6 +92,7 @@ input[type="text"], input[type="number"] {
   margin-top:20px;
 }
 
+/*Styles all div's inside of an ul*/
 ul div {
   position: absolute;
   top: 145px;
@@ -107,6 +101,7 @@ ul div {
   z-index: 10;
 }
 
+/*In js we add this to the current tab*/
 .activated {
   cursor: pointer;
   display: inline-block;
@@ -121,6 +116,7 @@ ul div {
   padding: 10px 20px;
 }
 
+/*In js we add this to all tabs you're not currently at*/
 .notactivated {
   cursor: pointer;
   display: inline-block;
@@ -140,9 +136,11 @@ ul div {
    background-color:#567;
 }
 
+/*Added to some of the text*/
 b {
   font-weight: bold;
 }
+
 
 .input {
   position: absolute;
@@ -154,10 +152,6 @@ b {
   position: absolute;
   top: 1;
   left: 87px;
-}
-
-b {
-  font-weight: bold;
 }
 
 .modPrice {
@@ -337,4 +331,25 @@ h3 {
 
 #totalTotal {
   margin-left: 600px;
+}
+
+/*Section for the customer to enter data in customerhelp.html*/
+.customerSearch {
+  position: absolute;
+  top: 253px;
+  left: 40px;
+  background-color:#456;
+  padding: 20px;
+  border:3px solid #000;
+  color:#fff;
+}
+
+/*In the box in the customerhelp.html*/
+.customerSearch h2, .customerSearch form {
+  padding: 5px;
+}
+
+/*Box that shows the result of the customer search*/
+.customerResult {
+  margin-left: 620px;
 }

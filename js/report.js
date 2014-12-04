@@ -49,61 +49,69 @@ $(function(){
     return false;
   });
   
-  $('.getReport').submit(function() {
-      
-      var year = $('#year').val();
-      var month = $("#month").val();
-      var dateLog = year + "-" + month;
-      console.log("year:", year, "month:", month, "date:", dateLog);
-      $('.reportDiv').show();
-
-      var reportInput = {};
-      reportInput["isbnLog"] = $(".ISBNfound").val();
-      reportInput["dateLog"] = dateLog;
-
-      /*$(this).find("input").not("input[type='submit']").each(function() {
-        reportInput[this.name] = $(this).val();
-      });*/
-
-      console.log("reportInput:", reportInput);
-      $.ajax({
-        url:"libs/sql-ajax-json.php",
-        dataType: "json",
-        data: {
-          sql: "sql/product-questions.sql",
-          run: "data for report",
-          isbnLog: JSON.stringify(reportInput["isbnLog"]),
-          dateLog: reportInput["dateLog"]
-
-        },
-        success: function(data) {
-          console.log("Success for raport-ajax!", data);
-          var total = 0;
-          for (var i = 0; i < data.length; i++) {
-            var article = $('<article class="p1" id=reportResult/>');
-            article.append('<h3>Isbn: ' + '<em>' + data[i].isbnLog + '</em>' + '</h3>');
-            article.append('<h3>Date: ' + '<em>' + data[i].dateLog + '</em>' + '</h3>');
-            article.append('<h3>Amount: ' + '<em>' + data[i].amountLog + '</em>' + '</h3>');
-            article.append('<h3>Earnings/book: ' + '<em>' + data[i].earnings + '</em>' + '</h3>');
-            article.append('<h3>Earnings in this buy: ' + '<em>' + data[i].totalAmount + '</em>' + '</h3>');
-            total += data[i].totalAmount;
-            $(".reportDiv").append(article);
+        $('.getReport').submit(function() {
             
-          }
-         
-          $(".reportDiv").append('<h3 id="totalTotal">Total earnings for this isbn in the time period: ' + total + '</h3');
-        },
-        error: function(data) {
-          console.log("Error with the report", data);
-        }
-      });
-      
-      return false;
-  });
+            var year = $('#year').val();
+            var month = $("#month").val();
+            var dateLog = year + "-" + month;
+            console.log("year:", year, "month:", month, "date:", dateLog);
+            $('.reportDiv').show();
+
+            var reportInput = {};
+            reportInput["isbnLog"] = $(".ISBNfound").val();
+            reportInput["dateLog"] = dateLog;
+
+            /*$(this).find("input").not("input[type='submit']").each(function() {
+              reportInput[this.name] = $(this).val();
+            });*/
+
+            var runCommand = "data for report";
+
+            if (!reportInput["isbnLog"]) {
+              runCommand = "simple data for report";
+            }
+
+            console.log("reportInput:", reportInput);
+              $.ajax({
+                url:"libs/sql-ajax-json.php",
+                dataType: "json",
+                data: {
+                  sql: "sql/product-questions.sql",
+                  run: runCommand,
+                  isbnLog: JSON.stringify(reportInput["isbnLog"]),
+                  dateLog: reportInput["dateLog"]
+
+              },
+              success: function(data) {
+                console.log("Success for raport-ajax!", data);
+                var total = 0;
+                for (var i = 0; i < data.length; i++) {
+                  var article = $('<article class="p1" id=reportResult/>');
+                  article.append('<h3>Isbn: ' + '<em>' + data[i].isbnLog + '</em>' + '</h3>');
+                  article.append('<h3>Date: ' + '<em>' + data[i].dateLog + '</em>' + '</h3>');
+                  article.append('<h3>Amount: ' + '<em>' + data[i].amountLog + '</em>' + '</h3>');
+                  article.append('<h3>Earnings/book: ' + '<em>' + data[i].earnings + '</em>' + '</h3>');
+                  article.append('<h3>Earnings in this buy: ' + '<em>' + data[i].totalAmount + '</em>' + '</h3>');
+                  total += data[i].totalAmount;
+                  $(".reportDiv").append(article);
+                  
+                }
+               
+                $(".reportDiv").append('<h3 id="totalTotal">Total earnings for this isbn in the time period: ' + total + '</h3');
+              },
+              error: function(data) {
+                console.log("Error with the report", data);
+              }
+            });
+            
+            return false;
+        });
 
   //When you click the 'X' - the div hides.
   $('.closeReport').click(function() {
+    $("#totalTotal, .p1").remove();
     $('.reportDiv').hide();
+    
   });
 
 
