@@ -14,7 +14,7 @@ $(function(){
 				dataType: "json",
 				data: {
 					sql: "sql/product-questions.sql",
-					run: "get books by isbn",
+					run: "get info for customer by isbn",
 					isbn: JSON.stringify(customerSearch["customerInput"])
 				},
 				success: function(data) {
@@ -52,7 +52,7 @@ $(function(){
 				dataType: "json",
 				data: {
 					sql: "sql/product-questions.sql",
-					run: "get books by title",
+					run: "get info for customer by title",
 					title: JSON.stringify(customerSearch["customerInput"])
 				},
 				success: function(data) {
@@ -90,7 +90,7 @@ $(function(){
 				dataType: "json",
 				data: {
 					sql: "sql/product-questions.sql",
-					run: "get books by author",
+					run: "get info for customer by author",
 					author: JSON.stringify(customerSearch["customerInput"])
 				},
 				success: function(data) {

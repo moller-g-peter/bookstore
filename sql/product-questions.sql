@@ -30,11 +30,20 @@ INSERT INTO booklist (isbn, title, author, fPrice, amount, shelf) VALUES ({isbn}
 # get books by isbn
 SELECT * FROM booklist WHERE isbn={isbn};
 
+#get info for customer by isbn
+SELECT * FROM customer_info where isbn={isbn};
+
 # get books by title
 SELECT * FROM booklist WHERE title={title};
 
+#get info for customer by title
+SELECT * FROM customer_info where title={title};
+
 # get books by author
 SELECT * FROM booklist WHERE author={author};
+
+#get info for customer by author
+SELECT * FROM customer_info where author={author};
 
 # update books
 INSERT INTO booklog (isbnLog, amountLog) VALUES ({isbnLog}, {amountLog});
@@ -56,9 +65,7 @@ SELECT * FROM books_with_price WHERE isbn={isbn};
 
 
 # data for report
-SELECT * FROM booklog WHERE dateLog LIKE "%{dateLog}%" && isbnLog = {isbnLog};
-
-# earnings
+SELECT * FROM report_data WHERE dateLog LIKE "%{dateLog}%" && isbnLog = {isbnLog};
 
 # match isbn
 SELECT * FROM booklist WHERE isbn LIKE "{isbn}%" LIMIT 10;
