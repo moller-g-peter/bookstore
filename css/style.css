@@ -320,6 +320,12 @@ h3 {
   box-shadow: 0 0 30px  8px  #000;
 }
 
+.glass:active {
+  margin-right:7px;
+  margin-top: 17px;
+  border: 3px solid #000;
+}
+
 #reportResult {
   padding-top: 20px;
 }
