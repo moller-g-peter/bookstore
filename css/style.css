@@ -8,6 +8,26 @@ body {
   /*background-size: cover;*/
 }
 
+/*All forms*/
+form {
+  padding: 35px;
+}
+
+h3 {
+  margin:10px 0 0 0;
+  font-weight: bold;
+  font-size: 20px;
+  color:#000;
+}
+
+/*Tag around some of the text with the answers from the DB*/
+em {
+  text-decoration: underline;
+  font-size:20px;
+  font-weight: bold;
+  color:#642;
+}
+
 /*Right img in header*/
 .booksInRow {
   position: absolute;
@@ -30,6 +50,13 @@ body {
   padding:10px 0 0 10px;
   border-bottom: 2px solid #000;
 }
+
+.menu {
+  display: block;
+  position: absolute;
+  margin-top: -70px;
+}
+
 
 /*Every other child in resultbox has a different color*/
 .resultWindow .p1:nth-child(even) {
@@ -141,56 +168,51 @@ b {
   font-weight: bold;
 }
 
-
+/*Positions tab no. 1*/
 .input {
   position: absolute;
   top: 0;
   left:0;
 }
 
+/*Positions tab no.2*/
 .sell{
   position: absolute;
   top: 1;
   left: 87px;
 }
 
+/*Positions tab no.3*/
 .modPrice {
   position: absolute;
   top: 1;
   left: 161px;
 }
 
+/*Positions tab no.4*/
 .report {
   position: absolute;
   top: 1;
   left: 278px;
 }
 
-form {
-  padding: 35px;
-}
-
+/*Class of some articles contaioning answers from the DB*/
 .p1 {
   font-size: 18px;
   padding: 5px 12px;
 }
 
+/*button in the Mod-price-box*/
 .modFields button {
   margin-top: 10px;
 }
 
+/*Elements in the ModPrice- and Report-box*/
 .modFields input, .reportFields button {
   display: inline-block;
 }
 
-em {
-  text-decoration: underline;
-  font-size:20px;
-  font-weight: bold;
-  color:#642;
-
-}
-
+/*Error message in the resultbox*/
 .error {
   margin-left:20px;
   padding-top:5px;
@@ -199,38 +221,31 @@ em {
   font-weight: bold;
 }
 
-h3 {
-  margin:10px 0 0 0;
-  font-weight: bold;
-  font-size: 20px;
-  color:#000;
+/*First form in report-box*/
+.CheckISBNforReport {
+  margin-bottom: 15px;
 }
 
-
+/*All children of both form in report-box*/
 .CheckISBNforReport *, .getReport * {
   display: block;
 
 }
 
-.reportButton {
-  margin-bottom: 20px;
-}
-
+/*Animation between forms*/
 .transform {
   -webkit-animation-name:inputText;
   -webkit-animation-duration:1s;
 }
 
+/*Animation between forms*/
 @-webkit-keyframes inputText {
   from{-webkit-transform:translateY(-160px);}
   to{-webkit-transform:translateY(0px)}
 }
 
-.CheckISBNforReport {
-  margin-bottom: 15px;
-}
-
- .result-h2 {
+/*Heading over result-box*/
+.result-h2 {
   position:absolute;
   z-index: 2;
   width: 620px;
@@ -243,14 +258,17 @@ h3 {
   text-shadow: 1px 1px 1px #404040;
 }
 
+/*A hidden input*/
 #transportISBN {
   display: none;
 }
 
+/*Symbolizes wrongly entered data in input*/
 .redInput {
   background-color:#b33;
 }
 
+/*For the 'check'-symbol in the input-tab*/
 .check {
   display:block;
   float:right;
@@ -259,10 +277,13 @@ h3 {
   font-weight: bold;
   text-shadow: 0 0 15px #0f0;  
 }
+
+/*Beneath the 'check'-symbol in the input-tab*/
 .clearfix {
   clear: both;
 }
 
+/*Shows only when you demanded a report - contains the report*/
 .reportDiv {
   width: 99vw;
   height: 85vh;
@@ -272,6 +293,7 @@ h3 {
   z-index: 20;
 }
 
+/*A 'close'-symbol in the reportDiv*/
 .closeReport {
   float: right;
   padding: 10px;
@@ -280,20 +302,31 @@ h3 {
   font-size: 30px;
 }
 
-.minusBooklist {
-  margin-top: -60px;
+/*Inside of reportDiv*/
+#reportResult {
+  padding-top: 20px;
 }
 
-.amountU {
-  cursor: pointer;
+#reportResult h3 {
+  display: inline;
+  padding: 5px;
 }
 
-.menu {
-  display: block;
-  position: absolute;
-  margin-top: -70px;
+/*Inside of reportDiv*/
+#totalTotal {
+  margin-left: 600px;
 }
 
+/*Link*/
+.glass {
+  float:right;
+  min-height: 65px;
+  min-width: 20px;
+  margin: 20px 10px ;
+  box-shadow: 0 0 30px  8px  #000;
+}
+
+/*Styling of link*/
 .customlink h3 {
   padding: 10px;
   color:#fff;
@@ -301,6 +334,7 @@ h3 {
   color: #ffffff;
 }
 
+/*Autocomplete-div*/
 .option {
     margin-top: 124px;
     margin-left: 313px;
@@ -312,6 +346,7 @@ h3 {
   background-color: #afa;
 }
 
+<<<<<<< Updated upstream
 .glass {
   float:right;
   min-height: 65px;
@@ -359,18 +394,6 @@ h3 {
 .customerResult {
   margin-left: 620px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 .passwordMand {
   /*position: absolute;*/
