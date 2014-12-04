@@ -1,5 +1,7 @@
 $(function(){
 
+	$(".passwordMand").hide();
+
 	$('.customerForm').submit(function() {
 		var customerSearch = {};
 
@@ -128,6 +130,57 @@ $(function(){
     return false;
  
 	});
+
+
+		$('.customlink').click(function() {
+			$(".passwordMand").show();
+			console.log("success I");
+			return false;
+		});
+
+		$('.passwordMand').submit(function() {
+			var userLogin = {};
+			console.log("success II");
+    $(this).find("input").not("input[type='submit']").each(function() {
+      userLogin[this.name] = $(this).val();
+      console.log("userLogin: ", userLogin);
+    });
+
+    $.ajax({
+      url:"libs/sql-ajax-json.php",
+        dataType: "json",
+        data: {
+          sql: "sql/product-questions.sql",
+          run: "get user login",
+          userID: userLogin["userID"],
+          userPWD: userLogin["userPWD"]
+        },
+        success: function(data) {
+        	if(data.length){
+        		// console.log("success III: ", data);
+        		var currUrl = window.location.href;
+        		// console.log("currUrl: ", currUrl);
+        		var filename = currUrl.substring(currUrl.lastIndexOf('/')+1);
+        		// console.log("filename: ", filename);
+        		var newUrl = currUrl.replace(filename, "");
+        		// console.log("newUrl: ", newUrl);
+        		window.location.href = newUrl;
+        		alert("You logged in successfully.");
+        	} else {
+        		console.log("failure III: ", data);
+        		alert("User ID or password is wrong.");
+        	}
+	        console.log("success IV");
+	        $(".loginResult").show();
+        },
+        error: function(data) {
+          // console.log("userLogin: ", userLogin);
+          console.log("error: ", data);
+
+        }
+    });
+    return false;
+  });
 });
 
 

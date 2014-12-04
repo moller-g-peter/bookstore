@@ -353,3 +353,24 @@ h3 {
 .customerResult {
   margin-left: 620px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+.passwordMand {
+  /*position: absolute;*/
+  display: block;
+  width: 500px;
+  height: 60px;
+  background-color: red;
+  float: right;
+}

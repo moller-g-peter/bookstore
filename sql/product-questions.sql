@@ -63,12 +63,13 @@ INSERT INTO pricelist (isbn, salesPrice) VALUES ({isbn}, {salesPrice});
 # get books by isbn II
 SELECT * FROM books_with_price WHERE isbn={isbn};
 
-
 # data for report
 SELECT * FROM report_data WHERE dateLog LIKE "{dateLog}%" && isbnLog = {isbnLog};
 
 # match isbn
 SELECT * FROM booklist WHERE isbn LIKE "{isbn}%" LIMIT 10;
 
+# get user login
+SELECT * FROM userlogin WHERE userID="{userID}" AND userPWD="{userPWD}";
 
 -- are we using this?? Yes we are, it will -"amount" from booklist and +"amount" to booklog  -> UPDATE booklist SET amount = amount - {amountLog} WHERE isbn = '{isbnLog}';
