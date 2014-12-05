@@ -64,9 +64,9 @@ $(function(){
 			});
 		}
 		else {
-						$('.resultWindow').append('<p class="error">The isbn is to short<br/><hr/></p> </p>');
-						grabisbn.addClass("redInput");
-					}
+			$('.resultWindow').append('<p class="error">The isbn is to short<br/><hr/></p> </p>');
+			grabisbn.addClass("redInput");
+		}
 		return false;
 	});
 
@@ -151,13 +151,5 @@ $(function(){
 			}
 	
 	});
-
-
-
-
-
-
-
-
 
 });
