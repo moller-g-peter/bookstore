@@ -1,7 +1,11 @@
+// This file contains functions concerning the customer-page
+
 $(function(){
 
 	$(".passwordMand").hide();
 
+	//This function is used when the customer searches for a book.
+	//If-else if-else for different data types isbn/title/author
 	$('.customerForm').submit(function() {
 		var customerSearch = {};
 
@@ -24,7 +28,6 @@ $(function(){
 					var resultHtml = $('.resultWindow');
 					console.log("Add customerSearch success data: ", data);
 
-					//Observera att sales price inte kommer fram rätt än pga. att det inte matas in i kolumnen rätt just nu
 					for (var i = 0; i < data.length; i++) {
 						var article = $('<article class="p1"/>');
 						article.append('<h3>ISBN: ' + '<em>' + data[i].isbn + '</em>' + '</h3>');
