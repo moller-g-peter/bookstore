@@ -1,7 +1,4 @@
 $(function(){
-
-  $('.isbnM').hide();
-  $('.isbnMq').hide();
    
   //Denna funktion söker via ajax i databasen på ett isbn nummer och skickar tillbaka valda värden tex price och title..
   $('.searchForm').submit(function() {
