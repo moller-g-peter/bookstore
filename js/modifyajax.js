@@ -1,6 +1,6 @@
 $(function(){
    
-  //Denna funktion söker via ajax i databasen på ett isbn nummer och skickar tillbaka valda värden tex price och title..
+   //This function searches via ajax in the database on an isbn number and sends back values like price and title
   $('.updateForm').submit(function() {
     var form = $('form');
     var grabisbn = form.find('#isbn3');
@@ -38,15 +38,6 @@ $(function(){
             grabisbn.addClass("redInput");
             $('.resultWindow').append("<p class='error'>The isbn number your looking for is not found or to short<br/><hr/></p>");
           }
-          if (bookInfo.isbn.length == 13 && data.length){
-            
-            // 
-
-            // $(".sellISBN").addClass("transform").val(bookInfo.isbn).delay(1000).queue(function(next){
-            // $(this).removeClass("transform");
-            //   next();
-            // });
-          }
         },
         error: function(data) {
           alert("Error: Fill in all input fields.");
@@ -55,6 +46,7 @@ $(function(){
     return false;
   });
 
+  //This function handles the info entered in the "enter new price"-form 
   $('.updateFormModify').submit(function() {
     var modifyBook = {};
     $(this).find("input").not("input[type='submit']").each(function() {
@@ -88,16 +80,10 @@ $(function(){
     return false;
   });
 
+        // If success in changing the price, this function prints out the result 
         function newPriceResult(modifyBook){
           var resultNewPrice = modifyBook;
           console.log(resultNewPrice);
-          // console.log({
-          //         sql: "sql/product-questions.sql",
-          //         run: "modified price result",
-          //         isbn: resultNewPrice["isbn"],
-          //         title: resultNewPrice["title"],
-          //         salesPrice: resultNewPrice["salesPrice"]
-          //       });
 
             $.ajax({
               url:"libs/sql-ajax-json.php",
@@ -124,7 +110,7 @@ $(function(){
             });
         }
 
-        
+    //Handles the auto complete of the isbn-field
     $('#isbn3').keyup(function(){
     $('.option').show();
       var scan = $('#isbn3').val();

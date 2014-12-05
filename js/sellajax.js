@@ -1,12 +1,12 @@
 $(function(){
-   
-  //Denna funktion söker via ajax i databasen på ett isbn nummer och skickar tillbaka valda värden tex price och title..
+ 
+  //This function searches via ajax in the data base on an ISBN number and sends back results like price and title 
   $('.searchForm').submit(function() {
     var form = $('form');
     var grabisbn = form.find('#isbn2');
     var bookInfo = {};
 
-
+    //This function makes sure the isbn you want to sell exists in the DB
     $(this).find("input").not("input[type='submit']").each(function() {
       bookInfo[this.name] = $(this).val();
     });
@@ -36,7 +36,7 @@ $(function(){
             resultHtml.append(article);
             //Moving the ISBN nomber down with animation by adding a class
           
-            // add data[i].isbn to the hidden form
+            //Add data[i].isbn to the hidden form
             $('.isbnM').val(data[i].isbn);
           }
           
@@ -58,6 +58,7 @@ $(function(){
     return false;
   });
 
+  //This function sends the sale-info to tables in 
   $('.makeSale').submit(function() {
     var sellBook = {};
     $(this).find("input").not("input[type='submit']").each(function() {

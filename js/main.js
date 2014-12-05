@@ -18,6 +18,8 @@ $(function(){
 		$(this).addClass("activated");
 	});
 
+
+	////This function is used when the staff enters a new delivery in the form.
 	$('.inputForm').submit(function() {
 		var isbnTrue = true;
 		var form = $('form');
@@ -51,7 +53,6 @@ $(function(){
 
 				success: function(data) {
 					grabisbn.removeClass("redInput");
-					// alert("You have succefully stored your data!");
 					$('.resultWindow').append('<p class="p1">' + 'You added: ' + '<b>' + bookInfo.title + '.</b><br>' + 'By author: ' + '<b>' + bookInfo.author + '.</b><br>' + ' Amount added: ' + '<b>' + bookInfo.amount + '.</b>' + '<br>' + 
 							'Added to shelf: ' + '<b>' + bookInfo.shelf + '.<span class="check"> √ </span><div class="clearfix"></div></b><hr>');
 					$('input', '.inputForm').val('');
@@ -72,7 +73,7 @@ $(function(){
 
 
 
-// This is Autu insert salesprice to PRICELIST TABLE
+// This is Auto insert salesprice to PRICELIST TABLE
 	function autoPriceInsert(bookInfo, data){
 		var insertAutoPrice = bookInfo;
 
@@ -94,7 +95,7 @@ $(function(){
 	}
 
 
-
+	//This covers the auto-complete of the input-tab
 	$('#isbn1').keyup(function(){
 		$('.option').show();
 			var scan = $('#isbn1').val();
@@ -108,9 +109,6 @@ $(function(){
 						isbn: parseInt(scan)
 					},
 					success: function(data) {
-
-						
-
 						$('.option').html("");
 						for (var i = 0; i < data.length; i++) {
 							var inputField = $('<input class"underme" title="Title: '+ data[i].title + ' &#13 Author: ' + data[i].author + '" type="text" value="'+ data[i].isbn + '" >');
@@ -151,5 +149,4 @@ $(function(){
 			}
 	
 	});
-
 });

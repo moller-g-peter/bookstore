@@ -1,5 +1,6 @@
 $(function(){
 
+  //This function makes sure the ISBN you're looking for exists in the DB
   $('.CheckISBNforReport').submit(function() {
     var form = $('form');
     var grabisbn = form.find('#isbn4');
@@ -49,6 +50,7 @@ $(function(){
     return false;
   });
   
+        // This function fetches the data for the report depending on the criteries entered
         $('.getReport').submit(function() {
             
             var year = $('#year').val();
@@ -60,10 +62,6 @@ $(function(){
             var reportInput = {};
             reportInput["isbnLog"] = $(".ISBNfound").val();
             reportInput["dateLog"] = dateLog;
-
-            /*$(this).find("input").not("input[type='submit']").each(function() {
-              reportInput[this.name] = $(this).val();
-            });*/
 
             var runCommand = "data for report";
 
@@ -114,7 +112,7 @@ $(function(){
     
   });
 
-
+  //This function handles the auto complete of the isbn-field
   $('#isbn4').keyup(function(){
     $('.option').show();
       var scan = $('#isbn4').val();
@@ -154,9 +152,4 @@ $(function(){
       }
   
   });
-
-
-
-
-
 });
