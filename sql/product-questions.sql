@@ -74,5 +74,3 @@ SELECT * FROM booklist WHERE isbn LIKE "{isbn}%" LIMIT 10;
 
 # get user login
 SELECT * FROM userlogin WHERE userID="{userID}" AND userPWD="{userPWD}";
-
--- are we using this?? Yes we are, it will -"amount" from booklist and +"amount" to booklog  -> UPDATE booklist SET amount = amount - {amountLog} WHERE isbn = '{isbnLog}';

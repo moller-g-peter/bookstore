@@ -55,6 +55,7 @@ $(function(){
     });
   }
 
+    //Handles the auto complete of the isbn-field
     $('#isbn3').keyup(function(){
     $('.option').show();
       var scan = $('#isbn3').val();
