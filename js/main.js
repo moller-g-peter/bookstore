@@ -129,6 +129,8 @@ $(function(){
 							$('#title1').val(thisBookData.title);
 							$('#author1').val(thisBookData.author);
 							$('#shelf1').val(thisBookData.shelf);
+							$('#fPrice1').val(thisBookData.fPrice);
+
 							$('.option').hide();
 
 						});

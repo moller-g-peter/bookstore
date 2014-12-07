@@ -25,7 +25,7 @@ INSERT INTO login (email, password) VALUES ({email}, {password});
 SELECT users.uid, users.fname, users.lname, users.email FROM users, login WHERE login.email={email} AND login.password={password} AND users.email=login.email;
 
 # book input
-INSERT INTO booklist (isbn, title, author, fPrice, amount, shelf) VALUES({isbn}, {title}, {author}, {fPrice}, {amount}, {shelf}) ON DUPLICATE KEY UPDATE amount = amount + {amount};
+INSERT INTO booklist (isbn, title, author, fPrice, amount, shelf) VALUES({isbn}, {title}, {author}, {fPrice}, {amount}, {shelf}) ON DUPLICATE KEY UPDATE amount = amount + {amount}, fPrice = {fPrice};
 
 # get books by isbn
 SELECT * FROM booklist WHERE isbn={isbn};
