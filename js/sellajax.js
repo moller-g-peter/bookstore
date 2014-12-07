@@ -23,8 +23,7 @@ $(function(){
           grabisbn.removeClass("redInput");
           $('.resultWindow').html("");
           var resultHtml = $('.resultWindow');
-          console.log("Add bookInfo success data: ", data);
-          // alert("You have succefully stored your data!");
+
           for (var i = 0; i < data.length; i++) {
             var article = $('<article class="p1"/>');
             article.append('<h3>Title: ' + '<em>' + data[i].title + '</em>' + '</h3>');
@@ -76,7 +75,6 @@ $(function(){
         success: function(data) {
           $('.resultWindow').html("");
           var resultHtml = $('.resultWindow');
-          console.log("Add sellBook success data: ", data, sellBook);
           $('.isbnMq').val(sellBook.amountLog);
           // alert("You have succefully stored your data!");
           var article = $('<article class="p1"/>');
@@ -84,7 +82,6 @@ $(function(){
           resultHtml.append(article);
         },
         error: function(data) {
-          console.log("error: ", data);
           $('.resultWindow').append("<p>The isbn number your looking for is undefined..<br/><hr/></p>");
         }
     });
@@ -94,7 +91,6 @@ $(function(){
   $('.makeSale').submit(function() {
 
     var updateBooklist = {};
-
       $(this).find("input").not("input[type='submit']").each(function() {
         updateBooklist[this.name] = $(this).val();
       });
@@ -109,14 +105,13 @@ $(function(){
             amountLog: JSON.stringify(updateBooklist["amountLog"])
           },
           success: function(data) {
-            console.log('Success: ', data, updateBooklist);
             var resultHtml = $('.resultWindow');
             var article = $('<article class="p1"/>');
             article.append('<h2>' + 'Book with ISBN: ' + updateBooklist.isbnLog +  ". " + 'Amount of copies with this ISBN removed from booklistDB: ' + updateBooklist.amountLog + '.' + '</h2>');
             resultHtml.append(article);
           },
           error: function(data) {
-            console.log('Error: ', data);
+            alert('error');
           }
       });
       return false;
@@ -136,7 +131,6 @@ $(function(){
           },
           success: function(data) {
 
-            console.log(data);
             $('.option').html("");
             for (var i = 0; i < data.length; i++) {
               var inputField = $('<input class"underme" title="Title: '+ data[i].title + ' &#13 Author: ' + data[i].author + '" type="text" value="'+ data[i].isbn + '" >');
@@ -153,7 +147,7 @@ $(function(){
 
           },
           error: function(data) {
-            console.log("error data :", data, scan);
+            alert('error');
           }
 
         });

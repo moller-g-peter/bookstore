@@ -12,7 +12,6 @@ $(function(){
       $(this).find("input[type='text']").each(function() {
 			customerSearch[this.name] = $(this).val();
 		});
-      console.log("Value of the chosen radiobutton:", $("input[name=choice]:checked").val());
 		
 		if (($("input[name=choice]:checked").val()) == ("isbn")) {
 			$.ajax({
@@ -26,7 +25,6 @@ $(function(){
 				success: function(data) {
 					$('.resultWindow').html("");
 					var resultHtml = $('.resultWindow');
-					console.log("Add customerSearch success data: ", data);
 
 					for (var i = 0; i < data.length; i++) {
 						var article = $('<article class="p1"/>');
@@ -42,7 +40,7 @@ $(function(){
 
 					}
 					if (!data.length){
-					$('.resultWindow').append("<p class='error'>We can't find that book in the system!<br/><hr/></p>");
+            $('.resultWindow').append("<p class='error'>We can't find that book in the system!<br/><hr/></p>");
 					}
 				},
 				error: function(data) {
@@ -63,7 +61,6 @@ $(function(){
 				success: function(data) {
 					$('.resultWindow').html("");
 					var resultHtml = $('.resultWindow');
-					console.log("Add customerSearch success data: ", data);
 
 					//Observera att sales price inte kommer fram rätt än pga. att det inte matas in i kolumnen rätt just nu
 					for (var i = 0; i < data.length; i++) {
@@ -80,7 +77,7 @@ $(function(){
 
 					}
 					if (!data.length){
-					$('.resultWindow').append("<p class='error'>We can't find that book in the system!<br/><hr/></p>");
+            $('.resultWindow').append("<p class='error'>We can't find that book in the system!<br/><hr/></p>");
 					}
 				},
 				error: function(data) {
@@ -101,7 +98,6 @@ $(function(){
 				success: function(data) {
 					$('.resultWindow').html("");
 					var resultHtml = $('.resultWindow');
-					console.log("Add customerSearch success data: ", data);
 
 					//Observera att sales price inte kommer fram rätt än pga. att det inte matas in i kolumnen rätt just nu
 					for (var i = 0; i < data.length; i++) {
@@ -113,7 +109,6 @@ $(function(){
 						article.append('<h3>Price: ' + '<em>' + data[i].salesPrice*1.06 + ':-</em>' + '</h3>');
 						article.append('<h3> Amount in store: ' + '<em>' + data[i].amount + ' </em>' + 'pcs</h3>');
 						article.append('<h3> Shelf: ' + '<em>' + data[i].shelf + '</em>' + '</h3><hr/>');
-
 						resultHtml.append(article);
 
 					}
@@ -126,10 +121,6 @@ $(function(){
 				}
 			});
 		}
-		else {
-			console.log("something's wrong");
-		}
-
     return false;
  
 	});
@@ -137,16 +128,13 @@ $(function(){
 
 		$('.customlink, .glass').click(function() {
 			$(".passwordMand").show();
-			console.log("success I");
 			return false;
 		});
 
 		$('.passwordMand').submit(function() {
 			var userLogin = {};
-			console.log("success II");
     $(this).find("input").not("input[type='submit']").each(function() {
       userLogin[this.name] = $(this).val();
-      console.log("userLogin: ", userLogin);
     });
 
     $.ajax({
@@ -159,27 +147,20 @@ $(function(){
           userPWD: userLogin["userPWD"]
         },
         success: function(data) {
-        	if(data.length){
-        		// console.log("success III: ", data);
-        		var currUrl = window.location.href;
-        		// console.log("currUrl: ", currUrl);
-        		var filename = currUrl.substring(currUrl.lastIndexOf('/')+1);
-        		// console.log("filename: ", filename);
-        		var newUrl = currUrl.replace(filename, "");
-        		// console.log("newUrl: ", newUrl);
-        		window.location.href = newUrl;
-        		alert("You logged in successfully.");
-        	} else {
-        		console.log("failure III: ", data);
-        		alert("User ID or password is wrong.");
-        	}
-	        console.log("success IV");
-	        $(".loginResult").show();
-        },
-        error: function(data) {
-          // console.log("userLogin: ", userLogin);
-          console.log("error: ", data);
-
+          if(data.length){
+            var currUrl = window.location.href;
+            var filename = currUrl.substring(currUrl.lastIndexOf('/')+1);
+            var newUrl = currUrl.replace(filename, "");
+            window.location.href = newUrl;
+            alert("You logged in successfully.");
+          }
+          else {
+            alert("User ID or password is wrong.");
+          }
+            $(".loginResult").show();
+          },
+          error: function(data) {
+            alert('error');
         }
     });
     return false;

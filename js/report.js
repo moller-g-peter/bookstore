@@ -43,7 +43,6 @@ $(function(){
 
         },
         error: function(data) {
-          console.log("error: ", data);
           alert("Fill in all input fields.");
         }
       });
@@ -56,7 +55,7 @@ $(function(){
             var year = $('#year').val();
             var month = $("#month").val();
             var dateLog = year + "-" + month;
-            console.log("year:", year, "month:", month, "date:", dateLog);
+         
             $('.reportDiv').show();
 
             var reportInput = {};
@@ -69,7 +68,6 @@ $(function(){
               runCommand = "simple data for report";
             }
 
-            console.log("reportInput:", reportInput);
               $.ajax({
                 url:"libs/sql-ajax-json.php",
                 dataType: "json",
@@ -81,7 +79,6 @@ $(function(){
 
               },
               success: function(data) {
-                console.log("Success for raport-ajax!", data);
                 var total = 0;
                 for (var i = 0; i < data.length; i++) {
                   var article = $('<article class="p1" id=reportResult/>');
@@ -89,7 +86,7 @@ $(function(){
                   article.append('<h3>Date: ' + '<em>' + data[i].dateLog + '</em>' + '</h3>');
                   article.append('<h3>Amount: ' + '<em>' + data[i].amountLog + '</em>' + '</h3>');
                   article.append('<h3>Earnings/book: ' + '<em>' + data[i].earnings + '</em>' + '</h3>');
-                  article.append('<h3>Earnings in this buy: ' + '<em>' + data[i].totalAmount + '</em>' + '</h3>');
+                  article.append('<h3> Earnings from this transaction: ' + '<em>' + data[i].totalAmount + '</em>' + '</h3>');
                   total += data[i].totalAmount;
                   $(".reportDiv").append(article);
                   
@@ -98,7 +95,6 @@ $(function(){
                 $(".reportDiv").append('<h3 id="totalTotal">Total earnings for this isbn in the time period: ' + total + '</h3');
               },
               error: function(data) {
-                console.log("Error with the report", data);
               }
             });
             
@@ -127,7 +123,7 @@ $(function(){
           },
           success: function(data) {
 
-            console.log(data);
+    
             $('.option').html("");
             for (var i = 0; i < data.length; i++) {
               var inputField = $('<input class"underme" title="Title: '+ data[i].title + ' &#13 Author: ' + data[i].author + '" type="text" value="'+ data[i].isbn + '" >');
@@ -144,7 +140,7 @@ $(function(){
 
           },
           error: function(data) {
-            console.log("error data :", data, scan);
+            alert('error');
           }
 
         });

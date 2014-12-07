@@ -21,8 +21,6 @@ $(function(){
         success: function(data) {
           $('.resultWindow').html("");
           var resultHtml = $('.resultWindow');
-          console.log("Add bookInfo success data: ", data);
-          // alert("You have succefully stored your data!");
 
           for (var i = 0; i < data.length; i++) {
             var article = $('<article class="p1"/>');
@@ -66,14 +64,10 @@ $(function(){
 
           $('.resultWindow').html("");
           var resultHtml = $('.resultWindow');
-          console.log(modifyBook);
-
-          newPriceResult(modifyBook);
-          $('input').val('');
+            $('input').val('');
+            newPriceResult(modifyBook);
         },
         error: function(data) {
-          console.log("modifyBook: ", modifyBook);
-          console.log("error: ", data);
           $('.resultWindow').append("<p>The isbn number your looking for is undefined..<br/><hr/></p>");
         }
     });
@@ -83,7 +77,6 @@ $(function(){
         // If success in changing the price, this function prints out the result 
         function newPriceResult(modifyBook){
           var resultNewPrice = modifyBook;
-          console.log(resultNewPrice);
 
             $.ajax({
               url:"libs/sql-ajax-json.php",
@@ -94,18 +87,15 @@ $(function(){
                   isbn: resultNewPrice["isbn"]
                 },
                 success: function(modifyBook) {
-                  console.log("modifyBook: ", modifyBook);
                   $('.resultWindow').append('<p class="p1">' + 'Price has been successfully updated: ' + '<br>' +
                     'ISBN number: ' + '<b>' + modifyBook[0].isbn + '</b><br>' +
                     'Title: ' + '<b>' + modifyBook[0].title + '</b><br>' +
-                    // 'Previous price: ' + '<b>' + modifyBook.title + '.</b><br>' +
                     'Current price: ' + '<b>' + modifyBook[0].salesPrice + '</b><br>'
                    );
                   
                 },
                 error: function(data) {
-                  console.log("newPriceResult error: ", data.responseText);
-                  /*alert("Fill in all input fields.");*/
+                  alert('error');
                 }
             });
         }
@@ -124,8 +114,6 @@ $(function(){
             isbn: parseInt(scan)
           },
           success: function(data) {
-
-            console.log(data);
             $('.option').html("");
             for (var i = 0; i < data.length; i++) {
               var inputField = $('<input class"underme" title="Title: '+ data[i].title + ' &#13 Author: ' + data[i].author + '" type="text" value="'+ data[i].isbn + '" >');
@@ -142,7 +130,7 @@ $(function(){
 
           },
           error: function(data) {
-            console.log("error data :", data, scan);
+            alert('error')
           }
 
         });

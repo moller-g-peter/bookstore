@@ -1,6 +1,5 @@
 
 $(function(){
-	
 	//adding and removing classes with style properties to/from the tabs and hide/show the right elements
 	$('.input').addClass("activated");
 	$('.sell, .modPrice, .report').addClass("notactivated");
@@ -111,7 +110,7 @@ $(function(){
 					success: function(data) {
 						$('.option').html("");
 						for (var i = 0; i < data.length; i++) {
-							var inputField = $('<input class"underme" title="Title: '+ data[i].title + ' &#13 Author: ' + data[i].author + '" type="text" value="'+ data[i].isbn + '" >');
+							var inputField = $('<input class"underme" title="Title: '+ data[i].title + ' &#13 Author: ' + data[i].author + '" type="text" value="'+ data[i]["isbn"] + '" >');
 							inputField.data("book", data[i]);
 							$('.option').append(inputField);
 
@@ -122,9 +121,7 @@ $(function(){
 						}
 
 						$(".option input[type='text']").click(function() {
-							console.log("this fields data: ", $(this).data("book"));
 							var thisBookData = $(this).data("book");
-							// var isbn = $(this).val();
 							$('#isbn1').val(thisBookData.isbn);
 							$('#title1').val(thisBookData.title);
 							$('#author1').val(thisBookData.author);
@@ -143,12 +140,15 @@ $(function(){
 
 					},
 					error: function(data) {
-						console.log("error data :", data, scan);
+						alert('error');
 					}
 
 				});
 				return false;
 			}
+
+
+			
 	
 	});
 });
