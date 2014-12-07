@@ -346,7 +346,6 @@ b {
   background-color: #afa;
 }
 
-<<<<<<< Updated upstream
 .glass {
   float:right;
   min-height: 65px;
@@ -402,10 +401,16 @@ b {
   height: 60px;
   margin-top: 300px;
   margin-left: 650px;
-  background-color: #f60;
+  background-color: #e72;
   z-index: 100;
   border: 3px solid #000;
   padding-bottom: 60px;
+  font-weight: bold;
+}
+
+.pwdSubmit {
+  font-weight: bold;
+  border: 1px solid #000;
 }
 
 #userPWD {
