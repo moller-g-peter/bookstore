@@ -16,7 +16,7 @@ $(function(){
         dataType: "json",
         data: {
           sql: "sql/product-questions.sql",
-          run: "get books by isbn",
+          run: "get info for customer by isbn",
           isbn: JSON.stringify(bookInfo["isbn"])
         },
         success: function(data) {
@@ -29,7 +29,7 @@ $(function(){
             var article = $('<article class="p1"/>');
             article.append('<h3>Title: ' + '<em>' + data[i].title + '</em>' + '</h3>');
             article.append('<h3>Author: ' + '<em>' + data[i].author + '</em>' + '</h3>');
-            article.append('<h3>Price: ' + '<em>' + data[i].fPrice + ':-</em>' + '</h3>');
+            article.append('<h3>Price: ' + '<em>' + data[i].salesPrice + ':-</em>' + '</h3>');
             article.append('<h3> Amount in store: ' + '<em>' + data[i].amount + '</em>' + ' pcs</h3>');
             article.append('<h3> Shelf: ' + '<em>' + data[i].shelf + '</em>' + '</h3><hr/>');
             
