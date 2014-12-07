@@ -28,7 +28,7 @@ SELECT users.uid, users.fname, users.lname, users.email FROM users, login WHERE 
 INSERT INTO booklist (isbn, title, author, fPrice, amount, shelf) VALUES ({isbn}, {title}, {author}, {fPrice}, {amount}, {shelf});
 
 # get books by isbn
-SELECT * FROM pricelist WHERE isbn={isbn};
+SELECT * FROM booklist WHERE isbn={isbn};
 
 #get info for customer by isbn
 SELECT * FROM customer_info where isbn={isbn};
