@@ -400,8 +400,24 @@ b {
   display: block;
   width: 500px;
   height: 60px;
-  margin-top: 500px;
-  left: 500px;
-  background-color: #456;
+  margin-top: 300px;
+  margin-left: 650px;
+  background-color: #f60;
   z-index: 100;
+  border: 3px solid #000;
+  padding-bottom: 60px;
+}
+
+#userPWD {
+  width: 400px;
+  margin-left: 3px;
+  padding: 5.5px 0;
+}
+
+.pwdSubmit {
+  margin-top: 10px;
+}
+
+#userID {
+  width: 400px;
 }

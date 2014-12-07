@@ -135,7 +135,7 @@ $(function(){
 	});
 
 
-		$('.customlink').click(function() {
+		$('.customlink, .glass').click(function() {
 			$(".passwordMand").show();
 			console.log("success I");
 			return false;
