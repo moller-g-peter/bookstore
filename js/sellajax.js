@@ -29,7 +29,7 @@ $(function(){
             var article = $('<article class="p1"/>');
             article.append('<h3>Title: ' + '<em>' + data[i].title + '</em>' + '</h3>');
             article.append('<h3>Author: ' + '<em>' + data[i].author + '</em>' + '</h3>');
-            article.append('<h3>Price: ' + '<em>' + data[i].salesPrice + ':-</em>' + '</h3>');
+            article.append('<h3>Price: ' + '<em>' + data[i].salesPrice*1.06 + ':-</em>' + '</h3>');
             article.append('<h3> Amount in store: ' + '<em>' + data[i].amount + '</em>' + ' pcs</h3>');
             article.append('<h3> Shelf: ' + '<em>' + data[i].shelf + '</em>' + '</h3><hr/>');
             
